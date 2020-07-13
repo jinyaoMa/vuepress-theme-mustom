@@ -1,0 +1,76 @@
+@import 'animation'
+@import 'skin'
+
+article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul, :before, :after
+  margin 0
+  padding 0
+  box-sizing border-box
+  animation appear 0.6s ease-out
+
+html
+  font-size $fontSize
+  line-height $lineHeight
+  scroll-behavior smooth
+
+body
+  font-family -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif
+  -webkit-font-smoothing antialiased
+
+::-webkit-scrollbar
+  height 1rem
+  width 1rem
+  background-color #f1f1f1
+
+::-webkit-scrollbar-thumb
+  background-color #c1c1c1
+  border 0.25rem solid #f1f1f1
+  border-radius 0.5rem
+
+.GlobalLayout
+  color var(--clr-txt)
+  background-color var(--clr-bg)
+  ::selection
+    color var(--clr-bg)
+    background var(--clr-selection)
+
+a
+  text-decoration none
+  color var(--clr-link)
+  position relative
+  &:before
+    content ''
+    position absolute
+    bottom -1px
+    right 0
+    height 1px
+    width 0
+    background-color var(--clr-selection)
+    transition width 0.5s
+  &:hover:before
+    left 0
+    width 100%
+
+.nav-card
+  width $navCardWidth
+  display inline-block
+  @media (min-width: 321px)
+    &:not(:last-child)
+      margin-bottom $gap
+
+.nav-card-caption
+  color var(--clr-bg)
+  font-size 1.25rem
+  line-height $lineHeight * 1.5
+  padding 0 $gap * 0.5
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+  i
+    margin-right $gap * 0.5
+
+.nav-card-inner
+  background-color var(--clr-bg)
+  border-radius $borderRadius
+  padding $gap 0
+  @media (max-width 480px)
+    border-radius 0
