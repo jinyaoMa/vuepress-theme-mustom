@@ -20,13 +20,13 @@ export default {
 
     this.$router.beforeEach((to, from, next) => {
       if (to.path !== from.path && !Vue.component(to.name)) {
-        nprogress.start()
+        nprogress.start();
       }
       next()
     })
 
     this.$router.afterEach(o => {
-      nprogress.done()
+      nprogress.done();
 
       // Busuanzi
       this.mustom$InitBusuanzi();

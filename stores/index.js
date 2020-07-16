@@ -1,6 +1,5 @@
 import lang from "./lang";
 import skin from "./skin";
-import drawer from "./drawer";
 
 const combine = (...stores) => {
   const result = {};
@@ -18,5 +17,5 @@ const combine = (...stores) => {
 export default Vuex => {
   return new Vuex.Store(combine({
     state: {}
-  }, lang, skin, drawer));
+  }, lang, skin)); // Add-in here
 }
