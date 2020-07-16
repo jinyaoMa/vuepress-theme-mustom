@@ -23,11 +23,11 @@ export default ({
   siteData
 }) => {
   Vue.use(Vuex);
-  Vue.mixin(mixins);
-
   Object.assign(options, {
     store: stores(Vuex)
   });
+  
+  Vue.mixin(mixins(Vue, Vuex));
 
   /**
    * Another: https://github.com/vuejs/vue-router/blob/dev/examples/scroll-behavior/app.js

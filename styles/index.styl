@@ -5,12 +5,14 @@ article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fields
   margin 0
   padding 0
   box-sizing border-box
-  animation appear 0.6s ease-out
+  transition background 0.6s
 
 html
   font-size $fontSize
   line-height $lineHeight
   scroll-behavior smooth
+  overflow-x hidden
+  overflow-y scroll
 
 body
   font-family -apple-system, Helvetica, Arial, sans-serif
@@ -19,33 +21,38 @@ body
 ::-webkit-scrollbar
   height $scrollbarSize
   width $scrollbarSize
-  background-color $scrollbarColorBack
+  background $scrollbarColorBack
 
 ::-webkit-scrollbar-thumb
-  background-color $scrollbarColorFront
+  background $scrollbarColorFront
   border 0.25 * $scrollbarSize solid $scrollbarColorBack
   border-radius 0.5 * $scrollbarSize
 
 .GlobalLayout
-  color var(--clr-txt)
-  background-color var(--clr-bg)
+  color var(--txt)
+  background var(--bg)
   ::selection
-    color var(--clr-bg)
-    background var(--clr-selection)
+    color var(--bg)
+    background var(--selection)
 
-a
+:not(.markdown-body) a
   text-decoration none
-  color var(--clr-link)
+  color var(--link)
   position relative
   &:before
     content ''
     position absolute
-    bottom -1px
+    bottom -2px
     right 0
-    height 1px
+    height 2px
     width 0
-    background-color var(--clr-selection)
+    background var(--selection)
     transition width 0.5s
   &:hover:before
     left 0
     width 100%
+
+.card
+  background var(--bg)
+  border-radius $borderRadius
+  margin $gap 0
