@@ -22,6 +22,8 @@ export default {
   height $headerHeight
   background var(--header-bg)
   box-shadow 0 0 $gap * 0.5 1px var(--txt)
+  @media (max-width $smallestWidth)
+    box-shadow 0 0 1px var(--txt)
   display grid
   grid-template-columns $headerHeight auto $headerHeight
   grid-template-rows $headerHeight

@@ -40,14 +40,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
         text: 'archive', // locale match
         link: '/archive/'
       }, {
-        icon: '<i class="fas fa-folder-open fa-fw"></i>',
-        text: 'category', // locale match
-        link: '/categories/'
-      }, {
-        icon: '<i class="fas fa-tags fa-fw"></i>',
-        text: 'tag', // locale match
-        link: '/tags/'
-      }, {
         icon: '<i class="fas fa-user fa-fw"></i>',
         text: 'about', // locale match
         link: '/about/'

@@ -1,16 +1,25 @@
 <template>
   <div class="Drawer">
     <brand />
+    <Menu />
+    <Skin />
+    <Settings />
   </div>
 </template>
 
 <script>
 import Brand from "./parts/Brand";
+import Menu from "./parts/Menu";
+import Skin from "./parts/Skin";
+import Settings from "./parts/Settings";
 
 export default {
   name: "Drawer",
   components: {
-    Brand
+    Brand,
+    Menu,
+    Skin,
+    Settings
   }
 };
 </script>
@@ -23,6 +32,7 @@ export default {
   height s('calc(100vh - %s)', $headerHeight)
   width $sideWidth
   overflow hidden
+  overflow-y scroll
 
 @media (max-width: $smallWidth)
   .Drawer

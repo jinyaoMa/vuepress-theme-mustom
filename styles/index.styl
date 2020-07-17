@@ -1,7 +1,7 @@
 @import 'animation'
 @import 'skin'
 
-article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul, :before, :after
+article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul, a, :before, :after
   margin 0
   padding 0
   box-sizing border-box
@@ -35,7 +35,7 @@ body
     color var(--bg)
     background var(--selection)
 
-:not(.markdown-body) a
+a
   text-decoration none
   color var(--link)
   position relative
@@ -46,7 +46,7 @@ body
     right 0
     height 2px
     width 0
-    background var(--selection)
+    background var(--underline)
     transition width 0.5s
   &:hover:before
     left 0
@@ -54,5 +54,37 @@ body
 
 .card
   background var(--bg)
-  border-radius $borderRadius
   margin $gap 0
+  border-radius $borderRadius
+  overflow hidden
+  position relative
+  @media (max-width $smallestWidth)
+    margin 0
+    border-radius 0
+  &.mini
+    height 2.3rem
+    .minimize:before
+      content '\f067'
+  .icon
+    margin-right 0.5rem
+
+.caption
+  font-size 0.8rem
+  line-height 1
+  padding 0.75rem 1rem
+  background var(--highlight)
+
+.minimize
+  position absolute
+  top 0
+  right 0
+  font-size 0.8rem
+  line-height 1
+  padding 0.75rem
+  width 2.25rem
+  text-align center
+  cursor pointer
+  font-family 'Font Awesome 5 Free'
+  font-weight 900
+  &:before
+    content '\f068'

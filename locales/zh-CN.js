@@ -15,9 +15,6 @@ module.exports = { // placeholder [::]
   },
 
   brand: {
-    signature: '个性签名',
-    contact: '找我吹<i class="fas fa-square-full"></i>',
-    statistics: '本站统计',
     pstCount: '文章计数',
     catCount: '分类计数',
     tagCount: '标签计数'
@@ -32,8 +29,6 @@ module.exports = { // placeholder [::]
     texts: {
       home: '首页',
       archive: '归档',
-      category: '分类',
-      tag: '标签',
       about: '关于',
       resume: '简历小贴士',
       letter: '求职信小贴士',

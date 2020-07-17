@@ -15,9 +15,6 @@ module.exports = {
   },
 
   brand: {
-    signature: 'Comment',
-    contact: 'Follow Me',
-    statistics: 'Site Statistics',
     pstCount: 'Count of Posts',
     catCount: 'Count of Categories',
     tagCount: 'Count of Tags'

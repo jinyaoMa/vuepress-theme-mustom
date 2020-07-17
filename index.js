@@ -44,13 +44,11 @@ module.exports = (themeConfig, context) => {
           id: 'tags',
           keys: ['tags'],
           path: context.base + 'tags/',
-          layout: 'Tags',
           scopeLayout: 'Archive'
         }, {
           id: 'categories',
           keys: ['categories'],
           path: context.base + 'categories/',
-          layout: 'Categories',
           scopeLayout: 'Archive'
         }],
         sitemap: {
