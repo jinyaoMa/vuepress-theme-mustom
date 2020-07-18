@@ -3,15 +3,13 @@ module.exports = {
   sitename: 'Mark の Personal Website',
 
   footer: {
-    copyright: '© [:start_year:] - [:last_build_year:] [:author:]',
+    copyright: '© [:start_year:] - [:build_year:] [:author:]',
     powered: 'Powered by [:vuepress:]',
     themed: 'Theme [:theme:] By [:author:]',
     pv: 'Site total page views',
     uv: 'Site total visitors',
     wd: 'Site total word count',
-    license: 'Creative Commons Attribution-Noncommercial-ShareAlike 4.0 International license',
-    friend: 'Scan QR Code via QQ',
-    labelqr: 'QQ Group: '
+    license: 'Creative Commons Attribution-Noncommercial-ShareAlike 4.0 International license'
   },
 
   brand: {
@@ -46,7 +44,7 @@ module.exports = {
     caption: 'Skin',
     names: {
       default: 'Default',
-      light: 'Light'
+      memariani: 'Memariani'
     }
   },
 
@@ -55,8 +53,14 @@ module.exports = {
     names: {
       nightshift: 'Night Shift',
       nocanvas: 'Disable Canvas',
-      autoplay: 'Autoplay',
       language: '简体中文'
+    }
+  },
+
+  panels: {
+    captions: {
+      categories: 'Categories',
+      tags: 'Tags'
     }
   }
 

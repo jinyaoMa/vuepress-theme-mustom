@@ -1,16 +1,31 @@
 <template>
-  <div class="Aside"></div>
+  <div class="Aside">
+    <Panel />
+  </div>
 </template>
 
 <script>
+import Panel from "./parts/Panel";
+
 export default {
-  name: "Aside"
+  name: "Aside",
+  components: {
+    Panel
+  },
+  methods: {
+    height() {
+      return this.$el.scrollHeight;
+    },
+    scrollTo(y) {
+      this.$el.scrollTo(0, y);
+    }
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
 .Aside
-  zIndex(50)
+  zIndex(60)
   position fixed
   top $headerHeight
   height s('calc(100vh - %s)', $headerHeight)

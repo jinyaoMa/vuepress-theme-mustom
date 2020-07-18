@@ -36,18 +36,18 @@ export default (Vue, Vuex) => {
       smoothscroll.polyfill();
     },
     methods: {
-      mustom$Scroll2Header() {
-        if (typeof window === 'undefined') return;
-        window.scrollTo(0, window.innerHeight);
-      },
+      ...Vuex.mapActions({
+        mustom$SwapLang: 'swapLang',
+        mustom$SetSkin: 'setSkin',
+        mustom$Nightshift: 'nightshift'
+      }),
       mustom$Scroll2Top() {
         if (typeof window === 'undefined') return;
         window.scrollTo(0, 0);
       },
       mustom$Scroll2Bottom() {
         if (typeof window === 'undefined' || typeof document === 'undefined') return;
-        const target = this.$root.$el ? this.$root.$el : document.body.scrollHeight;
-        window.scrollTo(0, target.offsetHeight);
+        window.scrollTo(0, document.body.scrollHeight);
       },
       mustom$InitBusuanzi() {
         jsonp(
@@ -62,12 +62,23 @@ export default (Vue, Vuex) => {
           },
           true
         );
+      },
+      mustom$ToggleMinimize(e) {
+        const parent = e.path[1]; // .card
+        if (parent.classList.contains('mini')) {
+          parent.classList.remove('mini');
+        } else {
+          parent.classList.add('mini');
+        }
+        this.$root.$refs.layout.onResize();
       }
     },
     computed: {
       ...Vuex.mapGetters({
+        mustom$Lang: 'lang',
         mustom$Locale: 'locale',
         mustom$Skin: 'skin',
+        mustom$IsNight: 'isNight'
       }),
       mustom$SiteTotalWords() {
         let result = 0;
@@ -89,6 +100,24 @@ export default (Vue, Vuex) => {
       },
       mustom$SiteTotalTags() {
         return this.$tags.length;
+      },
+      mustom$MaxNumberOfCategories() {
+        let result = 0;
+        this.$categories.list.forEach(cate => {
+          if (cate.pages.length > result) {
+            result = cate.pages.length;
+          }
+        });
+        return result;
+      },
+      mustom$MaxNumberOfTags() {
+        let result = 0;
+        this.$tags.list.forEach(tag => {
+          if (tag.pages.length > result) {
+            result = tag.pages.length;
+          }
+        });
+        return result;
       }
     }
   }

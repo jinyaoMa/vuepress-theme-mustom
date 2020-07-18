@@ -6,6 +6,9 @@ export default {
     lang: 'zh-CN'
   },
   getters: {
+    lang(state) {
+      return state.lang;
+    },
     locale(state) {
       switch (state.lang) {
         case 'zh-CN':

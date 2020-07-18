@@ -1,5 +1,6 @@
 import lang from "./lang";
 import skin from "./skin";
+import nightshift from "./nightshift";
 
 const combine = (...stores) => {
   const result = {};
@@ -17,5 +18,5 @@ const combine = (...stores) => {
 export default Vuex => {
   return new Vuex.Store(combine({
     state: {}
-  }, lang, skin)); // Add-in here
+  }, lang, skin, nightshift)); // Add-in here
 }

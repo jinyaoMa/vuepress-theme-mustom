@@ -11,9 +11,11 @@ module.exports = { // https://www.vuepress.cn/zh/config/
   themeConfig: {
     author: 'jinyaoMa',
     year: 2019,
-    footerQQGroup: '595614161',
     brand: {
-      signature: '我只想安静地做笔记',
+      signatures: [
+        '我只想安静地做笔记', // zh
+        'I just wanna note silently' // en
+      ],
       contacts: [{
         icon: '<i class="fab fa-github fa-fw"></i>',
         text: 'jinyaoMa',

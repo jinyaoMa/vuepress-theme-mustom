@@ -20,19 +20,26 @@ export default {
     Menu,
     Skin,
     Settings
+  },
+  methods: {
+    height() {
+      return this.$el.scrollHeight;
+    },
+    scrollTo(y) {
+      this.$el.scrollTo(0, y);
+    }
   }
 };
 </script>
 
 <style lang="stylus" scoped>
 .Drawer
-  zIndex(40)
+  zIndex(50)
   position fixed
   top $headerHeight
   height s('calc(100vh - %s)', $headerHeight)
   width $sideWidth
   overflow hidden
-  overflow-y scroll
 
 @media (max-width: $smallWidth)
   .Drawer

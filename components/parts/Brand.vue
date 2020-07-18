@@ -1,9 +1,12 @@
 <template>
   <div class="Brand card">
-    <div class="caption"></div>
+    <div class="caption avatar"></div>
     <div class="inner">
       <div class="author">{{$themeConfig.author}}</div>
-      <div class="signature" v-html="$themeConfig.brand.signature"></div>
+      <div
+        class="signature"
+        v-html="$themeConfig.brand.signatures[/^zh-/i.test(mustom$Lang) ? 0 : 1]"
+      ></div>
       <div class="counter">
         <span :title="mustom$Locale.brand.pstCount">
           <i class="fas fa-archive fa-fw"></i>
@@ -44,7 +47,7 @@ export default {
   grid-template-areas 'caption' 'inner'
   @media (max-width: $smallWidth)
     grid-template-areas 'caption inner'
-    grid-template-columns 11.625rem auto
+    grid-template-columns 12rem auto
   @media (max-width: $smallestWidth)
     grid-template-areas 'caption' 'inner'
     grid-template-columns auto
@@ -83,6 +86,7 @@ export default {
   margin -1rem -1rem
   padding 1rem 1rem
   background var(--highlight)
+  font-weight bold
   @media (max-width: $smallWidth) and (min-width: $smallestWidth)
     line-height 2
     padding 0 0 0 1rem
@@ -97,21 +101,22 @@ export default {
   span
     display inline-block
     &:not(:last-child)
-      margin-right 0.25rem
+      margin-right 0.5rem
+    &:not(:first-child)
+      margin-left 0.25rem
 
 .contact
-  margin-top 0.5rem
-  border-top 1px solid
-  border-bottom 1px solid
-  @media (max-width: $smallWidth) and (min-width: $smallestWidth)
-    border none
+  margin-top 0.5rem !important
   a
+    display inline-block
     color var(--txt)
+    background var(--highlight)
     font-size 1.25rem
-    padding 0.25rem 0
+    width 2.5rem
     transition color 0.6s
+    text-align center
     &:hover
       color var(--underline)
     &:not(:last-child)
-      margin-right 0.25rem
+      margin-right 0.5rem
 </style>

@@ -9,9 +9,7 @@ module.exports = { // placeholder [::]
     pv: '本站总点击量',
     uv: '本站总访客量',
     wd: '本站文章总字数',
-    license: '知识共享署名-非商业用途-相同方式共享4.0国际许可协议',
-    friend: '技术交流？扫码进群就对了',
-    labelqr: 'QQ群：'
+    license: '知识共享署名-非商业用途-相同方式共享4.0国际许可协议'
   },
 
   brand: {
@@ -44,7 +42,7 @@ module.exports = { // placeholder [::]
     caption: '皮肤',
     names: {
       default: '默认',
-      light: '明亮'
+      memariani: '暗彩'
     }
   },
 
@@ -53,8 +51,14 @@ module.exports = { // placeholder [::]
     names: {
       nightshift: '夜间模式',
       nocanvas: '禁用画布',
-      autoplay: '自动播放',
       language: 'English'
+    }
+  },
+
+  panels: {
+    captions: {
+      categories: '分类',
+      tags: '标签'
     }
   }
 

@@ -3,10 +3,13 @@ module.exports = (themeConfig, context) => {
   Object.assign(themeConfig, {
     skins: [{
       name: 'default', // locale match
+      color: 'linear-gradient(120deg, #666666, #999999, #333333)'
+    }, {
+      name: 'jshine', // locale match
       color: 'linear-gradient(120deg, #ff3300, #cc66ff, #00ccff)'
     }, {
-      name: 'lightgold', // locale match
-      color: 'linear-gradient(120deg, lightgoldenrodyellow, gold, goldenrod)'
+      name: 'memariani', // locale match
+      color: 'linear-gradient(120deg, #cc6699, #6666cc, #33cccc)'
     }],
     settings: [{
       name: 'nightshift',
@@ -15,11 +18,15 @@ module.exports = (themeConfig, context) => {
       name: 'nocanvas',
       icon: '<i class="fas fa-video fa-fw"></i>'
     }, {
-      name: 'autoplay',
-      icon: '<i class="fas fa-play-circle fa-fw"></i>'
-    }, {
       name: 'language',
       icon: '<i class="fas fa-globe-asia fa-fw"></i>'
+    }],
+    panels: [{
+      caption: 'categories',
+      icon: '<i class="fas fa-folder-open fa-fw"></i>'
+    }, {
+      caption: 'tags',
+      icon: '<i class="fas fa-tags fa-fw"></i>'
     }]
   });
 
@@ -108,7 +115,7 @@ module.exports = (themeConfig, context) => {
     return {
       BUILD_YEAR: (new Date()).getFullYear(),
       VUEPRESS_OFFICIAL_SITE: '//vuepress.vuejs.org/',
-      THEME_REPO_URL: '//github.com/jinyaoMa/vuepress-blog',
+      THEME_REPO_URL: '//github.com/jinyaoMa/vuepress-theme-mustom',
       THEME_NAME: name,
       THEME_SHORTNAME: 'Mustom',
       THEME_AUTHOR: 'jinyaoMa',

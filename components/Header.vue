@@ -20,10 +20,11 @@ export default {
   left 0
   width 100%
   height $headerHeight
+  color var(--header)
   background var(--header-bg)
-  box-shadow 0 0 $gap * 0.5 1px var(--txt)
+  box-shadow 0 0 $gap * 0.25 1px var(--header)
   @media (max-width $smallestWidth)
-    box-shadow 0 0 1px var(--txt)
+    box-shadow 0 0 1px var(--header)
   display grid
   grid-template-columns $headerHeight auto $headerHeight
   grid-template-rows $headerHeight
@@ -34,5 +35,8 @@ export default {
   overflow hidden
   text-overflow ellipsis
   line-height $headerHeight
-  font-size $headerHeight * 0.25
+  font-size $headerHeight * 0.3
+  @media (max-width $smallestWidth)
+    font-size $headerHeight * 0.25
+  font-weight bold
 </style>

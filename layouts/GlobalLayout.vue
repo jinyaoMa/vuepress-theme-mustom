@@ -1,21 +1,25 @@
 <template>
-  <div :class="`GlobalLayout skin-${mustom$Skin}`">
+  <div :class="`GlobalLayout skin-${mustom$Skin} ${mustom$IsNight ? 'nightshift' : ''}`">
     <Launch />
     <Spinner />
     <Header />
+    <Goingto />
     <div class="frame">
-      <div class="main">
+      <div class="main" ref="main">
         <div class="drawer">
-          <Drawer />
+          <Drawer ref="drawer" />
         </div>
         <div class="center">
-          <div></div>
+          <component :is="layout" />
+          <Empty />
         </div>
         <div class="aside">
-          <Aside />
+          <Aside ref="aside" />
         </div>
         <div class="footer">
-          <div></div>
+          <div>
+            <Footer />
+          </div>
         </div>
       </div>
     </div>
@@ -26,8 +30,11 @@
 import Launch from "@theme/components/Launch";
 import Spinner from "@theme/components/Spinner";
 import Header from "@theme/components/Header";
+import Goingto from "@theme/components/Goingto";
 import Drawer from "@theme/components/Drawer";
 import Aside from "@theme/components/Aside";
+import Footer from "@theme/components/Footer";
+import Empty from "@theme/components/Empty";
 
 export default {
   name: "GlobalLayout",
@@ -35,8 +42,16 @@ export default {
     Launch,
     Spinner,
     Header,
+    Goingto,
     Drawer,
-    Aside
+    Aside,
+    Footer,
+    Empty
+  },
+  data() {
+    return {
+      scrollDiff: 1.2
+    };
   },
   computed: {
     layout: function() {
@@ -56,6 +71,32 @@ export default {
   },
   mounted() {
     console.log(this);
+    window.addEventListener("resize", this.onResize);
+    document.addEventListener("scroll", this.onScroll);
+    window.setTimeout(o => {
+      this.onResize();
+    }, 0);
+  },
+  methods: {
+    onResize() {
+      if (window.innerWidth > 1360) {
+        // manual measured
+        const drawerHeight = this.$refs.drawer.height() * this.scrollDiff;
+        const asideHeight = this.$refs.aside.height() * this.scrollDiff;
+        this.$refs.main.style.minHeight =
+          (drawerHeight > asideHeight ? drawerHeight : asideHeight) + "px";
+      } else if (window.innerWidth > 1080) {
+        // manual measured
+        const asideHeight = this.$refs.aside.height() * this.scrollDiff;
+        this.$refs.main.style.minHeight = asideHeight + "px";
+      } else {
+        this.$refs.main.style.minHeight = "100vh";
+      }
+    },
+    onScroll() {
+      this.$refs.drawer.scrollTo(window.scrollY / this.scrollDiff);
+      this.$refs.aside.scrollTo(window.scrollY / this.scrollDiff);
+    }
   }
 };
 </script>
@@ -82,6 +123,7 @@ export default {
   min-height 100vh
   display grid
   grid-template-columns $sideWidth auto $sideWidth
+  grid-template-rows auto min-content
   grid-template-areas 'drawer center aside' 'drawer footer aside'
 
 .center, .footer
@@ -89,6 +131,8 @@ export default {
 
 .center
   grid-area center
+  display grid
+  grid-template-rows min-content auto
 
 .drawer
   grid-area drawer
@@ -102,6 +146,7 @@ export default {
 @media (max-width: $smallWidth)
   .main
     grid-template-columns auto $sideWidth
+    grid-template-rows auto auto min-content
     grid-template-areas 'drawer aside' 'center aside' 'footer aside'
   .drawer, .center, .footer
     padding 0 $gap 0 0
@@ -109,11 +154,12 @@ export default {
 @media (max-width: $smallerWidth)
   .main
     grid-template-columns auto
+    grid-template-rows auto auto auto auto
     grid-template-areas 'drawer' 'center' 'aside' 'footer'
   .drawer, .center, .footer
     padding 0
 
-@media (max-width $smallestWidth)
+@media (max-width: $smallestWidth)
   .frame
     padding $headerHeight 0 0
 </style>

@@ -11,7 +11,7 @@
           <span v-html="mustom$Locale.menus.texts[item.text]"></span>
         </router-link>
       </div>
-      <div class="minimize"></div>
+      <div class="minimize" @click="mustom$ToggleMinimize"></div>
     </div>
   </div>
 </template>
@@ -34,11 +34,23 @@ a
   padding 1rem
   line-height 1
   color var(--txt)
+  position relative
   &:before
     display none
   &:hover
     background var(--highlight)
+  &:after
+    content ''
+    height 1rem
+    width @height
+    position absolute
+    top 1rem
+    right 1rem
+    border-radius $borderRadius
   &.router-link-exact-active
     background var(--txt)
     color var(--bg)
+    &:after
+      background var(--underline)
+      border 2px solid
 </style>
