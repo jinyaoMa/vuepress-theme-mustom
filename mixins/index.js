@@ -1,8 +1,7 @@
-import nprogress from 'nprogress';
 import smoothscroll from 'smoothscroll-polyfill';
 import { jsonp } from "../utils";
 
-export default (Vue, Vuex) => {
+export default (_, Vuex) => {
   return {
     data() {
       return {
@@ -13,33 +12,15 @@ export default (Vue, Vuex) => {
       };
     },
     mounted() {
-      // configure progress bar
-      nprogress.configure({
-        parent: '.Header'
-      })
-
-      this.$router.beforeEach((to, from, next) => {
-        if (to.path !== from.path && !Vue.component(to.name)) {
-          nprogress.start();
-        }
-        next()
-      })
-
-      this.$router.afterEach(o => {
-        nprogress.done();
-
-        // Busuanzi
-        this.mustom$InitBusuanzi();
-      })
-
       // smoothscroll
-      smoothscroll.polyfill();
+      smoothscroll.polyfill()
     },
     methods: {
       ...Vuex.mapActions({
         mustom$SwapLang: 'swapLang',
         mustom$SetSkin: 'setSkin',
-        mustom$Nightshift: 'nightshift'
+        mustom$Nightshift: 'nightshift',
+        mustom$SetExt: 'setExt'
       }),
       mustom$Scroll2Top() {
         if (typeof window === 'undefined') return;
@@ -70,7 +51,18 @@ export default (Vue, Vuex) => {
         } else {
           parent.classList.add('mini');
         }
-        this.$root.$refs.layout.onResize();
+        window && window.setTimeout(o => {
+          this.$root.$refs.layout.onResize();
+        }, 200);
+      },
+      mustom$FixHeight() {
+        if (typeof this.$el.querySelector === 'function') {
+          this.$el.querySelectorAll('.card').forEach(card => {
+            if (card.querySelector('.minimize')) {
+              card.style.height = card.offsetHeight + 'px';
+            }
+          });
+        }
       }
     },
     computed: {
@@ -78,7 +70,8 @@ export default (Vue, Vuex) => {
         mustom$Lang: 'lang',
         mustom$Locale: 'locale',
         mustom$Skin: 'skin',
-        mustom$IsNight: 'isNight'
+        mustom$IsNight: 'isNight',
+        mustom$Ext: 'ext'
       }),
       mustom$SiteTotalWords() {
         let result = 0;

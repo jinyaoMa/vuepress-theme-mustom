@@ -1,9 +1,12 @@
 <template>
-  <div :class="`GlobalLayout skin-${mustom$Skin} ${mustom$IsNight ? 'nightshift' : ''}`">
+  <div :class="`GlobalLayout skin-${mustom$Skin}${mustom$IsNight ? ' nightshift' : ''}${mustom$Ext !== '' ? ' fixed': ''}`">
     <Launch />
-    <Spinner />
+    <Spinner ref="spinner" />
     <Header />
     <Goingto />
+    <transition name="slide-fade">
+      <Ext v-if="mustom$Ext !== ''" />
+    </transition>
     <div class="frame">
       <div class="main" ref="main">
         <div class="drawer">
@@ -35,6 +38,7 @@ import Drawer from "@theme/components/Drawer";
 import Aside from "@theme/components/Aside";
 import Footer from "@theme/components/Footer";
 import Empty from "@theme/components/Empty";
+import Ext from "@theme/components/Ext";
 
 export default {
   name: "GlobalLayout",
@@ -46,7 +50,8 @@ export default {
     Drawer,
     Aside,
     Footer,
-    Empty
+    Empty,
+    Ext
   },
   data() {
     return {
@@ -75,7 +80,22 @@ export default {
     document.addEventListener("scroll", this.onScroll);
     window.setTimeout(o => {
       this.onResize();
-    }, 0);
+      window.setTimeout(o => {
+        this.mustom$FixHeight();
+      }, 0);
+    }, 600);
+
+    this.$router.beforeEach((to, from, next) => {
+      if (to.path !== from.path && !this.$vuepress.getVueComponent(to.name)) {
+        this.$refs.spinner.start();
+      }
+      next();
+    });
+    this.$router.afterEach(o => {
+      window.setTimeout(o => {
+        this.$refs.spinner.stop();
+      }, 200);
+    });
   },
   methods: {
     onResize() {
@@ -94,8 +114,18 @@ export default {
       }
     },
     onScroll() {
-      this.$refs.drawer.scrollTo(window.scrollY / this.scrollDiff);
-      this.$refs.aside.scrollTo(window.scrollY / this.scrollDiff);
+      this.$refs.drawer.scrollTo(
+        window.scrollY /
+          (this.scrollDiff +
+            (this.$refs.drawer.height() * (this.scrollDiff - 1)) /
+              this.$refs.drawer.height())
+      );
+      this.$refs.aside.scrollTo(
+        window.scrollY /
+          (this.scrollDiff +
+            (this.$refs.aside.height() * (this.scrollDiff - 1)) /
+              this.$refs.aside.height())
+      );
     }
   }
 };
@@ -106,12 +136,24 @@ export default {
   font-family 'Source Han Sans CN'
   src url('../assets/SourceHanSansCN.otf')
 
+.slide-fade-enter-active
+  transition all 0.3s ease
+
+.slide-fade-leave-active
+  transition all 0.3s ease
+
+.slide-fade-enter, .slide-fade-leave-to
+  transform translate3d(0, -100%, 0)
+  opacity 0
+
 .GlobalLayout
   font-family 'Source Han Sans CN'
   background var(--bg-global)
   background-attachment fixed
   min-width $minWidth
   width 100%
+  &.fixed
+    position fixed
 
 .frame
   padding $headerHeight $floatingSize 0

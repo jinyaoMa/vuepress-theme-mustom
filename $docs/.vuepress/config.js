@@ -62,10 +62,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       caption: 'others', // locale match
       icon: '<i class="fas fa-ellipsis-h fa-fw"></i>',
       items: [{
-        icon: '<i class="fas fa-search fa-fw"></i>',
-        text: 'search', // locale match
-        link: '/search/'
-      }, {
         icon: '<i class="fas fa-box fa-fw"></i>',
         text: 'library', // locale match
         link: '/library/'

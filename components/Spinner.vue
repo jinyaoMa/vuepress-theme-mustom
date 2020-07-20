@@ -6,7 +6,15 @@
 export default {
   name: "Spinner",
   mounted() {
-    this.$el.classList.add('hide');
+    this.stop();
+  },
+  methods: {
+    start() {
+      this.$el.classList.remove("hide");
+    },
+    stop() {
+      this.$el.classList.add("hide");
+    }
   }
 };
 </script>

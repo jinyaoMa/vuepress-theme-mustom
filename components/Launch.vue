@@ -15,7 +15,7 @@ export default {
 
 <style lang="stylus" scoped>
 .Launch
-  zIndex(10)
+  zIndex(-99999)
   position fixed
   top 0
   left 0

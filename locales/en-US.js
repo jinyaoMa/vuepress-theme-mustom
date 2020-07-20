@@ -32,7 +32,6 @@ module.exports = {
       about: 'About',
       resume: 'Resume Tips',
       letter: 'Cover Letter Tips',
-      search: 'Search',
       library: 'Code Library',
       icons: 'Icon Font Library',
       records: 'Records',

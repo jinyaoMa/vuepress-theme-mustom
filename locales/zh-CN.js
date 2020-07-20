@@ -30,7 +30,6 @@ module.exports = { // placeholder [::]
       about: '关于',
       resume: '简历小贴士',
       letter: '求职信小贴士',
-      search: '搜索',
       library: '代码库',
       icons: '图标字体库',
       records: '记录',

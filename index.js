@@ -103,6 +103,34 @@ module.exports = (themeConfig, context) => {
         searchMaxSuggestions: 10
       }
     ],
+    [ // https://shigma.github.io/markdown-it-pangu/vuepress.html
+      'vuepress-plugin-pangu'
+    ],
+    [ // https://vuepress.github.io/zh/plugins/nprogress/
+      'vuepress-plugin-nprogress'
+    ],
+    [
+      'vuepress-plugin-helper-live2d', {
+        log: false,
+        live2d: {
+          enable: true,
+          model: 'haruto',
+          display: {
+            position: "right",
+            width: 200,
+            height: 300,
+            hOffset: 64,
+            vOffset: 0,
+          },
+          mobile: {
+            show: false
+          },
+          react: {
+            opacity: 1
+          }
+        }
+      }
+    ],
   ];
 
   const alias = o => {
@@ -141,8 +169,8 @@ module.exports = (themeConfig, context) => {
     if (content) {
       const pangunode = require('./scripts/pangunode');
       $page.title = pangunode($page.title || '');
-      $page._strippedContent = pangunode($page._strippedContent || '');
-      $page.excerpt = pangunode($page.excerpt || '');
+      //$page._strippedContent = pangunode($page._strippedContent || '');
+      //$page.excerpt = pangunode($page.excerpt || '');
     }
 
     if (content) {
