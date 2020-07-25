@@ -11,7 +11,7 @@
         v-for="(setting, i) in $themeConfig.settings"
         :key="i"
         @click="doSetting(setting.name)"
-        :class="isChecked(setting.name) ? 'active' : ''"
+        :class="`${isChecked(setting.name) ? 'active' : ''} ${mustom$IsMobile && setting.name === 'nocanvas' ? 'hide' : ''}`"
       >
         <span class="icon" v-html="setting.icon"></span>
         <span v-html="mustom$Locale.settings.names[setting.name]"></span>
@@ -116,6 +116,9 @@ export default {
     transition transform 0.2s, background 0.6s
     transform scale(3)
     z-index 1
+
+.hide
+  display none
 </style>
 
 <style lang="stylus">
