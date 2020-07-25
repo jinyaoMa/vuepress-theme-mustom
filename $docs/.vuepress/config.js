@@ -11,6 +11,12 @@ module.exports = { // https://www.vuepress.cn/zh/config/
   themeConfig: {
     author: 'jinyaoMa',
     year: 2019,
+    header: {
+      sitename: [
+        '耀 の 个人网站',
+        'Mark の Personal Website'
+      ]
+    },
     brand: {
       signatures: [
         '我只想安静地做笔记', // zh

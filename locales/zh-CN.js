@@ -41,6 +41,8 @@ module.exports = { // placeholder [::]
     caption: '皮肤',
     names: {
       default: '默认',
+      whiteblack: '黑白',
+      jshine: '彩色',
       memariani: '暗彩'
     }
   },

@@ -3,6 +3,9 @@ module.exports = (themeConfig, context) => {
   Object.assign(themeConfig, {
     skins: [{
       name: 'default', // locale match
+      color: '#696969'
+    }, {
+      name: 'whiteblack', // locale match
       color: 'linear-gradient(120deg, #666666, #999999, #333333)'
     }, {
       name: 'jshine', // locale match

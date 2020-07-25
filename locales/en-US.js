@@ -43,6 +43,8 @@ module.exports = {
     caption: 'Skin',
     names: {
       default: 'Default',
+      whiteblack: 'White & Black',
+      jshine: 'JShine',
       memariani: 'Memariani'
     }
   },

@@ -1,14 +1,18 @@
 <template>
   <div class="Header">
-    <div :class="mustom$Ext === 'portal' && mustom$Ext"><i class="fas fa-cube ext" @click="mustom$SetExt('portal')"></i></div>
-    <div class="sitename" v-html="mustom$Locale.sitename"></div>
-    <div :class="mustom$Ext === 'search' && mustom$Ext"><i class="fas fa-search ext" @click="mustom$SetExt('search')"></i></div>
+    <div :class="`ext ${mustom$Ext === 'portal' ? mustom$Ext : ''}`" @click="mustom$SetExt('portal')">
+      <i class="fas fa-cube"></i>
+    </div>
+    <div class="sitename" v-html="$themeConfig.header.sitename[mustom$LangIndex]"></div>
+    <div :class="`ext ${mustom$Ext === 'search' ? mustom$Ext : ''}`" @click="mustom$SetExt('search')">
+      <i class="fas fa-search"></i>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
 };
 </script>
 
@@ -44,19 +48,17 @@ export default {
   font-weight bold
 
 .ext
-  margin $headerHeight * 0.2
-  height $headerHeight * 0.6
+  height $headerHeight
   width @height
   line-height @height
   text-align center
   cursor pointer
-  border-radius $borderRadius
   &:hover
     background var(--highlight)
-
-.portal
-  color var(--link)
-
-.search
-  color var(--underline)
+  &.portal
+    color var(--bg)
+    background var(--link)
+  &.search
+    color var(--bg)
+    background var(--underline)
 </style>

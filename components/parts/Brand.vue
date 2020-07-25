@@ -5,7 +5,7 @@
       <div class="author">{{$themeConfig.author}}</div>
       <div
         class="signature"
-        v-html="$themeConfig.brand.signatures[/^zh-/i.test(mustom$Lang) ? 0 : 1]"
+        v-html="$themeConfig.brand.signatures[mustom$LangIndex]"
       ></div>
       <div class="counter">
         <span :title="mustom$Locale.brand.pstCount">
@@ -65,6 +65,7 @@ export default {
   @media (max-width: $smallestWidth)
     margin 1rem auto
     width 100%
+    max-width calc(100% - 2rem)
   &:before
     content ''
     display block

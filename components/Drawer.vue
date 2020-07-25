@@ -2,7 +2,7 @@
   <div class="Drawer">
     <brand />
     <Menu />
-    <Skin />
+    <Skin v-if="!mustom$IsMobile" />
     <Settings />
   </div>
 </template>

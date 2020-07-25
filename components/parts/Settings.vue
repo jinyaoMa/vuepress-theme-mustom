@@ -32,7 +32,7 @@ export default {
           case "nightshift":
             return this.mustom$IsNight;
           case "nocanvas":
-            break;
+            return this.mustom$NoCanvas;
           case "language":
             return /^en-/i.test(this.mustom$Lang);
         }
@@ -46,6 +46,12 @@ export default {
           this.mustom$Nightshift();
           break;
         case "nocanvas":
+          if (this.mustom$NoCanvas) {
+            this.$root.$el.classList.remove('NO_CANVAS');
+          } else {
+            this.$root.$el.classList.add('NO_CANVAS');
+          }
+          this.mustom$ToggleCanvas();
           break;
         case "language":
           this.mustom$SwapLang();
@@ -110,4 +116,11 @@ export default {
     transition transform 0.2s, background 0.6s
     transform scale(3)
     z-index 1
+</style>
+
+<style lang="stylus">
+#app.NO_CANVAS
+  #live2d-widget
+    opacity 0 !important
+    transition opacity 0.6s
 </style>

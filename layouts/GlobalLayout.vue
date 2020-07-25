@@ -1,5 +1,10 @@
 <template>
-  <div :class="`GlobalLayout skin-${mustom$Skin}${mustom$IsNight ? ' nightshift' : ''}${mustom$Ext !== '' ? ' fixed': ''}`">
+  <div
+    :class="`GlobalLayout skin-${mustom$Skin}${mustom$IsNight ? ' nightshift' : ''}${mustom$Ext !== '' ? ' fixed': ''}`"
+  >
+    <transition name="fade">
+      <Canvas v-if="mustom$Skin === 'default' && !mustom$IsMobile && !mustom$NoCanvas" />
+    </transition>
     <Launch />
     <Spinner ref="spinner" />
     <Header />
@@ -39,6 +44,7 @@ import Aside from "@theme/components/Aside";
 import Footer from "@theme/components/Footer";
 import Empty from "@theme/components/Empty";
 import Ext from "@theme/components/Ext";
+import Canvas from "@theme/components/Canvas";
 
 export default {
   name: "GlobalLayout",
@@ -51,15 +57,16 @@ export default {
     Aside,
     Footer,
     Empty,
-    Ext
+    Ext,
+    Canvas,
   },
   data() {
     return {
-      scrollDiff: 1.2
+      scrollDiff: 1.2,
     };
   },
   computed: {
-    layout: function() {
+    layout: function () {
       if (this.$page.path) {
         const layout = this.$frontmatter.layout;
         if (
@@ -72,15 +79,15 @@ export default {
         return "Home";
       }
       return "NotFound";
-    }
+    },
   },
   mounted() {
     console.log(this);
     window.addEventListener("resize", this.onResize);
     document.addEventListener("scroll", this.onScroll);
-    window.setTimeout(o => {
+    window.setTimeout((o) => {
       this.onResize();
-      window.setTimeout(o => {
+      window.setTimeout((o) => {
         this.mustom$FixHeight();
       }, 0);
     }, 600);
@@ -91,8 +98,8 @@ export default {
       }
       next();
     });
-    this.$router.afterEach(o => {
-      window.setTimeout(o => {
+    this.$router.afterEach((o) => {
+      window.setTimeout((o) => {
         this.$refs.spinner.stop();
       }, 200);
     });
@@ -126,8 +133,8 @@ export default {
             (this.$refs.aside.height() * (this.scrollDiff - 1)) /
               this.$refs.aside.height())
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -135,6 +142,15 @@ export default {
 @font-face
   font-family 'Source Han Sans CN'
   src url('../assets/SourceHanSansCN.otf')
+
+.fade-enter-active
+  transition opacity 0.2s ease
+
+.fade-leave-active
+  transition opacity 0.6s ease
+
+.fade-enter, .fade-leave-to
+  opacity 0
 
 .slide-fade-enter-active
   transition all 0.3s ease
@@ -185,7 +201,7 @@ export default {
 .footer
   grid-area footer
 
-@media (max-width: $smallWidth)
+@media (max-width $smallWidth)
   .main
     grid-template-columns auto $sideWidth
     grid-template-rows auto auto min-content
@@ -193,7 +209,7 @@ export default {
   .drawer, .center, .footer
     padding 0 $gap 0 0
 
-@media (max-width: $smallerWidth)
+@media (max-width $smallerWidth)
   .main
     grid-template-columns auto
     grid-template-rows auto auto auto auto
@@ -201,7 +217,7 @@ export default {
   .drawer, .center, .footer
     padding 0
 
-@media (max-width: $smallestWidth)
+@media (max-width $smallestWidth)
   .frame
     padding $headerHeight 0 0
 </style>

@@ -20,7 +20,8 @@ export default (_, Vuex) => {
         mustom$SwapLang: 'swapLang',
         mustom$SetSkin: 'setSkin',
         mustom$Nightshift: 'nightshift',
-        mustom$SetExt: 'setExt'
+        mustom$SetExt: 'setExt',
+        mustom$ToggleCanvas: 'toggleCanvas'
       }),
       mustom$Scroll2Top() {
         if (typeof window === 'undefined') return;
@@ -71,8 +72,18 @@ export default (_, Vuex) => {
         mustom$Locale: 'locale',
         mustom$Skin: 'skin',
         mustom$IsNight: 'isNight',
-        mustom$Ext: 'ext'
+        mustom$Ext: 'ext',
+        mustom$NoCanvas: 'noCanvas'
       }),
+      mustom$LangIndex() {
+        return /^zh-/i.test(this.mustom$Lang) ? 0 : 1;
+      },
+      mustom$IsMobile() {
+        return window && /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(window.navigator.userAgent);
+      },
+      mustom$IsChinese() {
+        return window && /^(zh)/i.test(window.navigator.browserLanguage || window.navigator.language || 'zh');
+      },
       mustom$SiteTotalWords() {
         let result = 0;
         this.$site.pages
