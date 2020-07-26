@@ -1,16 +1,19 @@
 <template>
   <div class="Aside">
     <Panel />
+    <Audioplayer />
   </div>
 </template>
 
 <script>
 import Panel from "./parts/Panel";
+import Audioplayer from "./parts/Audioplayer";
 
 export default {
   name: "Aside",
   components: {
-    Panel
+    Panel,
+    Audioplayer
   },
   methods: {
     height() {

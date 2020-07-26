@@ -1,12 +1,15 @@
 <template>
   <div class="Brand card">
-    <div class="caption avatar"></div>
+    <div class="caption ifSmallest">
+      <span class="icon">
+        <i class="fas fa-id-card fa-fw"></i>
+      </span>
+      <span v-html="mustom$Locale.brand.caption"></span>
+    </div>
+    <div class="avatar"></div>
     <div class="inner">
       <div class="author">{{$themeConfig.author}}</div>
-      <div
-        class="signature"
-        v-html="$themeConfig.brand.signatures[mustom$LangIndex]"
-      ></div>
+      <div class="signature" v-html="$themeConfig.brand.signatures[mustom$LangIndex]"></div>
       <div class="counter">
         <span :title="mustom$Locale.brand.pstCount">
           <i class="fas fa-archive fa-fw"></i>
@@ -32,37 +35,49 @@
         ></a>
       </div>
     </div>
+    <div class="minimize ifSmallest" @click="mustom$ToggleMinimize"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Brand"
+  name: "Brand",
 };
 </script>
 
 <style lang="stylus" scoped>
 .Brand
   display grid
-  grid-template-areas 'caption' 'inner'
-  @media (max-width: $smallWidth)
-    grid-template-areas 'caption inner'
+  grid-template-areas 'avatar' 'inner'
+  @media (max-width $smallWidth)
+    grid-template-areas 'avatar inner'
     grid-template-columns 12rem auto
-  @media (max-width: $smallestWidth)
-    grid-template-areas 'caption' 'inner'
+  @media (max-width $smallestWidth)
+    grid-template-areas 'caption' 'avatar' 'inner'
     grid-template-columns auto
 
-.caption, .inner
+.caption
+  grid-area caption
+  display none
+
+.minimize
+  display none
+
+.ifSmallest
+  @media (max-width $smallestWidth)
+    display block
+
+.avatar, .inner
   margin 1rem
 
-.caption
+.avatar
   max-width s('calc(%s - 2rem)', $sideWidth)
   background url('/assets/img/brand.png')
   background-size cover
   border-radius $borderRadius
-  grid-area caption
+  grid-area avatar
   padding inherit
-  @media (max-width: $smallestWidth)
+  @media (max-width $smallestWidth)
     margin 1rem auto
     width 100%
     max-width calc(100% - 2rem)
@@ -73,7 +88,7 @@ export default {
 
 .inner
   text-align center
-  @media (max-width: $smallWidth) and (min-width: $smallestWidth)
+  @media (max-width $smallWidth) and (min-width $smallestWidth)
     text-align left
     > div
       margin 0 0 0 -1rem
@@ -88,7 +103,7 @@ export default {
   padding 1rem 1rem
   background var(--highlight)
   font-weight bold
-  @media (max-width: $smallWidth) and (min-width: $smallestWidth)
+  @media (max-width $smallWidth) and (min-width $smallestWidth)
     line-height 2
     padding 0 0 0 1rem
     border-radius $borderRadius

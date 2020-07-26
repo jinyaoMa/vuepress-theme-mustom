@@ -19,14 +19,10 @@ body
   -webkit-font-smoothing antialiased
 
 ::-webkit-scrollbar
-  height $scrollbarSize
-  width $scrollbarSize
-  background $scrollbarColorBack
+  webkitScrollbar()
 
 ::-webkit-scrollbar-thumb
-  background $scrollbarColorFront
-  border 0.25 * $scrollbarSize solid $scrollbarColorBack
-  border-radius 0.5 * $scrollbarSize
+  webkitScrollbarThumb()
 
 .GlobalLayout
   color var(--txt)
@@ -72,7 +68,7 @@ a
 .caption
   font-size 0.8rem
   line-height 1
-  padding 0.75rem 1rem
+  padding 0.75rem
   background var(--highlight)
   user-select none
 
@@ -88,5 +84,8 @@ a
   cursor pointer
   font-family 'Font Awesome 5 Free'
   font-weight 900
+  @media (max-width $smallestWidth)
+    width 100%
+    text-align right
   &:before
     content '\f068'

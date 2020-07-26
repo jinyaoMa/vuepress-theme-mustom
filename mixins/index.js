@@ -21,7 +21,8 @@ export default (_, Vuex) => {
         mustom$SetSkin: 'setSkin',
         mustom$Nightshift: 'nightshift',
         mustom$SetExt: 'setExt',
-        mustom$ToggleCanvas: 'toggleCanvas'
+        mustom$ToggleCanvas: 'toggleCanvas',
+        mustom$TriggerResizeIncrement: 'triggerResizeIncrement'
       }),
       mustom$Scroll2Top() {
         if (typeof window === 'undefined') return;
@@ -46,24 +47,22 @@ export default (_, Vuex) => {
         );
       },
       mustom$ToggleMinimize(e) {
+        if (typeof window === 'undefined') return;
         const parent = e.path[1]; // .card
         if (parent.classList.contains('mini')) {
           parent.classList.remove('mini');
+          window.setTimeout(o => {
+            parent.style.height = 'auto';
+          }, 200);
         } else {
-          parent.classList.add('mini');
+          parent.style.height = parent.offsetHeight + 'px';
+          window.setTimeout(o => {
+            parent.classList.add('mini');
+          }, 0);
         }
-        window && window.setTimeout(o => {
-          this.$root.$refs.layout.onResize();
+        window.setTimeout(o => {
+          this.mustom$TriggerResizeIncrement();
         }, 200);
-      },
-      mustom$FixHeight() {
-        if (typeof this.$el.querySelector === 'function') {
-          this.$el.querySelectorAll('.card').forEach(card => {
-            if (card.querySelector('.minimize')) {
-              card.style.height = card.offsetHeight + 'px';
-            }
-          });
-        }
       }
     },
     computed: {
@@ -73,16 +72,19 @@ export default (_, Vuex) => {
         mustom$Skin: 'skin',
         mustom$IsNight: 'isNight',
         mustom$Ext: 'ext',
-        mustom$NoCanvas: 'noCanvas'
+        mustom$NoCanvas: 'noCanvas',
+        mustom$TriggerResize: 'triggerResize'
       }),
       mustom$LangIndex() {
         return /^zh-/i.test(this.mustom$Lang) ? 0 : 1;
       },
       mustom$IsMobile() {
-        return window && /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(window.navigator.userAgent);
+        if (typeof window === 'undefined') return;
+        return /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i.test(window.navigator.userAgent);
       },
       mustom$IsChinese() {
-        return window && /^(zh)/i.test(window.navigator.browserLanguage || window.navigator.language || 'zh');
+        if (typeof window === 'undefined') return;
+        return /^(zh)/i.test(window.navigator.browserLanguage || window.navigator.language || 'zh');
       },
       mustom$SiteTotalWords() {
         let result = 0;

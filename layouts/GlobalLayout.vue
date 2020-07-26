@@ -81,15 +81,18 @@ export default {
       return "NotFound";
     },
   },
+  watch: {
+    mustom$TriggerResize() {
+      this.onResize();
+      this.onScroll();
+    }
+  },
   mounted() {
     console.log(this);
     window.addEventListener("resize", this.onResize);
     document.addEventListener("scroll", this.onScroll);
     window.setTimeout((o) => {
       this.onResize();
-      window.setTimeout((o) => {
-        this.mustom$FixHeight();
-      }, 0);
     }, 600);
 
     this.$router.beforeEach((to, from, next) => {

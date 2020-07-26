@@ -35,6 +35,7 @@ export default {
         .replace("[:author:]", this.$themeConfig.author);
     },
     powered() {
+      if (typeof __VUEPRESS__ === 'undefined') return '';
       return this.mustom$Locale.footer.powered.replace(
         "[:vuepress:]",
         `<a target="_blank" href="${VUEPRESS_OFFICIAL_SITE}" title="VuePress v${__VUEPRESS__.version}">VuePress</a>`
@@ -65,7 +66,7 @@ export default {
   @media (max-width: $smallWidth) and (min-width: $smallerWidth)
     text-align left
   background var(--bg)
-  padding 1rem s('calc(1rem + %s)', $borderRadius)
+  padding 0.75rem s('calc(1rem + %s)', $borderRadius) 0.5rem
   border-radius $borderRadius $borderRadius 0 0
   position relative
   overflow hidden

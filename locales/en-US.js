@@ -13,6 +13,7 @@ module.exports = {
   },
 
   brand: {
+    caption: 'Card',
     pstCount: 'Count of Posts',
     catCount: 'Count of Categories',
     tagCount: 'Count of Tags'
@@ -63,6 +64,10 @@ module.exports = {
       categories: 'Categories',
       tags: 'Tags'
     }
+  },
+
+  audioplayer: {
+    caption: 'APlayer.js + Meting.js'
   }
 
 }

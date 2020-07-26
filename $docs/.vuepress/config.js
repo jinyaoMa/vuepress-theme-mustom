@@ -85,6 +85,13 @@ module.exports = { // https://www.vuepress.cn/zh/config/
         link: '/gallery/'
       }]
     }],
+    meting: {
+      server: 'netease',
+      type: 'playlist',
+      id: '4989572738',
+      theme: '#ff3300',
+      height: '297px'
+    },
     exts: [{
       name: 'My Site',
       icon: 'https://ma-jinyao.cn/asset/img/author.medium.png',

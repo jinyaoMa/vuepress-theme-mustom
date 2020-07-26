@@ -281,6 +281,7 @@ export default {
   left 0
   height 100vh
   width 100vw
+  pointer-events none
 
 canvas
   width 100%

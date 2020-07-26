@@ -26,7 +26,7 @@ export default {
   height $headerHeight
   color var(--header)
   background var(--header-bg)
-  box-shadow 0 0 $gap * 0.25 1px var(--header)
+  box-shadow 0 $borderRadius * -0.5 $borderRadius var(--header)
   @media (max-width $smallestWidth)
     box-shadow 0 0 1px var(--header)
   display grid

@@ -1,6 +1,3 @@
-zIndex(num)
-  z-index 1000 - num
-
 // Global
 $fontSize = 16px
 $lineHeight = 2
@@ -24,3 +21,17 @@ $headerHeight = $fontSize * 4
 // Footer
 $footerLicenseWidth = 120px * 0.75 // origin 120px
 $footerLicenseHeight = 42px * 0.75 // origin 42px
+
+// Functions
+zIndex(num)
+  z-index 1000 - num
+
+webkitScrollbar()
+  height $scrollbarSize
+  width $scrollbarSize
+  background $scrollbarColorBack
+
+webkitScrollbarThumb()
+  background $scrollbarColorFront
+  border 0.25 * $scrollbarSize solid $scrollbarColorBack
+  border-radius 0.5 * $scrollbarSize

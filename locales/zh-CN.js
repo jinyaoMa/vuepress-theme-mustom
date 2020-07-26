@@ -13,6 +13,7 @@ module.exports = { // placeholder [::]
   },
 
   brand: {
+    caption: '卡片',
     pstCount: '文章计数',
     catCount: '分类计数',
     tagCount: '标签计数'
@@ -61,6 +62,10 @@ module.exports = { // placeholder [::]
       categories: '分类',
       tags: '标签'
     }
+  },
+
+  audioplayer: {
+    caption: 'APlayer.js + Meting.js'
   }
 
 }
