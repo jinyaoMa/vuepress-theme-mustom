@@ -68,6 +68,16 @@ module.exports = {
 
   audioplayer: {
     caption: 'APlayer.js + Meting.js'
+  },
+
+  translate: {
+    tooltip: 'Highlight words to translate - Supported by Baidu Translation API',
+    copytip: 'Click to copy highlighted content',
+    result: 'Translation Result',
+    copied: 'Copied!',
+    zh: '中文',
+    en: 'English',
+    jp: '日本語'
   }
 
 }

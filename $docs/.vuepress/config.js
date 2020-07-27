@@ -89,35 +89,42 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       server: 'netease',
       type: 'playlist',
       id: '4989572738',
-      theme: '#ff3300',
+      theme: 'var(--link)', // e.g. #ff3300
       height: '297px'
     },
-    exts: [{
+    portals: [{
       name: 'My Site',
+      desc: '耀 の 个人网站 | Mark の Personal Website',
       icon: 'https://ma-jinyao.cn/asset/img/author.medium.png',
       link: 'https://ma-jinyao.cn/'
     }, {
       name: 'MPlayer',
+      desc: 'APlayer 个人模仿练习版',
       icon: 'https://ma-jinyao.cn/asset/img/icon.medium.png',
       link: 'https://ma-jinyao.cn/MPlayer'
     }, {
       name: 'Resume',
+      desc: 'Resume Template',
       icon: 'https://ma-jinyao.cn/extension/resume/icon.png',
       link: 'https://ma-jinyao.cn/extension/resume/english/'
     }, {
       name: '简历',
+      desc: '简历模板',
       icon: 'https://ma-jinyao.cn/extension/resume/icon.reverse.png',
       link: 'https://ma-jinyao.cn/extension/resume/chinese/'
     }, {
       name: 'Cover Letter',
+      desc: 'Cover Letter Template',
       icon: 'https://ma-jinyao.cn/extension/letter/icon.png',
       link: 'https://ma-jinyao.cn/extension/letter/english/'
     }, {
       name: '求职信',
+      desc: '求职信模板',
       icon: 'https://ma-jinyao.cn/extension/letter/icon.reverse.png',
       link: 'https://ma-jinyao.cn/extension/letter/chinese/'
     }, {
       name: 'Palette',
+      desc: '想知道图片主题色？',
       icon: 'https://ma-jinyao.cn/extension/palette/icon.png',
       link: 'https://ma-jinyao.cn/extension/palette/'
     }]

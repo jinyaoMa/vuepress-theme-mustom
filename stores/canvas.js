@@ -1,20 +1,23 @@
-export default {
-  state: {
-    noCanvas: false
-  },
-  getters: {
-    noCanvas(state) {
-      return state.noCanvas;
+export default savedata => {
+  return {
+    state: {
+      noCanvas: savedata.noCanvas || false
     },
-  },
-  mutations: {
-    toggleCanvas(state) {
-      state.noCanvas = !state.noCanvas;
-    }
-  },
-  actions: {
-    toggleCanvas(context) {
-      context.commit('toggleCanvas');
+    getters: {
+      noCanvas(state) {
+        return state.noCanvas;
+      },
+    },
+    mutations: {
+      toggleCanvas(state) {
+        state.noCanvas = !state.noCanvas;
+        savedata.__set__('noCanvas', state.noCanvas);
+      }
+    },
+    actions: {
+      toggleCanvas(context) {
+        context.commit('toggleCanvas');
+      }
     }
   }
 }

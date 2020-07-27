@@ -1,9 +1,16 @@
+import _storage from "../utils/storage";
 import lang from "./lang";
 import skin from "./skin";
 import nightshift from "./nightshift";
-import ext from "./ext";
 import canvas from "./canvas";
+import ext from "./ext";
 import trigger from "./trigger";
+
+const savedata = _storage.get() || {};
+savedata.__set__ = (key, value) => {
+  savedata[key] = value;
+  _storage.set(savedata);
+};
 
 const combine = (...stores) => {
   const result = {};
@@ -21,5 +28,5 @@ const combine = (...stores) => {
 export default Vuex => {
   return new Vuex.Store(combine({
     state: {}
-  }, lang, skin, nightshift, ext, canvas, trigger)); // Add-in here
+  }, lang(savedata), skin(savedata), nightshift(savedata), canvas(savedata), ext, trigger)); // Add-in here
 }

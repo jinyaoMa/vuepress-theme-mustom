@@ -73,6 +73,7 @@ export default {
 .avatar
   max-width s('calc(%s - 2rem)', $sideWidth)
   background url('/assets/img/brand.png')
+  background-color var(--highlight)
   background-size cover
   border-radius $borderRadius
   grid-area avatar

@@ -35,7 +35,7 @@ export default {
         .replace("[:author:]", this.$themeConfig.author);
     },
     powered() {
-      if (typeof __VUEPRESS__ === 'undefined') return '';
+      if (typeof __VUEPRESS__ === "undefined") return "";
       return this.mustom$Locale.footer.powered.replace(
         "[:vuepress:]",
         `<a target="_blank" href="${VUEPRESS_OFFICIAL_SITE}" title="VuePress v${__VUEPRESS__.version}">VuePress</a>`
@@ -54,8 +54,8 @@ export default {
     },
     license() {
       return `<a class="by-nc-sa" target="_blank" href="${CC_LICENSE_LINK}" title="${this.mustom$Locale.footer.license}"></a>`;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -63,7 +63,7 @@ export default {
 .Footer
   user-select none
   text-align center
-  @media (max-width: $smallWidth) and (min-width: $smallerWidth)
+  @media (max-width $smallWidth) and (min-width $smallerWidth)
     text-align left
   background var(--bg)
   padding 0.75rem s('calc(1rem + %s)', $borderRadius) 0.5rem
@@ -78,6 +78,7 @@ export default {
     width 100%
     height $borderRadius
     background var(--highlight)
+
 .footerCount > span:not(:first-child)
   margin-left 0.1rem
 </style>
@@ -90,6 +91,7 @@ export default {
     height $footerLicenseHeight
     width $footerLicenseWidth
     background url('../assets/by-nc-sa.svg')
+    background-color var(--highlight)
     background-size cover
     &:before
       display none

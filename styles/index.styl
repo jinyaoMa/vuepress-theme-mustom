@@ -24,6 +24,25 @@ body
 ::-webkit-scrollbar-thumb
   webkitScrollbarThumb()
 
+.fade-enter-active
+  transition opacity 0.2s ease
+
+.fade-leave-active
+  transition opacity 0.2s ease
+
+.fade-enter, .fade-leave-to
+  opacity 0
+
+.slide-fade-enter-active
+  transition all 0.2s ease
+
+.slide-fade-leave-active
+  transition all 0.2s ease
+
+.slide-fade-enter, .slide-fade-leave-to
+  transform translate3d(0, -100%, 0)
+  opacity 0
+
 .GlobalLayout
   color var(--txt)
   background var(--bg)
@@ -39,13 +58,12 @@ a
     content ''
     position absolute
     bottom -2px
-    right 0
+    left 0
     height 2px
     width 0
     background var(--underline)
-    transition width 0.5s
+    transition width 0.6s
   &:hover:before
-    left 0
     width 100%
 
 .card
@@ -60,6 +78,8 @@ a
     border-radius 0
   &.mini
     height 2.3rem !important
+    @media (max-width $smallestWidth)
+      height 3rem !important
     .minimize:before
       content '\f067'
   .icon
@@ -68,6 +88,8 @@ a
 .caption
   font-size 0.8rem
   line-height 1
+  @media (max-width $smallestWidth)
+    line-height 2
   padding 0.75rem
   background var(--highlight)
   user-select none
@@ -78,6 +100,8 @@ a
   right 0
   font-size 0.8rem
   line-height 1
+  @media (max-width $smallestWidth)
+    line-height 2
   padding 0.75rem
   width 2.25rem
   text-align center

@@ -6,15 +6,7 @@
       </span>
       <span v-html="mustom$Locale.audioplayer.caption"></span>
     </div>
-    <div class="inner">
-      <meting-js
-        :server="$themeConfig.meting.server"
-        :type="$themeConfig.meting.type"
-        :id="$themeConfig.meting.id"
-        :theme="$themeConfig.meting.theme"
-        :list-max-height="$themeConfig.meting.height"
-      ></meting-js>
-    </div>
+    <div class="inner" v-html="metingJs"></div>
     <div class="minimize" @click="mustom$ToggleMinimize"></div>
   </div>
 </template>
@@ -29,6 +21,19 @@ export default {
       window.APlayer = m.default;
       import("meting/dist/Meting.min");
     });
+  },
+  computed: {
+    metingJs() {
+      return (
+        `<meting-js ` +
+        `server="${this.$themeConfig.meting.server}"` +
+        `type="${this.$themeConfig.meting.type}"` +
+        `id="${this.$themeConfig.meting.id}"` +
+        `theme="${this.$themeConfig.meting.theme}"` +
+        `list-max-height="${this.$themeConfig.meting.height}"` +
+        `></meting-js>`
+      );
+    },
   },
 };
 </script>

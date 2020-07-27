@@ -13,7 +13,7 @@ module.exports = { // placeholder [::]
   },
 
   brand: {
-    caption: '卡片',
+    caption: '狗 ๑乛◡乛๑ 牌',
     pstCount: '文章计数',
     catCount: '分类计数',
     tagCount: '标签计数'
@@ -66,6 +66,16 @@ module.exports = { // placeholder [::]
 
   audioplayer: {
     caption: 'APlayer.js + Meting.js'
+  },
+
+  translate: {
+    tooltip: '划词翻译 - 百度通用翻译API提供支持',
+    copytip: '点击复制高亮内容',
+    result: '翻译结果',
+    copied: '复制成功！',
+    zh: '中文',
+    en: 'English',
+    jp: '日本語'
   }
 
 }

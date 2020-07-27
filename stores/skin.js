@@ -1,20 +1,23 @@
-export default {
-  state: {
-    skin: 'default'
-  },
-  getters: {
-    skin(state) {
-      return state.skin;
+export default savedata => {
+  return {
+    state: {
+      skin: savedata.skin || 'default'
     },
-  },
-  mutations: {
-    setSkin(state, name) {
-      state.skin = name;
-    }
-  },
-  actions: {
-    setSkin(context, name) {
-      context.commit('setSkin', name);
+    getters: {
+      skin(state) {
+        return state.skin;
+      },
+    },
+    mutations: {
+      setSkin(state, name) {
+        state.skin = name;
+        savedata.__set__('skin', state.skin);
+      }
+    },
+    actions: {
+      setSkin(context, name) {
+        context.commit('setSkin', name);
+      }
     }
   }
 }

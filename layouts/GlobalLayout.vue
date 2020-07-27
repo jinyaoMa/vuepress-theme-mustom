@@ -18,8 +18,9 @@
           <Drawer ref="drawer" />
         </div>
         <div class="center">
+          <Translate v-if="!mustom$IsMobile" />
           <component :is="layout" />
-          <Empty />
+          <Empty v-if="!mustom$IsMobile" />
         </div>
         <div class="aside">
           <Aside ref="aside" />
@@ -45,6 +46,7 @@ import Footer from "@theme/components/Footer";
 import Empty from "@theme/components/Empty";
 import Ext from "@theme/components/Ext";
 import Canvas from "@theme/components/Canvas";
+import Translate from "@theme/components/Translate";
 
 export default {
   name: "GlobalLayout",
@@ -59,6 +61,7 @@ export default {
     Empty,
     Ext,
     Canvas,
+    Translate,
   },
   data() {
     return {
@@ -83,18 +86,20 @@ export default {
   },
   watch: {
     mustom$TriggerResize() {
-      this.onResize();
-      this.onScroll();
-    }
+      if (!this.mustom$IsMobile) {
+        this.onResize();
+      }
+    },
   },
   mounted() {
     console.log(this);
-    window.addEventListener("resize", this.onResize);
-    document.addEventListener("scroll", this.onScroll);
-    window.setTimeout((o) => {
-      this.onResize();
-    }, 600);
-
+    if (!this.mustom$IsMobile) {
+      window.addEventListener("resize", this.onResize);
+      document.addEventListener("scroll", this.onScroll);
+      window.setTimeout((o) => {
+        this.onResize();
+      }, 600);
+    }
     this.$router.beforeEach((to, from, next) => {
       if (to.path !== from.path && !this.$vuepress.getVueComponent(to.name)) {
         this.$refs.spinner.start();
@@ -122,6 +127,7 @@ export default {
       } else {
         this.$refs.main.style.minHeight = "100vh";
       }
+      this.onScroll();
     },
     onScroll() {
       this.$refs.drawer.scrollTo(
@@ -145,25 +151,6 @@ export default {
 @font-face
   font-family 'Source Han Sans CN'
   src url('../assets/SourceHanSansCN.otf')
-
-.fade-enter-active
-  transition opacity 0.2s ease
-
-.fade-leave-active
-  transition opacity 0.6s ease
-
-.fade-enter, .fade-leave-to
-  opacity 0
-
-.slide-fade-enter-active
-  transition all 0.3s ease
-
-.slide-fade-leave-active
-  transition all 0.3s ease
-
-.slide-fade-enter, .slide-fade-leave-to
-  transform translate3d(0, -100%, 0)
-  opacity 0
 
 .GlobalLayout
   font-family 'Source Han Sans CN'
@@ -193,7 +180,18 @@ export default {
 .center
   grid-area center
   display grid
-  grid-template-rows min-content auto
+  grid-template-rows min-content min-content auto
+  gap $gap
+  padding-top $gap !important
+  padding-bottom $gap !important
+  @media (max-width $smallWidth)
+    padding-top 0 !important
+  @media (max-width $smallerWidth)
+    padding-bottom 0 !important
+  @media (max-width $smallestWidth)
+    gap 0
+  > .card
+    margin 0
 
 .drawer
   grid-area drawer
@@ -215,8 +213,9 @@ export default {
 @media (max-width $smallerWidth)
   .main
     grid-template-columns auto
-    grid-template-rows auto auto auto auto
+    grid-template-rows min-content min-content min-content min-content
     grid-template-areas 'drawer' 'center' 'aside' 'footer'
+    min-height auto
   .drawer, .center, .footer
     padding 0
 

@@ -14,4 +14,5 @@ export default {
   background-image url('../assets/empty.min.png')
   background-repeat-x no-repeat
   background-position-x center
+  min-height $emptyMinHeight
 </style>

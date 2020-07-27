@@ -112,7 +112,7 @@ module.exports = (themeConfig, context) => {
     [ // https://vuepress.github.io/zh/plugins/nprogress/
       'vuepress-plugin-nprogress'
     ],
-    [
+    [ // https://github.com/JoeyBling/vuepress-plugin-helper-live2d
       'vuepress-plugin-helper-live2d', {
         log: false,
         live2d: {
@@ -144,6 +144,7 @@ module.exports = (themeConfig, context) => {
 
   const define = o => {
     return {
+      BUILD_TIMESTAMP: Date.now(),
       BUILD_YEAR: (new Date()).getFullYear(),
       VUEPRESS_OFFICIAL_SITE: '//vuepress.vuejs.org/',
       THEME_REPO_URL: '//github.com/jinyaoMa/vuepress-theme-mustom',
