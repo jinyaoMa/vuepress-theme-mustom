@@ -35,9 +35,9 @@
 <script>
 export default {
   name: "Translate",
+  props: ["isHighlight"],
   data() {
     return {
-      isHighlight: false,
       hasResult: false,
       isCopied: false,
     };

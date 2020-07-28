@@ -10,7 +10,7 @@
       <div class="list">
         <transition-group name="fade">
           <div class="list-item" v-for="(post, i) in mustom$SitePosts.slice(0, offset)" :key="i">
-            <div class="item-info">
+            <div class="item-info markdown-body">
               <div class="item-title">
                 <router-link :to="post.path">{{post.title}}</router-link>
               </div>
@@ -31,7 +31,7 @@
                   </span>
                 </div>
               </div>
-              <div class="item-excerpt markdown-body" v-html="post.excerpt"></div>
+              <div class="item-excerpt" v-html="post.excerpt"></div>
             </div>
             <div
               :class="post.frontmatter.cover ? 'item-cover' : ''"
@@ -68,12 +68,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-a
+>>> a
   padding 0.25rem 0
   &:before
     display none
-  &:hover
-    text-decoration underline
 
 .list-item
   padding $gap 0 s('calc(%s - 0.25rem)', $gap)
@@ -93,11 +91,15 @@ a
 
 .item-title
   font-size 1.5rem
+  a
+    color var(--link)
   @media (max-width $smallestWidth)
     font-size 1rem
 
 .item-meta
   user-select none
+  a
+    color var(--link)
 
 .item-cover
   width 100%
@@ -105,8 +107,6 @@ a
   background-color var(--highlight)
   margin-left 1rem
   border-radius 0.25rem
-
-
 
 .item-excerpt
   img

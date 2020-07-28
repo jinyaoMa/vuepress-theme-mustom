@@ -9,7 +9,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
   theme: require.resolve('../../'),
 
   themeConfig: {
-    _secret: require('./secret'),
     author: 'jinyaoMa',
     year: 2019,
     header: {

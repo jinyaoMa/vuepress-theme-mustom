@@ -18,7 +18,7 @@
           <Drawer ref="drawer" />
         </div>
         <div class="center">
-          <Translate v-if="!mustom$IsMobile" />
+          <Translate v-if="!mustom$IsMobile" :isHighlight="isHighlight" />
           <component :is="layout" />
           <Empty v-if="!mustom$IsMobile" />
         </div>
@@ -66,6 +66,7 @@ export default {
   data() {
     return {
       scrollDiff: 1.2,
+      isHighlight: false,
     };
   },
   computed: {
@@ -99,6 +100,7 @@ export default {
       window.setTimeout((o) => {
         this.onResize();
       }, 600);
+      window.addEventListener("mouseup", this.onMouseup);
     }
     this.$router.beforeEach((to, from, next) => {
       if (to.path !== from.path && !this.$vuepress.getVueComponent(to.name)) {
@@ -113,6 +115,9 @@ export default {
     });
   },
   methods: {
+    onMouseup() {
+      
+    },
     onResize() {
       if (window.innerWidth > 1328) {
         // equal to $smallWidth in palette.styl
@@ -169,8 +174,10 @@ export default {
   // font-family 'Source Han Sans CN', -apple-system, Helvetica, Arial, sans-serif
   font-family -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji
   -webkit-font-smoothing antialiased
-  a:before
-    display none
+  color var(--txt)
+  a
+    :before
+      display none
 
 .frame
   padding $headerHeight $floatingSize 0
