@@ -114,7 +114,8 @@ export default {
   },
   methods: {
     onResize() {
-      if (window.innerWidth > 1360) {
+      if (window.innerWidth > 1328) {
+        // equal to $smallWidth in palette.styl
         // manual measured
         const drawerHeight = this.$refs.drawer.height() * this.scrollDiff;
         const asideHeight = this.$refs.aside.height() * this.scrollDiff;
@@ -148,18 +149,28 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+/*
 @font-face
   font-family 'Source Han Sans CN'
-  src url('../assets/SourceHanSansCN.otf')
-
+  src url('../statics/SourceHanSansCN.otf')
+*/
 .GlobalLayout
-  font-family 'Source Han Sans CN'
+  // font-family 'Source Han Sans CN', -apple-system, Helvetica, Arial, sans-serif
+  font-family -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing antialiased
   background var(--bg-global)
   background-attachment fixed
   min-width $minWidth
   width 100%
   &.fixed
     position fixed
+
+>>> .markdown-body
+  // font-family 'Source Han Sans CN', -apple-system, Helvetica, Arial, sans-serif
+  font-family -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji
+  -webkit-font-smoothing antialiased
+  a:before
+    display none
 
 .frame
   padding $headerHeight $floatingSize 0
@@ -190,7 +201,7 @@ export default {
     padding-bottom 0 !important
   @media (max-width $smallestWidth)
     gap 0
-  > .card
+  >>> .card
     margin 0
 
 .drawer

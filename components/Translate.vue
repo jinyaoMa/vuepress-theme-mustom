@@ -1,7 +1,7 @@
 <template>
   <div class="Translate card">
     <div :class="`bar ${isHighlight ? 'isHighlight' : ''}`">
-      <div class="sq" :title="mustom$Locale.translate.tooltip">
+      <div class="sq highlight" :title="mustom$Locale.translate.tooltip">
         <i class="fas fa-highlighter"></i>
       </div>
       <div class="locales">
@@ -57,6 +57,7 @@ export default {
   border-radius $borderRadius
   overflow hidden
   background transparent
+  user-select none
 
 .sq
   line-height 3
@@ -93,6 +94,9 @@ export default {
     position absolute
     right 0
     color var(--underline)
+
+.highlight
+  cursor help
 
 .copy
   cursor pointer

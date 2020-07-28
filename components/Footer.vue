@@ -79,18 +79,25 @@ export default {
     height $borderRadius
     background var(--highlight)
 
-.footerCount > span:not(:first-child)
-  margin-left 0.1rem
-</style>
+.footerCount
+  @media (max-width $smallWidth) and (min-width $smallerWidth)
+    position absolute
+    right s('calc(1rem + %s)', $borderRadius)
+    top 0.75rem
+  > span:not(:first-child)
+    margin-left 0.1rem
 
-<style lang="stylus">
-.license
+>>> .license
   padding-top 0.5rem
+  @media (max-width $smallWidth) and (min-width $smallerWidth)
+    position absolute
+    right s('calc(1rem + %s)', $borderRadius)
+    top 3.25rem
   .by-nc-sa
     display inline-block
     height $footerLicenseHeight
     width $footerLicenseWidth
-    background url('../assets/by-nc-sa.svg')
+    background url('../statics/by-nc-sa.svg')
     background-color var(--highlight)
     background-size cover
     &:before

@@ -13,7 +13,7 @@ module.exports = {
   },
 
   brand: {
-    caption: 'Card',
+    caption: 'CARD',
     pstCount: 'Count of Posts',
     catCount: 'Count of Categories',
     tagCount: 'Count of Tags'
@@ -21,9 +21,9 @@ module.exports = {
 
   menus: {
     captions: {
-      main: 'Main',
-      job: 'Job',
-      others: 'Others'
+      main: 'MAIN',
+      job: 'JOB RELATED',
+      others: 'OTHERS'
     },
     texts: {
       home: 'Home',
@@ -41,7 +41,7 @@ module.exports = {
   },
 
   skins: {
-    caption: 'Skin',
+    caption: 'SKIN',
     names: {
       default: 'Default',
       whiteblack: 'White & Black',
@@ -51,7 +51,7 @@ module.exports = {
   },
 
   settings: {
-    caption: 'Settings',
+    caption: 'SETTINGS',
     names: {
       nightshift: 'Night Shift',
       nocanvas: 'Disable Canvas',
@@ -61,13 +61,13 @@ module.exports = {
 
   panels: {
     captions: {
-      categories: 'Categories',
-      tags: 'Tags'
+      categories: 'CATEGORIES',
+      tags: 'TAGS'
     }
   },
 
   audioplayer: {
-    caption: 'APlayer.js + Meting.js'
+    caption: 'PLAYLIST'
   },
 
   translate: {
@@ -78,6 +78,15 @@ module.exports = {
     zh: '中文',
     en: 'English',
     jp: '日本語'
+  },
+
+  hitokoto: {
+    caption: 'HITOKOTO'
+  },
+
+  recent: {
+    caption: 'RECENT POSTS',
+    more: 'MORE POSTS'
   }
 
 }

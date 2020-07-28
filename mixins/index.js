@@ -1,5 +1,5 @@
 import smoothscroll from 'smoothscroll-polyfill';
-import { jsonp } from "../utils";
+import { jsonp, ajax } from "../utils";
 
 export default (_, Vuex) => {
   return {
@@ -8,6 +8,10 @@ export default (_, Vuex) => {
         mustom$Busuanzi: {
           pv: '∞',
           uv: '∞'
+        },
+        mustom$Hitokoto: {
+          word: 'Loading...',
+          from: 'Loading...'
         }
       };
     },
@@ -45,6 +49,32 @@ export default (_, Vuex) => {
           },
           true
         );
+      },
+      mustom$InitHitokoto() {
+        let that = this;
+        if (that.$themeConfig.hitokoto.customs && that.$themeConfig.hitokoto.customs.length) {
+          const rand = Math.floor(Math.random() * that.$themeConfig.hitokoto.customs.length);
+          that.mustom$Hitokoto.word = customs[rand].word;
+          that.mustom$Hitokoto.from = customs[rand].from;
+        } else {
+          ajax({
+            url: that.$themeConfig.hitokoto.api,
+            data: {
+              c: that.$themeConfig.hitokoto.type
+            },
+            dataType: 'json',
+            success(result) {
+              if (typeof result.hitokoto === "string" && result.hitokoto.trim().length > 0) {
+                that.mustom$Hitokoto.word = result.hitokoto.trim();
+              }
+              if (typeof result.from_who === "string" && result.from_who.trim().length > 0) {
+                that.mustom$Hitokoto.from = result.from_who.trim();
+              } else if (typeof result.from === "string" && result.from.trim().length > 0) {
+                that.mustom$Hitokoto.from = result.from.trim();
+              }
+            }
+          });
+        }
       },
       mustom$ToggleMinimize(e) {
         if (typeof window === 'undefined') return;
@@ -124,6 +154,11 @@ export default (_, Vuex) => {
           }
         });
         return result;
+      },
+      mustom$SitePosts() {
+        return this.$site.pages
+          .filter(p => p.id === "post")
+          .sort((a, b) => a.frontmatter.date < b.frontmatter.date);
       }
     }
   }

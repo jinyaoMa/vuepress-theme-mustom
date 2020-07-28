@@ -3,6 +3,7 @@ import stores from "./stores";
 import mixins from "./mixins";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "nprogress/nprogress.css";
+import "github-markdown-css";
 
 // fork from vue-router@3.0.2
 // src/util/scroll.js

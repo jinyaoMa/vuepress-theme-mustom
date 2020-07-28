@@ -45,7 +45,7 @@ export default {
   font-size $headerHeight * 0.3
   @media (max-width $smallestWidth)
     font-size $headerHeight * 0.25
-  font-weight bold
+  font-weight 555
 
 .ext
   height $headerHeight

@@ -127,7 +127,14 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       desc: '想知道图片主题色？',
       icon: 'https://ma-jinyao.cn/extension/palette/icon.png',
       link: 'https://ma-jinyao.cn/extension/palette/'
-    }]
+    }],
+    hitokoto: {
+      customs: [/*{ // format; if customs exist, API will be ignored, and customs will be in use
+        word: 'https://developer.hitokoto.cn',
+        from: '一言开发者中心'
+      }*/],
+      type: 'i' // https://developer.hitokoto.cn/sentence/#请求参数
+    }
   },
 
   markdown: {

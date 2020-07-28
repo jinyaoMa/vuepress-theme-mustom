@@ -1,6 +1,26 @@
+const combineThemeConfig = (themeConfig, object) => {
+  for (const key in object) {
+    if (object[key] instanceof Array) {
+      if (!themeConfig.hasOwnProperty(key)) {
+        themeConfig[key] = [];
+      }
+      themeConfig[key] = themeConfig[key].concat(object[key]);
+    } else if (typeof object[key] === "object") {
+      if (!themeConfig.hasOwnProperty(key)) {
+        themeConfig[key] = {};
+      }
+      combineThemeConfig(themeConfig[key], object[key]);
+    } else {
+      if (!themeConfig.hasOwnProperty(key)) {
+        themeConfig[key] = object[key];
+      }
+    }
+  }
+};
+
 module.exports = (themeConfig, context) => {
 
-  Object.assign(themeConfig, {
+  combineThemeConfig(themeConfig, {
     skins: [{
       name: 'default', // locale match
       color: '#696969'
@@ -30,7 +50,11 @@ module.exports = (themeConfig, context) => {
     }, {
       caption: 'tags',
       icon: '<i class="fas fa-tags fa-fw"></i>'
-    }]
+    }],
+    hitokoto: {
+      api: '//v1.hitokoto.cn',
+      type: 'l' // https://developer.hitokoto.cn/sentence/#请求参数
+    }
   });
 
   const name = 'vuepress-theme-mustom';
@@ -173,8 +197,8 @@ module.exports = (themeConfig, context) => {
     if (content) {
       const pangunode = require('./scripts/pangunode');
       $page.title = pangunode($page.title || '');
-      //$page._strippedContent = pangunode($page._strippedContent || '');
-      //$page.excerpt = pangunode($page.excerpt || '');
+      $page._strippedContent = pangunode($page._strippedContent || '');
+      $page.excerpt = pangunode($page.excerpt || '');
     }
 
     if (content) {

@@ -103,14 +103,14 @@ export default {
   margin -1rem -1rem
   padding 1rem 1rem
   background var(--highlight)
-  font-weight bold
+  font-weight 500
   @media (max-width $smallWidth) and (min-width $smallestWidth)
     line-height 2
     padding 0 0 0 1rem
     border-radius $borderRadius
 
 .signature
-  margin-top 1rem
+  margin-top 1.25rem
 
 .counter
   padding 0 0.5rem

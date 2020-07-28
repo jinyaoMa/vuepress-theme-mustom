@@ -38,6 +38,13 @@ export default {
 };
 </script>
 
+<style lang="stylus" scoped>
+.caption, .minimize
+  display none
+  @media (max-width $smallestWidth)
+    display block
+</style>
+
 <style lang="stylus">
 .aplayer.aplayer-withlist
   margin 0

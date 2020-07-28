@@ -65,7 +65,7 @@ module.exports = { // placeholder [::]
   },
 
   audioplayer: {
-    caption: 'APlayer.js + Meting.js'
+    caption: '歌 ๑乛◡乛๑ 单'
   },
 
   translate: {
@@ -76,6 +76,15 @@ module.exports = { // placeholder [::]
     zh: '中文',
     en: 'English',
     jp: '日本語'
+  },
+
+  hitokoto: {
+    caption: '一言'
+  },
+
+  recent: {
+    caption: '近期文章',
+    more: '更多文章'
   }
 
 }
