@@ -1,21 +1,13 @@
 <template>
-  <div class="Spinner"></div>
+  <div :class="`Spinner ${mustom$IsSpinning ? '' : 'hide'}`"></div>
 </template>
 
 <script>
 export default {
   name: "Spinner",
   mounted() {
-    this.stop();
+    this.mustom$SetSpin(false);
   },
-  methods: {
-    start() {
-      this.$el.classList.remove("hide");
-    },
-    stop() {
-      this.$el.classList.add("hide");
-    }
-  }
 };
 </script>
 

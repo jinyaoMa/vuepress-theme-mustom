@@ -72,12 +72,17 @@ module.exports = {
 
   translate: {
     tooltip: 'Highlight words to translate - Supported by Baidu Translation API',
-    copytip: 'Click to copy highlighted content',
+    copytip: 'Click to copy highlighted content below translation bar',
     result: 'Translation Result',
     copied: 'Copied!',
     zh: '中文',
     en: 'English',
-    jp: '日本語'
+    jp: '日本語',
+    error: {
+      empty: 'ERROR: QUERY IS EMPTY',
+      huge: 'ERROR: QUERY IS TOO LONG',
+      wrong: 'ERROR: BAIDU TRANSLATION API CRASH'
+    }
   },
 
   hitokoto: {
@@ -87,6 +92,10 @@ module.exports = {
   recent: {
     caption: 'RECENT POSTS',
     more: 'MORE POSTS'
+  },
+
+  comment: {
+    caption: 'COMMENTS'
   }
 
 }

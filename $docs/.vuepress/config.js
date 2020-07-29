@@ -1,3 +1,5 @@
+const secret = require('./_secret');
+
 module.exports = { // https://www.vuepress.cn/zh/config/
 
   base: '/',
@@ -9,6 +11,8 @@ module.exports = { // https://www.vuepress.cn/zh/config/
   theme: require.resolve('../../'),
 
   themeConfig: {
+    translate: secret.translate,
+    comment: secret.comment,
     author: 'jinyaoMa',
     year: 2019,
     header: {
@@ -134,8 +138,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
         from: '一言开发者中心'
       }*/],
       type: 'i' // https://developer.hitokoto.cn/sentence/#请求参数
-    },
-    translate: require('./_baiduTranslate')
+    }
   },
 
   markdown: {

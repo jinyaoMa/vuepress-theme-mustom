@@ -87,7 +87,14 @@ module.exports = (themeConfig, context) => {
         }],
         sitemap: {
           hostname: 'https://ma-jinyao.cn' + context.base
-        }
+        },
+        comment: themeConfig.comment, /* { // https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#comment
+          service: 'vssue',
+          owner: 'You',
+          repo: 'Your repo',
+          clientId: 'Your clientId',
+          clientSecret: 'Your clientSecret',
+        }*/
       }
     ],
     [ // https://vuepress.github.io/zh/plugins/zooming/

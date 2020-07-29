@@ -5,42 +5,85 @@
         <i class="fas fa-highlighter"></i>
       </div>
       <div class="locales">
-        <div v-html="mustom$Locale.translate.zh"></div>
+        <div v-html="mustom$Locale.translate.zh" @click="translate('zh')"></div>
         <span>|</span>
-        <div v-html="mustom$Locale.translate.en"></div>
+        <div v-html="mustom$Locale.translate.en" @click="translate('en')"></div>
         <span>|</span>
-        <div v-html="mustom$Locale.translate.jp"></div>
+        <div v-html="mustom$Locale.translate.jp" @click="translate('jp')"></div>
         <transition name="fade">
           <span v-if="isCopied" class="copied" v-html="mustom$Locale.translate.copied"></span>
         </transition>
       </div>
-      <div class="sq copy" :title="mustom$Locale.translate.copytip">
+      <div class="sq copy" :title="mustom$Locale.translate.copytip" @click="copy">
         <i class="fas fa-copy"></i>
       </div>
     </div>
-    <transition name="slide-fade">
-      <div class="result" v-if="hasResult">
+    <transition name="fade">
+      <div class="result" v-if="isHighlight && isTranslated && hasResult">
         <div class="caption">
           <span class="icon">
             <i class="fas fa-poll-h fa-fw"></i>
           </span>
           <span v-html="mustom$Locale.translate.result"></span>
         </div>
-        <div class="inner"></div>
+        <div :class="`inner ${isError ? 'error' : ''}`" v-html="result"></div>
       </div>
     </transition>
   </div>
 </template>
 
 <script>
+import baiduTranslate from "../utils/baiduTranslate";
+
 export default {
   name: "Translate",
-  props: ["isHighlight"],
+  props: ["isHighlight", "isTranslated"],
   data() {
     return {
       hasResult: false,
       isCopied: false,
+      isError: false,
+      result: "",
     };
+  },
+  watch: {
+    isHighlight(flag) {
+      if (flag) {
+        let rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+        this.$el.style.transform =
+          "translate3d(0,calc(1.25rem + " +
+          (window.scrollY + rect.y + rect.height - this.$el.offsetTop) +
+          "px),0)";
+      } else {
+        this.$el.style.transform = "translate3d(0,0,0)";
+      }
+      this.isCopied = false;
+    },
+  },
+  methods: {
+    copy() {
+      const query = window.getSelection().toString().trim();
+      if (query.length > 0 && document.execCommand("copy")) {
+        this.isCopied = true;
+      }
+    },
+    translate(lang) {
+      this.result = "";
+      this.hasResult = false;
+      this.mustom$SetSpin(true);
+      const query = window.getSelection().toString().trim();
+      baiduTranslate(this.$themeConfig.translate, query, lang, (data) => {
+        this.mustom$SetSpin(false);
+        if (data.error) {
+          this.isError = true;
+          this.result = this.mustom$Locale.translate.error[data.error];
+        } else {
+          this.isError = false;
+          this.result = data.result;
+        }
+        this.hasResult = true;
+      });
+    },
   },
 };
 </script>
@@ -50,6 +93,7 @@ export default {
   height 3rem
   overflow visible
   zIndex(32)
+  transition transform 0.233s
 
 .bar
   display grid
@@ -111,9 +155,14 @@ export default {
 
 .inner
   padding 0.5rem 1rem 0.75rem
+  border $borderRadius solid var(--highlight)
+  border-top none
 
 .isHighlight
   padding 1rem 50vw
   margin -1rem -50vw
   background var(--translate-bg-highlight)
+
+.error
+  color brown
 </style>

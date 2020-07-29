@@ -18,8 +18,15 @@
           <Drawer ref="drawer" />
         </div>
         <div class="center">
-          <Translate v-if="!mustom$IsMobile" :isHighlight="isHighlight" />
-          <component :is="layout" />
+          <Translate
+            v-if="!mustom$IsMobile"
+            :isHighlight="isHighlight"
+            :isTranslated="isTranslated"
+            ref="translate"
+          />
+          <div ref="partial">
+            <component :is="layout" />
+          </div>
           <Empty v-if="!mustom$IsMobile" />
         </div>
         <div class="aside">
@@ -66,7 +73,10 @@ export default {
   data() {
     return {
       scrollDiff: 1.2,
+      isMousedownTranslate: false,
+      isMousedownPartial: false,
       isHighlight: false,
+      isTranslated: false,
     };
   },
   computed: {
@@ -100,23 +110,50 @@ export default {
       window.setTimeout((o) => {
         this.onResize();
       }, 600);
-      window.addEventListener("mouseup", this.onMouseup);
+      this.$refs.translate.$el.addEventListener(
+        "mousedown",
+        this.onMousedownTranslate
+      );
+      this.$refs.partial.addEventListener("mousedown", this.onMousedownPartial);
+      document.addEventListener("mouseup", this.onMouseup);
     }
     this.$router.beforeEach((to, from, next) => {
       if (to.path !== from.path && !this.$vuepress.getVueComponent(to.name)) {
-        this.$refs.spinner.start();
+        this.mustom$SetSpin(true);
       }
       next();
     });
     this.$router.afterEach((o) => {
       window.setTimeout((o) => {
-        this.$refs.spinner.stop();
+        this.mustom$SetSpin(false);
       }, 200);
     });
   },
   methods: {
+    onMousedownTranslate() {
+      this.isMousedownTranslate = true;
+    },
+    onMousedownPartial() {
+      this.isMousedownPartial = true;
+      window.getSelection().empty();
+    },
     onMouseup() {
-      
+      if (this.isMousedownPartial) {
+        const query = window.getSelection().toString().trim();
+        if (query.length > 0) {
+          this.isHighlight = true;
+        } else {
+          this.isHighlight = false;
+        }
+        this.isTranslated = false;
+      } else if (this.isMousedownTranslate) {
+        this.isTranslated = true;
+      } else {
+        this.isHighlight = false;
+        this.isTranslated = false;
+      }
+      this.isMousedownTranslate = false;
+      this.isMousedownPartial = false;
     },
     onResize() {
       if (window.innerWidth > 1328) {

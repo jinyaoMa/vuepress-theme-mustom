@@ -26,7 +26,8 @@ export default (_, Vuex) => {
         mustom$Nightshift: 'nightshift',
         mustom$SetExt: 'setExt',
         mustom$ToggleCanvas: 'toggleCanvas',
-        mustom$TriggerResizeIncrement: 'triggerResizeIncrement'
+        mustom$TriggerResizeIncrement: 'triggerResizeIncrement',
+        mustom$SetSpin: 'setSpin'
       }),
       mustom$Scroll2Top() {
         if (typeof window === 'undefined') return;
@@ -103,7 +104,8 @@ export default (_, Vuex) => {
         mustom$IsNight: 'isNight',
         mustom$Ext: 'ext',
         mustom$NoCanvas: 'noCanvas',
-        mustom$TriggerResize: 'triggerResize'
+        mustom$TriggerResize: 'triggerResize',
+        mustom$IsSpinning: 'isSpinning'
       }),
       mustom$LangIndex() {
         return /^zh-/i.test(this.mustom$Lang) ? 0 : 1;

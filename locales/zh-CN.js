@@ -70,12 +70,17 @@ module.exports = { // placeholder [::]
 
   translate: {
     tooltip: '划词翻译 - 百度通用翻译API提供支持',
-    copytip: '点击复制高亮内容',
+    copytip: '点击复制翻译条底下区域高亮内容',
     result: '翻译结果',
     copied: '复制成功！',
     zh: '中文',
     en: 'English',
-    jp: '日本語'
+    jp: '日本語',
+    error: {
+      empty: '警告！没检测到特定区域内的高亮文本内容 ๑乛◡乛๑',
+      huge: '警告！高亮的文本它不圆不粗，但很大很长 ๑乛◡乛๑',
+      wrong: '警告！百度翻译API倒闭啦 ๑乛◡乛๑'
+    }
   },
 
   hitokoto: {
@@ -85,6 +90,10 @@ module.exports = { // placeholder [::]
   recent: {
     caption: '近期文章',
     more: '更多文章'
+  },
+
+  comment: {
+    caption: '评论 & 留言 & 骚话'
   }
 
 }

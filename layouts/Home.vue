@@ -2,19 +2,22 @@
   <div class="Home">
     <Hitokoto />
     <Recent />
+    <Comment />
   </div>
 </template>
 
 <script>
 import Hitokoto from "@theme/components/Hitokoto";
 import Recent from "@theme/components/Recent";
+import Comment from "@theme/components/Comment";
 
 export default {
   name: "Home",
   components: {
     Hitokoto,
-    Recent
-  }
+    Recent,
+    Comment,
+  },
 };
 </script>
 

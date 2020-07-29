@@ -5,6 +5,7 @@ import nightshift from "./nightshift";
 import canvas from "./canvas";
 import ext from "./ext";
 import trigger from "./trigger";
+import spin from "./spin";
 
 const savedata = _storage.get() || {};
 savedata.__set__ = (key, value) => {
@@ -28,5 +29,5 @@ const combine = (...stores) => {
 export default Vuex => {
   return new Vuex.Store(combine({
     state: {}
-  }, lang(savedata), skin(savedata), nightshift(savedata), canvas(savedata), ext, trigger)); // Add-in here
+  }, lang(savedata), skin(savedata), nightshift(savedata), canvas(savedata), ext, trigger, spin)); // Add-in here
 }

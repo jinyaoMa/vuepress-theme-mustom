@@ -12,6 +12,7 @@
     "@vuepress/plugin-search": "^1.5.2",
     "aplayer": "^1.10.1",
     "github-markdown-css": "^4.0.0",
+    "md5": "^2.2.1",
     "meting": "^2.0.1",
     "smoothscroll-polyfill": "^0.4.4",
     "vuepress": "^1.5.2",
