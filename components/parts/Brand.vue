@@ -6,7 +6,7 @@
       </span>
       <span v-html="mustom$Locale.brand.caption"></span>
     </div>
-    <div class="avatar"></div>
+    <div class="avatar" :style="{ backgroundImage: `url('${$withBase('/assets/img/brand.png')}')` }"></div>
     <div class="inner">
       <div class="author">{{$themeConfig.author}}</div>
       <div class="signature" v-html="$themeConfig.brand.signatures[mustom$LangIndex]"></div>
@@ -72,7 +72,6 @@ export default {
 
 .avatar
   max-width s('calc(%s - 2rem)', $sideWidth)
-  background url('/assets/img/brand.png')
   background-color var(--highlight)
   background-size cover
   border-radius $borderRadius

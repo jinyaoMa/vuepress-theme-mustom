@@ -96,6 +96,24 @@ module.exports = {
 
   comment: {
     caption: 'COMMENTS'
+  },
+
+  timeline: {
+    caption: 'POST ARCHIVE',
+    yearTotal: 'have [total] posts written this year'
+  },
+
+  article: {
+    caption: 'PAGE CONTENT',
+    minuteUnit: '[time] min.',
+    ending: {
+      left: 'The post above ended',
+      right: 'Thanks for your reading'
+    },
+    friend: {
+      text: 'Come on! Write some comments, and your suggestions will improve the quality of my creative!',
+      button: 'FRIEND ME'
+    }
   }
 
 }

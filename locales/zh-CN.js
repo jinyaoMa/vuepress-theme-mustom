@@ -94,6 +94,24 @@ module.exports = { // placeholder [::]
 
   comment: {
     caption: '评论 & 留言 & 骚话'
+  },
+
+  timeline: {
+    caption: '文章档案',
+    yearTotal: '共写有 [total] 篇文章'
+  },
+
+  article: {
+    caption: '页面内容',
+    minuteUnit: '[time] 分钟',
+    ending: {
+      left: '以上文章结束',
+      right: '感谢您的阅读'
+    },
+    friend: {
+      text: '请多多留言，您的建议将大大提升我的创作质量！',
+      button: '加我好友'
+    }
   }
 
 }

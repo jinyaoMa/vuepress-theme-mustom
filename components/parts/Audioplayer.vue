@@ -46,24 +46,31 @@ export default {
 </style>
 
 <style lang="stylus">
-.aplayer.aplayer-withlist
+.aplayer
   margin 0
   box-shadow none
   background none
   max-width 100vw
-  .aplayer-lrc
-    &:before, &:after
-      content none
-  .aplayer-icon-menu, .aplayer-volume-wrap
-    display none !important
-  .aplayer-time.aplayer-time-narrow
-    padding-right 4px
-  .aplayer-list ol
-    &::-webkit-scrollbar
-      webkitScrollbar()
-    &::-webkit-scrollbar-thumb
-      webkitScrollbarThumb()
-    li
-      &:hover, &.aplayer-list-light
-        background var(--highlight)
+  &.aplayer-withlrc
+    .aplayer-pic
+      height 90px - $borderRadius * 2 // orig 90px
+      width 90px - $borderRadius * 2 // orig 90px
+      margin $borderRadius
+      border-radius $borderRadius
+  &.aplayer-withlist
+    .aplayer-lrc
+      &:before, &:after
+        content none
+    .aplayer-icon-menu, .aplayer-volume-wrap
+      display none !important
+    .aplayer-time.aplayer-time-narrow
+      padding-right 4px
+    .aplayer-list ol
+      &::-webkit-scrollbar
+        webkitScrollbar()
+      &::-webkit-scrollbar-thumb
+        webkitScrollbarThumb()
+      li
+        &:hover, &.aplayer-list-light
+          background var(--highlight)
 </style>

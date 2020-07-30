@@ -290,23 +290,11 @@ The outer pipes (|) are optional, and you don't need to make the raw Markdown li
 
 ```
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
-$$
-f(n) =
-\begin{cases}
-\frac{n}{2},  & \text{if $n$ is even} \\\\[2ex]
-3n+1, & \text{if $n$ is odd}
-\end{cases}
-$$
+$$\begin{equation} \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \label{eq:sample} \end{equation}$$
 ```
 
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
-$$
-f(n) =
-\begin{cases}
-\frac{n}{2},  & \text{if $n$ is even} \\\\[2ex]
-3n+1, & \text{if $n$ is odd}
-\end{cases}
-$$
+$$\begin{equation} \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15} \label{eq:sample} \end{equation}$$
 
 > You can find more information about **LaTeX** mathematical expressions [here](//math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
 

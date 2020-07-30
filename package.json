@@ -20,8 +20,10 @@
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-nprogress": "^1.1.7",
     "vuepress-plugin-pangu": "^1.0.1",
+    "vuepress-plugin-permalink-pinyin": "^1.0.0",
     "vuepress-plugin-serve": "^2.0.3",
     "vuepress-plugin-smooth-scroll": "^0.0.9",
+    "vuepress-plugin-social-share": "^0.3.1",
     "vuepress-plugin-table-of-contents": "^1.1.6",
     "vuepress-plugin-zooming": "^1.1.7",
     "vuex": "^3.5.1"

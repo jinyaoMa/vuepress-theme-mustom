@@ -13,7 +13,7 @@ export default {
   name: "Aside",
   components: {
     Panel,
-    Audioplayer
+    Audioplayer,
   },
   methods: {
     height() {
@@ -21,8 +21,8 @@ export default {
     },
     scrollTo(y) {
       this.$el.scrollTo(0, y);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -35,7 +35,7 @@ export default {
   width $sideWidth
   overflow hidden
 
-@media (max-width: $smallerWidth)
+@media (max-width $smallerWidth)
   .Aside
     position initial
     height auto

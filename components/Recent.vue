@@ -68,11 +68,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
->>> a
-  padding 0.25rem 0
-  &:before
-    display none
-
 .list-item
   padding $gap 0 s('calc(%s - 0.25rem)', $gap)
   margin 0 $gap

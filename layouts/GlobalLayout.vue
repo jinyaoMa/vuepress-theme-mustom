@@ -1,6 +1,7 @@
 <template>
   <div
     :class="`GlobalLayout skin-${mustom$Skin}${mustom$IsNight ? ' nightshift' : ''}${mustom$Ext !== '' ? ' fixed': ''}`"
+    :style="mustom$Skin === 'default' && !mustom$IsNight ? { backgroundImage: `url('${backgroundImage}')` } : {}"
   >
     <transition name="fade">
       <Canvas v-if="mustom$Skin === 'default' && !mustom$IsMobile && !mustom$NoCanvas" />
@@ -77,10 +78,11 @@ export default {
       isMousedownPartial: false,
       isHighlight: false,
       isTranslated: false,
+      backgroundImageIndex: 0,
     };
   },
   computed: {
-    layout: function () {
+    layout() {
       if (this.$page.path) {
         const layout = this.$frontmatter.layout;
         if (
@@ -94,6 +96,12 @@ export default {
       }
       return "NotFound";
     },
+    backgroundImage() {
+      return this.$themeConfig.customBackgrounds &&
+        this.$themeConfig.customBackgrounds.length
+        ? this.$themeConfig.customBackgrounds[this.backgroundImageIndex]
+        : "#";
+    },
   },
   watch: {
     mustom$TriggerResize() {
@@ -105,6 +113,17 @@ export default {
   mounted() {
     console.log(this);
     if (!this.mustom$IsMobile) {
+      const bgSwitcher = window.setInterval((o) => {
+        let tempIndex = this.backgroundImageIndex + 1;
+        if (this.$themeConfig.customBackgrounds) {
+          if (tempIndex === this.$themeConfig.customBackgrounds.length) {
+            tempIndex = 0;
+          }
+          this.backgroundImageIndex = tempIndex;
+        } else {
+          window.clearInterval(bgSwitcher);
+        }
+      }, 6000);
       window.addEventListener("resize", this.onResize);
       document.addEventListener("scroll", this.onScroll);
       window.setTimeout((o) => {
@@ -213,8 +232,15 @@ export default {
   -webkit-font-smoothing antialiased
   color var(--txt)
   a
-    :before
+    color var(--link-markdown)
+    &:before
       display none
+  table
+    color var(--txt)
+    tr
+      background-color var(--bg)
+      &:nth-child(2n)
+        background-color var(--highlight)
 
 .frame
   padding $headerHeight $floatingSize 0

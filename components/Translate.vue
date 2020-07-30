@@ -34,6 +34,7 @@
 
 <script>
 import baiduTranslate from "../utils/baiduTranslate";
+import decode from "../utils/decode";
 
 export default {
   name: "Translate",
@@ -72,7 +73,10 @@ export default {
       this.hasResult = false;
       this.mustom$SetSpin(true);
       const query = window.getSelection().toString().trim();
-      baiduTranslate(this.$themeConfig.translate, query, lang, (data) => {
+      const secret = this.$themeConfig.translate.isEncoded
+        ? decode(this.$themeConfig.translate.secret)
+        : this.$themeConfig.translate;
+      baiduTranslate(secret, query, lang, (data) => {
         this.mustom$SetSpin(false);
         if (data.error) {
           this.isError = true;

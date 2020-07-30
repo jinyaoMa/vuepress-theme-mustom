@@ -19,7 +19,7 @@ export default {
     Brand,
     Menu,
     Skin,
-    Settings
+    Settings,
   },
   methods: {
     height() {
@@ -27,8 +27,8 @@ export default {
     },
     scrollTo(y) {
       this.$el.scrollTo(0, y);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -41,7 +41,7 @@ export default {
   width $sideWidth
   overflow hidden
 
-@media (max-width: $smallWidth)
+@media (max-width $smallWidth)
   .Drawer
     position initial
     height auto

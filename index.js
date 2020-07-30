@@ -60,27 +60,30 @@ module.exports = (themeConfig, context) => {
   const name = 'vuepress-theme-mustom';
 
   const plugins = [
-    [
+    [ // https://vuepress-plugin-blog.ulivz.com/
       '@vuepress/blog',
       {
         directories: [{
           id: 'post',
+          title: '归档 | Archive',
           dirname: '_posts',
-          path: context.base + 'posts/',
+          path: context.base + 'archive/',
           pagination: {
             lengthPerPage: Infinity,
           },
-          itemPermalink: context.base + 'posts/:slug',
+          itemPermalink: context.base + 'archive/:slug',
           layout: 'Archive',
           itemLayout: 'Post'
         }],
         frontmatters: [{
           id: 'tags',
+          title: '标签 | Tags',
           keys: ['tags'],
           path: context.base + 'tags/',
           scopeLayout: 'Archive'
         }, {
           id: 'categories',
+          title: '分类 | Categories',
           keys: ['categories'],
           path: context.base + 'categories/',
           scopeLayout: 'Archive'
@@ -103,7 +106,7 @@ module.exports = (themeConfig, context) => {
         selector: '.markdown-body img',
         delay: 1000,
         options: {
-          bgColor: 'black',
+          bgColor: '#000000ee',
           scaleBase: 0.9,
           zIndex: 999999999,
         },
@@ -143,6 +146,9 @@ module.exports = (themeConfig, context) => {
     [ // https://vuepress.github.io/zh/plugins/nprogress/
       'vuepress-plugin-nprogress'
     ],
+    [ // https://github.com/viko16/vuepress-plugin-permalink-pinyin
+      'vuepress-plugin-permalink-pinyin'
+    ],
     [ // https://github.com/JoeyBling/vuepress-plugin-helper-live2d
       'vuepress-plugin-helper-live2d', {
         log: false,
@@ -164,6 +170,16 @@ module.exports = (themeConfig, context) => {
           }
         }
       }
+    ],
+    [ // https://sns.goyfe.com/guide/
+      'vuepress-plugin-social-share',
+      themeConfig.socialShare,/*{
+        networks: ['qq', 'weibo', 'douban', 'email', 'whatsapp', 'twitter', 'facebook', 'reddit', 'telegram', 'line'],
+        email: 'jinyao.ma@outlook.com',
+        fallbackImage: '/social-share.png',
+        autoQuote: true,
+        isPlain: true
+      }*/
     ],
   ];
 
@@ -189,7 +205,7 @@ module.exports = (themeConfig, context) => {
 
   const additionalPages = [
     {
-      path: '/',
+      path: context.base,
       frontmatter: {
         layout: 'Home'
       }
@@ -201,17 +217,19 @@ module.exports = (themeConfig, context) => {
 
     const content = $page._strippedContent;
 
+    // pangu
     if (content) {
       const pangunode = require('./scripts/pangunode');
-      $page.title = pangunode($page.title || '');
+      $page.frontmatter.title = $page.title = pangunode($page.title || '');
       $page._strippedContent = pangunode($page._strippedContent || '');
       $page.excerpt = pangunode($page.excerpt || '');
     }
 
+    // word count
     if (content) {
       const zh = (content.match(/[\u4E00-\u9FA5]/g) || []).length;
       const en = (content.replace(/[\u4E00-\u9FA5]/g, '').match(/[a-zA-Z0-9_\u0392-\u03c9\u0400-\u04FF]+|[\u4E00-\u9FFF\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af\u0400-\u04FF]+|[\u00E4\u00C4\u00E5\u00C5\u00F6\u00D6]+|\w+/g) || []).length;
-      const min2read = zh / 300 + en / 160;
+      const min2read = zh / 150 + en / 100;
       $page.frontmatter.wordcount = zh + en;
       $page.frontmatter.min2read = min2read < 1 ? '1' : parseInt(min2read, 10);
     } else {
@@ -219,13 +237,37 @@ module.exports = (themeConfig, context) => {
       $page.frontmatter.min2read = 0;
     }
 
+    // extract cover
     if (content) {
       const matches = content.match(/!\[.*\]\(\s*([^\)]+)\s*\)/) || [];
       if (matches.length > 1) {
-        $page.frontmatter.cover = matches[1].replace(/\s+['"].*['"]/, '');
+        $page.frontmatter.cover = $page.frontmatter.image = matches[1].replace(/\s+['"].*['"]/, '');
       } else {
         $page.frontmatter.cover = null;
       }
+    }
+
+    // generate desc
+    if (!$page.frontmatter.meta || !$page.frontmatter.meta.length) {
+      $page.frontmatter.meta = [];
+    }
+    if (content) {
+      if (content.trim().length === 0) {
+        $page.frontmatter.meta.push({
+          name: 'description',
+          content: $page.frontmatter.title + ' - ' + $page._computed.$description
+        });
+      } else {
+        $page.frontmatter.meta.push({
+          name: 'description',
+          content: content.replace(/\r?\n|\r/g, '').replace(/<!--[^>]+-->/g, ' | ').substr(0, 146) + ' ...' // length 150
+        });
+      }
+    } else {
+      $page.frontmatter.meta.push({
+        name: 'description',
+        content: $page.frontmatter.title + ' - ' + $page._computed.$description
+      });
     }
   };
 

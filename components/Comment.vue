@@ -7,7 +7,7 @@
       <span v-html="mustom$Locale.comment.caption"></span>
     </div>
     <div class="inner">
-      <CommentPlugin :title="$title" :options="{ locale: mustom$Lang }" />
+      <CommentPlugin :title="$title" :options="options" />
     </div>
     <div class="minimize" @click="mustom$ToggleMinimize"></div>
   </div>
@@ -15,11 +15,28 @@
 
 <script>
 import { Comment } from "@vuepress/plugin-blog/lib/client/components";
+import decode from "../utils/decode";
 
 export default {
   name: "Comment",
   components: {
     CommentPlugin: Comment,
+  },
+  computed: {
+    options() {
+      if (this.$themeConfig.comment.isEncoded) {
+        const secret = decode(this.$themeConfig.comment.secret);
+        return {
+          locale: this.mustom$Lang,
+          clientId: secret.appid,
+          clientSecret: secret.appkey
+        };
+      } else {
+        return {
+          locale: this.mustom$Lang,
+        };
+      }
+    },
   },
 };
 </script>

@@ -4,6 +4,7 @@ import mixins from "./mixins";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "nprogress/nprogress.css";
 import "github-markdown-css";
+import "@vuepress/theme-default/styles";
 
 // fork from vue-router@3.0.2
 // src/util/scroll.js
@@ -27,7 +28,7 @@ export default ({
   Object.assign(options, {
     store: stores(Vuex)
   });
-  
+
   Vue.mixin(mixins(Vue, Vuex));
 
   /**
