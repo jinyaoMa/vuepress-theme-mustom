@@ -98,12 +98,12 @@ module.exports = { // placeholder [::]
 
   timeline: {
     caption: '文章档案',
-    yearTotal: '共写有 [total] 篇文章'
+    yearTotal: '共写有 [:total:] 篇文章'
   },
 
   article: {
-    caption: '页面内容',
-    minuteUnit: '[time] 分钟',
+    caption: '文章内容',
+    minuteUnit: '[:time:] 分钟',
     ending: {
       left: '以上文章结束',
       right: '感谢您的阅读'
@@ -111,7 +111,22 @@ module.exports = { // placeholder [::]
     friend: {
       text: '请多多留言，您的建议将大大提升我的创作质量！',
       button: '加我好友'
-    }
+    },
+    license: {
+      author: '本文作者:',
+      link: '本文链接:',
+      copyright: '版权声明:',
+      notice: {
+        name: '<i class="fab fa-creative-commons"></i> BY-NC-SA',
+        text: '本站所有文章除特别声明外，均采用 [:license:] 许可协议。转载请注明出处！'
+      }
+    },
+    prev: '上一篇: ',
+    next: '下一篇: '
+  },
+
+  toc: {
+    caption: '目录'
   }
 
 }

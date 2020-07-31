@@ -1,3 +1,5 @@
+const md5 = require('md5');
+
 const combineThemeConfig = (themeConfig, object) => {
   for (const key in object) {
     if (object[key] instanceof Array) {
@@ -67,11 +69,10 @@ module.exports = (themeConfig, context) => {
           id: 'post',
           title: '归档 | Archive',
           dirname: '_posts',
-          path: context.base + 'archive/',
+          path: '/archive/',
           pagination: {
             lengthPerPage: Infinity,
           },
-          itemPermalink: context.base + 'archive/:slug',
           layout: 'Archive',
           itemLayout: 'Post'
         }],
@@ -79,17 +80,17 @@ module.exports = (themeConfig, context) => {
           id: 'tags',
           title: '标签 | Tags',
           keys: ['tags'],
-          path: context.base + 'tags/',
+          path: '/tag/',
           scopeLayout: 'Archive'
         }, {
           id: 'categories',
           title: '分类 | Categories',
           keys: ['categories'],
-          path: context.base + 'categories/',
+          path: '/category/',
           scopeLayout: 'Archive'
         }],
         sitemap: {
-          hostname: 'https://ma-jinyao.cn' + context.base
+          hostname: 'https://ma-jinyao.cn'
         },
         comment: themeConfig.comment, /* { // https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#comment
           service: 'vssue',
@@ -124,13 +125,6 @@ module.exports = (themeConfig, context) => {
     [ // https://vuepress.github.io/zh/plugins/mathjax/
       'vuepress-plugin-mathjax',
     ],
-    [ // https://www.vuepress.cn/plugin/official/plugin-active-header-links.html
-      '@vuepress/active-header-links',
-      {
-        sidebarLinkSelector: '.sidebar-link',
-        headerAnchorSelector: '.header-anchor'
-      }
-    ],
     [ // https://www.vuepress.cn/plugin/official/plugin-pwa.html
       '@vuepress/pwa'
     ],
@@ -145,9 +139,6 @@ module.exports = (themeConfig, context) => {
     ],
     [ // https://vuepress.github.io/zh/plugins/nprogress/
       'vuepress-plugin-nprogress'
-    ],
-    [ // https://github.com/viko16/vuepress-plugin-permalink-pinyin
-      'vuepress-plugin-permalink-pinyin'
     ],
     [ // https://github.com/JoeyBling/vuepress-plugin-helper-live2d
       'vuepress-plugin-helper-live2d', {
@@ -205,7 +196,7 @@ module.exports = (themeConfig, context) => {
 
   const additionalPages = [
     {
-      path: context.base,
+      path: '/',
       frontmatter: {
         layout: 'Home'
       }
@@ -268,6 +259,13 @@ module.exports = (themeConfig, context) => {
         name: 'description',
         content: $page.frontmatter.title + ' - ' + $page._computed.$description
       });
+    }
+
+    // change post link
+    const matches = $page.regularPath.match(/\/_posts\/(.+)(\.html)/);
+    if (matches && matches.length === 3) {
+      const pathArr = md5(decodeURIComponent(matches[1]));
+      $page.frontmatter.permalink = '/post/' + pathArr;
     }
   };
 

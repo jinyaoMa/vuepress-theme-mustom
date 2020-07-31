@@ -6,18 +6,6 @@ import "nprogress/nprogress.css";
 import "github-markdown-css";
 import "@vuepress/theme-default/styles";
 
-// fork from vue-router@3.0.2
-// src/util/scroll.js
-function getElementPosition(el) {
-  const docEl = document.documentElement;
-  const docRect = docEl.getBoundingClientRect();
-  const elRect = el.getBoundingClientRect();
-  return {
-    x: elRect.left - docRect.left,
-    y: elRect.top - docRect.top,
-  };
-}
-
 export default ({
   Vue,
   options,
@@ -44,12 +32,13 @@ export default ({
       if (Vue.$vuepress.$get('disableScrollBehavior')) {
         return;
       }
-      const targetElement = document.querySelector(to.hash);
-      if (targetElement) {
-        return window.scrollTo({
-          top: getElementPosition(targetElement).y,
-          behavior: 'smooth',
-        });
+
+      return {
+        selector: to.hash,
+        offset: {
+          x: 0,
+          y: 80
+        }
       }
     } else {
       return false;

@@ -100,12 +100,12 @@ module.exports = {
 
   timeline: {
     caption: 'POST ARCHIVE',
-    yearTotal: 'have [total] posts written this year'
+    yearTotal: 'have [:total:] posts written this year'
   },
 
   article: {
-    caption: 'PAGE CONTENT',
-    minuteUnit: '[time] min.',
+    caption: 'POST CONTENT',
+    minuteUnit: '[:time:] min.',
     ending: {
       left: 'The post above ended',
       right: 'Thanks for your reading'
@@ -113,7 +113,22 @@ module.exports = {
     friend: {
       text: 'Come on! Write some comments, and your suggestions will improve the quality of my creative!',
       button: 'FRIEND ME'
-    }
+    },
+    license: {
+      author: 'Post Author:',
+      link: 'Post Link:',
+      copyright: 'Copyright Notice:',
+      notice: {
+        name: '<i class="fab fa-creative-commons"></i> BY-NC-SA',
+        text: 'All articles/posts in this website are licensed under [:license:] unless stating additionally.'
+      }
+    },
+    prev: 'Older Post: ',
+    next: 'Newer Post: '
+  },
+
+  toc: {
+    caption: 'TABLE OF CONTENTS'
   }
 
 }

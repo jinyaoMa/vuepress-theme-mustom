@@ -31,11 +31,17 @@ export default (_, Vuex) => {
       }),
       mustom$Scroll2Top() {
         if (typeof window === 'undefined') return;
-        window.scrollTo(0, 0);
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
       },
       mustom$Scroll2Bottom() {
         if (typeof window === 'undefined' || typeof document === 'undefined') return;
-        window.scrollTo(0, document.body.scrollHeight);
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth',
+        });
       },
       mustom$InitBusuanzi() {
         jsonp(

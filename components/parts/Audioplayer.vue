@@ -6,7 +6,11 @@
       </span>
       <span v-html="mustom$Locale.audioplayer.caption"></span>
     </div>
-    <div class="inner" v-html="metingJs"></div>
+    <div
+      class="inner"
+      v-html="metingJs"
+      :style="$themeConfig.meting.height ? { height: `calc(${$themeConfig.meting.height} + ${coverSize})` } : {}"
+    ></div>
     <div class="minimize" @click="mustom$ToggleMinimize"></div>
   </div>
 </template>
@@ -16,6 +20,11 @@ import "aplayer/dist/APlayer.min.css";
 
 export default {
   name: "Audioplayer",
+  data() {
+    return {
+      coverSize: "90px", // APlayer cover size for .inner height config use
+    };
+  },
   mounted() {
     import("aplayer/dist/APlayer.min.js").then((m) => {
       window.APlayer = m.default;
@@ -53,8 +62,8 @@ export default {
   max-width 100vw
   &.aplayer-withlrc
     .aplayer-pic
-      height 90px - $borderRadius * 2 // orig 90px
-      width 90px - $borderRadius * 2 // orig 90px
+      height 90px - $borderRadius * 2 // orig 90px, total 90px
+      width 90px - $borderRadius * 2 // orig 90px, total 90px
       margin $borderRadius
       border-radius $borderRadius
   &.aplayer-withlist

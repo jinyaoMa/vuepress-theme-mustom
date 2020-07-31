@@ -50,7 +50,7 @@ export default {
 >>> .vssue
   color var(--txt)
   a
-    color var(--link)
+    color var(--underline)
   .vssue-comment-avatar
     border-radius $borderRadius
     overflow hidden

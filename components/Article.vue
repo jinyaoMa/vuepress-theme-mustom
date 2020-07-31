@@ -31,7 +31,7 @@
           </div>
           <div class="info-wordcount">
             <i class="fas fa-stopwatch fa-fw" />
-            {{getMin2Read($page.frontmatter.min2read)}}
+            {{min2Read($page.frontmatter.min2read)}}
           </div>
         </div>
       </div>
@@ -56,28 +56,100 @@
           <SocialShare />
         </div>
         <div class="license">
-          <div></div>
+          <div class="frame">
+            <div>
+              <span v-html="mustom$Locale.article.license.author"></span>
+              <a target="_blank" :href="$withBase('/')" v-html="$themeConfig.author"></a>
+            </div>
+            <div>
+              <span v-html="mustom$Locale.article.license.link"></span>
+              <a target="_blank" :href="permalink" v-html="permalink"></a>
+            </div>
+            <div>
+              <span v-html="mustom$Locale.article.license.copyright"></span>
+              <span v-html="license"></span>
+            </div>
+          </div>
+        </div>
+        <div class="tags">
+          <router-link
+            v-for="(tag, i) in $page.frontmatter.tags.flat(Infinity)"
+            :key="i"
+            :to="$tags.map[tag].path"
+          ># {{tag}}</router-link>
+        </div>
+        <div class="pn">
+          <router-link
+            class="prev"
+            v-if="prevIndex >= 0"
+            :to="getPage(prevIndex).path || '#'"
+            :title="mustom$Locale.article.prev + getPage(prevIndex).title"
+          >{{getPage(prevIndex).title}}</router-link>
+          <router-link
+            class="next"
+            v-if="nextIndex < mustom$SitePosts.length"
+            :to="getPage(nextIndex).path || '#'"
+            :title="mustom$Locale.article.next + getPage(nextIndex).title"
+          >{{getPage(nextIndex).title}}</router-link>
         </div>
       </div>
     </div>
+    <div class="minimize" @click="mustom$ToggleMinimize"></div>
   </div>
 </template>
 
 <script>
 export default {
   name: "Post",
+  data() {
+    return {
+      prevIndex: -1,
+      nextIndex: -1,
+    };
+  },
   mounted() {
     this.friend();
+    this.doPrevNext();
+  },
+  updated() {
+    this.doPrevNext();
+  },
+  computed: {
+    min2Read() {
+      return function (min) {
+        return this.mustom$Locale.article.minuteUnit.replace("[:time:]", min);
+      };
+    },
+    permalink() {
+      if (typeof window === "undefined") return this.$withBase("/");
+      return window.location.href;
+    },
+    license() {
+      return this.mustom$Locale.article.license.notice.text.replace(
+        "[:license:]",
+        `<a target="_blank" href="${CC_LICENSE_LINK}">${this.mustom$Locale.article.license.notice.name}</a>`
+      );
+    },
   },
   methods: {
+    getPage(index) {
+      return this.mustom$SitePosts[index] || {};
+    },
+    doPrevNext() {
+      for (let i = 0; i < this.mustom$SitePosts.length; i++) {
+        const page = this.mustom$SitePosts[i];
+        if (page.path === this.$page.path) {
+          this.prevIndex = i - 1;
+          this.nextIndex = i + 1;
+          break;
+        }
+      }
+    },
     addK(num) {
       if (num >= 1000) {
         num = Math.round(num / 100) / 10 + "k";
       }
       return num;
-    },
-    getMin2Read(min) {
-      return this.mustom$Locale.article.minuteUnit.replace("[time]", min);
     },
     friend() {
       const qrcode = this.$refs.qrcode;
@@ -112,7 +184,6 @@ export default {
 .inner
   background var(--bg)
   padding $gap
-  padding-bottom $gap * 1.25
   @media (max-width $smallestWidth)
     padding 1rem
 
@@ -154,6 +225,8 @@ export default {
   justify-content center
   justify-items center
   line-height 2.5
+  padding 0 $gap
+  margin 0 $gap * -1
   @media (max-width $smallerWidth)
     font-size 1rem
   @media (max-width $smallestWidth)
@@ -164,14 +237,14 @@ export default {
 
 .friend
   text-align center
-  margin $gap * 0.5 0
+  margin $gap * 0.5 0 s('calc(%s - 0.5rem)', $gap * 0.5)
   line-height 1.5
   @media (max-width $smallestWidth)
     margin 1rem 0
 
 .button
   width fit-content
-  margin 1rem auto
+  margin 1rem auto 0.75rem
   padding 1rem
   border-radius $borderRadius
   background var(--txt)
@@ -189,7 +262,7 @@ export default {
   justify-content center
   flex-wrap wrap
   overflow hidden
-  transition background 0.6s, height 0.2s
+  transition background 0.6s, height 0.5s
   position relative
   &.mini
     height 0 !important
@@ -201,6 +274,56 @@ export default {
 
 .share
   text-align center
+
+.license
+  width 100%
+  background var(--article-license-bg)
+  overflow-y hidden
+  overflow-x auto
+  margin $gap * 0.5 0
+  font-size 0.95rem
+
+.frame
+  line-height 2
+  padding 0.5rem 0.25rem 0.5rem 0.75rem
+  white-space nowrap
+  border-left 0.25rem solid var(--link)
+  span
+    display inline-block
+    &:first-child
+      margin-right 0.25rem
+      font-weight bold
+
+.tags
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  justify-content center
+  line-height 1.5
+  margin-top s('calc(%s + 0.25rem)', $gap * 0.5)
+  margin-bottom $gap * 0.5
+  > a
+    margin 0.5rem
+    margin-top 0
+
+.pn
+  display grid
+  grid-template-columns repeat(2, calc(50% - 0.5rem))
+  grid-template-areas 'prev next'
+  @media (max-width $smallestWidth)
+    grid-template-columns 100%
+    grid-template-areas 'prev' 'next'
+  gap 1rem
+  .prev
+    grid-area prev
+  .next
+    grid-area next
+    text-align right
+    @media (max-width $smallestWidth)
+      text-align left
+    &:before
+      left auto
+      right 0
 
 >>> div[class*='language-']
   border-radius 0

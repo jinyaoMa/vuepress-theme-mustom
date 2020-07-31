@@ -79,6 +79,7 @@ export default {
       isHighlight: false,
       isTranslated: false,
       backgroundImageIndex: 0,
+      headerElements: [],
     };
   },
   computed: {
@@ -135,6 +136,7 @@ export default {
       );
       this.$refs.partial.addEventListener("mousedown", this.onMousedownPartial);
       document.addEventListener("mouseup", this.onMouseup);
+      this.gotoHash();
     }
     this.$router.beforeEach((to, from, next) => {
       if (to.path !== from.path && !this.$vuepress.getVueComponent(to.name)) {
@@ -148,7 +150,48 @@ export default {
       }, 200);
     });
   },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
+    document.removeEventListener("scroll", this.onScroll);
+    this.$refs.translate.$el.removeEventListener(
+      "mousedown",
+      this.onMousedownTranslate
+    );
+    this.$refs.partial.removeEventListener(
+      "mousedown",
+      this.onMousedownPartial
+    );
+    document.removeEventListener("mouseup", this.onMouseup);
+  },
   methods: {
+    gotoHash() {
+      this.wrapHeaderElements();
+      if (this.$route.hash) {
+        for (let i = 0; i < this.headerElements.length; i++) {
+          const el = this.headerElements[i];
+          if (el.hash === this.$route.hash) {
+            window.scrollTo(0, el.top);
+            break;
+          }
+        }
+      }
+    },
+    wrapHeaderElements() {
+      this.headerElements = [];
+      this.$el.querySelectorAll(".header-anchor").forEach((el) => {
+        this.headerElements.push({
+          self: el,
+          top: this.getOffsetTop(el),
+          hash: el.hash,
+        });
+      });
+    },
+    getOffsetTop(el) {
+      const docEl = document.documentElement;
+      const docRect = docEl.getBoundingClientRect();
+      const elRect = el.getBoundingClientRect();
+      return elRect.top - docRect.top - 80; // 80 = 64px for header + 16px for 1rem
+    },
     onMousedownTranslate() {
       this.isMousedownTranslate = true;
     },
@@ -204,6 +247,24 @@ export default {
             (this.$refs.aside.height() * (this.scrollDiff - 1)) /
               this.$refs.aside.height())
       );
+      this.wrapHeaderElements();
+      for (let i = 0; i < this.headerElements.length; i++) {
+        const el = this.headerElements[i];
+        if (
+          el.top >= window.scrollY &&
+          el.top < window.scrollY + window.innerHeight - 160 // 160 = (64px for header + 16px for 1rem) * 2
+        ) {
+          if (el.hash !== this.$route.hash) {
+            this.$vuepress.$set("disableScrollBehavior", true);
+            this.$router.replace(decodeURIComponent(el.hash), () => {
+              this.$nextTick(() => {
+                this.$vuepress.$set("disableScrollBehavior", false);
+              });
+            });
+          }
+          break;
+        }
+      }
     },
   },
 };

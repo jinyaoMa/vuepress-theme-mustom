@@ -2,18 +2,23 @@
   <div class="Aside">
     <Panel />
     <Audioplayer />
+    <transition name="fade">
+      <Toc v-if="$page.id === 'post' && !mustom$IsMobile" />
+    </transition>
   </div>
 </template>
 
 <script>
 import Panel from "./parts/Panel";
 import Audioplayer from "./parts/Audioplayer";
+import Toc from "./parts/Toc";
 
 export default {
   name: "Aside",
   components: {
     Panel,
     Audioplayer,
+    Toc,
   },
   methods: {
     height() {

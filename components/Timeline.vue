@@ -59,7 +59,7 @@ export default {
     yearTotal() {
       return function (length) {
         return this.mustom$Locale.timeline.yearTotal.replace(
-          "[total]",
+          "[:total:]",
           `<strong style="color: var(--underline); text-decoration: underline">${length}</strong>`
         );
       };
