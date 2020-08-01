@@ -1,7 +1,7 @@
 ---
 title: Hexo主题Mustom使用指南（对应主题1.0版）
 categories:
-  - - Hexo
+  - Hexo
 tags:
   - Mustom
 date: 2020-04-15 13:56:45

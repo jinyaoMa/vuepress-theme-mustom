@@ -94,7 +94,6 @@
         </div>
       </div>
     </div>
-    <div class="minimize" @click="mustom$ToggleMinimize"></div>
   </div>
 </template>
 

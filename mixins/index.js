@@ -166,7 +166,14 @@ export default (_, Vuex) => {
       mustom$SitePosts() {
         return this.$site.pages
           .filter(p => p.id === "post")
-          .sort((a, b) => a.frontmatter.date < b.frontmatter.date);
+          .sort((a, b) => {
+            if (a.frontmatter.date < b.frontmatter.date) {
+              return 1;
+            } else if (a.frontmatter.date > b.frontmatter.date) {
+              return -1;
+            }
+            return 0;
+          });
       }
     }
   }

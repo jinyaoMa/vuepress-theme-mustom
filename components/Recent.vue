@@ -104,7 +104,7 @@ export default {
   border-radius 0.25rem
 
 .item-excerpt
-  img
+  >>> img
     display none
 
 .more

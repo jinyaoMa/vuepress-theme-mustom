@@ -172,27 +172,15 @@ module.exports = { // https://www.vuepress.cn/zh/config/
   evergreen: true,
 
   base: '/blog/',
-
+  /*
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {
       return {
         output: {
           publicPath: 'https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@gh-pages/'
-        },
-        resolve: {
-          alias: {
-            'public': path.resolve(__dirname, './public') // use ~public
-          }
-        }
-      }
-    } else {
-      return {
-        resolve: {
-          alias: {
-            'public': path.resolve(__dirname, './public') // use ~public
-          }
         }
       }
     }
   }
+  */
 }

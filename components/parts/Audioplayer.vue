@@ -52,6 +52,9 @@ export default {
   display none
   @media (max-width $smallestWidth)
     display block
+
+.inner
+  background var(--highlight)
 </style>
 
 <style lang="stylus">
@@ -60,6 +63,7 @@ export default {
   box-shadow none
   background none
   max-width 100vw
+  background var(--bg)
   &.aplayer-withlrc
     .aplayer-pic
       height 90px - $borderRadius * 2 // orig 90px, total 90px

@@ -52,7 +52,7 @@ export default {
   a
     color var(--underline)
   .vssue-comment-avatar
-    border-radius $borderRadius
+    border-radius 50%
     overflow hidden
     a
       &:before

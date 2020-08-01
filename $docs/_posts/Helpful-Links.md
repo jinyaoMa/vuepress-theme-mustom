@@ -1,7 +1,7 @@
 ---
 title: Helpful Links
 categories:
-  - - Note
+  - Note
 tags:
   - Links
 date: 2018-12-05 13:00:00

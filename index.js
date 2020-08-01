@@ -230,9 +230,9 @@ module.exports = (themeConfig, context) => {
 
     // extract cover
     if (content) {
-      const matches = content.match(/!\[.*\]\(\s*([^\)]+)\s*\)/) || [];
+      const matches = content.match(/\!\[[^\]]*\]\(\s*([^\)]+)\s*\)/) || [];
       if (matches.length > 1) {
-        $page.frontmatter.cover = $page.frontmatter.image = matches[1].replace(/\s+['"].*['"]/, '');
+        $page.frontmatter.cover = $page.frontmatter.image = matches[1].replace(/\s+['"][^'"]+['"]$/, '');
       } else {
         $page.frontmatter.cover = null;
       }

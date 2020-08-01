@@ -1,8 +1,8 @@
 ---
 title: Markdown Basic Syntax
 categories:
-  - - Markdown
-  - - Blog
+  - Markdown
+  - Blog
 tags:
   - Test
 date: 2019-12-02 08:00:00

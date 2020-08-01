@@ -1,7 +1,7 @@
 ---
 title: 数据结构之栈Stack和队列Queue
 categories:
-  - - 数据结构与算法
+  - 数据结构与算法
 tags:
   - Stack
   - Queue

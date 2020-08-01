@@ -53,7 +53,12 @@ export default {
         });
       }
       return result.sort((a, b) => {
-        return a.year < b.year;
+        if (a.year < b.year) {
+          return 1;
+        } else if (a.year > b.year) {
+          return -1;
+        }
+        return 0;
       });
     },
     yearTotal() {
@@ -71,7 +76,7 @@ export default {
 
 <style lang="stylus" scoped>
 .list
-  padding ($gap * 1.25)$gap
+  padding ($gap * 1.25) $gap
   display grid
   grid-auto-flow row dense
   > div .list-item:last-child .item-content:last-child

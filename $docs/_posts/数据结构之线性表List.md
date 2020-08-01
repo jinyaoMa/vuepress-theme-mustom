@@ -1,7 +1,7 @@
 ---
 title: 数据结构之线性表List
 categories:
-  - - 数据结构与算法
+  - 数据结构与算法
 tags:
   - 线性表
   - List
