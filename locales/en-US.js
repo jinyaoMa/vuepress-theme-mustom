@@ -104,7 +104,7 @@ module.exports = {
   },
 
   article: {
-    caption: 'POST CONTENT',
+    caption: 'PAGE CONTENT',
     minuteUnit: '[:time:] min.',
     ending: {
       left: 'The post above ended',
@@ -124,7 +124,11 @@ module.exports = {
       }
     },
     prev: 'Older Post: ',
-    next: 'Newer Post: '
+    next: 'Newer Post: ',
+    readmode: {
+      open: 'Enable Read Mode',
+      close: 'Disable Read Mode'
+    }
   },
 
   toc: {

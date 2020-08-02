@@ -1,9 +1,6 @@
 <template>
   <div class="Launch">
-    <div
-      :class="$themeConfig.maximizeLaunch ? 'avatar maximize' : 'avatar'"
-      :style="{ backgroundImage: `url('${$withBase('/assets/img/avatar.png')}')` }"
-    ></div>
+    <div :class="$themeConfig.maximizeLaunch ? 'avatar maximize' : 'avatar'" :style="style"></div>
   </div>
 </template>
 
@@ -14,6 +11,13 @@ export default {
     window.setTimeout((o) => {
       this.$el.classList.add("hide");
     }, 1000);
+  },
+  computed: {
+    style() {
+      return this.$themeConfig.images && this.$themeConfig.images.avatar
+        ? { backgroundImage: `url('${this.$withBase(this.$themeConfig.images.avatar)}')` }
+        : {};
+    },
   },
 };
 </script>
@@ -40,6 +44,7 @@ export default {
   height @width
   background-size auto 100%
   border-radius 50%
+  background-image url('../statics/avatar.png')
   &.maximize
     top 0
     left 0

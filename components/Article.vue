@@ -1,5 +1,5 @@
 <template>
-  <div class="Article card fix">
+  <div :class="`Article card fix ${mustom$Readmode ? 'isReading' : ''}`">
     <div class="caption">
       <span class="icon">
         <i class="fas fa-file fa-fw"></i>
@@ -7,8 +7,11 @@
       <span v-html="mustom$Locale.article.caption"></span>
     </div>
     <div class="inner">
-      <div class="meta">
-        <div class="meta-title">{{$page.title}}</div>
+      <div
+        :class="`meta ${$page.id !== 'post' ? 'page-meta' : ''} ${$page.frontmatter.isContentEmpty ? 'contentEmpty' : ''}`"
+        ref="meta"
+      >
+        <div class="meta-title">{{$page.title || $page.frontmatter.title}}</div>
         <div class="meta-info" v-if="$page.id === 'post'">
           <div class="info-date">
             <i class="fas fa-calendar-alt fa-fw" />
@@ -36,7 +39,7 @@
         </div>
       </div>
       <Content class="markdown-body" />
-      <div class="tail">
+      <div class="tail" v-if="$page.id === 'post'">
         <div class="ending">
           <span v-html="mustom$Locale.article.ending.left"></span>
           <i class="far fa-dot-circle fa-fw"></i>
@@ -93,6 +96,12 @@
           >{{getPage(nextIndex).title}}</router-link>
         </div>
       </div>
+      <div class="readmode" v-if="!mustom$IsMobile && !$page.frontmatter.isContentEmpty" @click="mustom$ToggleReadmode">
+        <span
+          v-html="mustom$Readmode ? mustom$Locale.article.readmode.close : mustom$Locale.article.readmode.open"
+        ></span>
+        <i :class="`fas ${mustom$Readmode ? 'fa-book' : 'fa-book-open'}`"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -107,11 +116,19 @@ export default {
     };
   },
   mounted() {
-    this.friend();
-    this.doPrevNext();
+    if (this.$page.id === "post") {
+      this.friend();
+      this.doPrevNext();
+    } else {
+      this.fixMargin();
+    }
   },
   updated() {
-    this.doPrevNext();
+    if (this.$page.id === "post") {
+      this.doPrevNext();
+    } else {
+      this.fixMargin();
+    }
   },
   computed: {
     min2Read() {
@@ -131,6 +148,12 @@ export default {
     },
   },
   methods: {
+    fixMargin() {
+      const target = this.$el.querySelector(".markdown-body");
+      if (target && target.innerText === "") {
+        this.$refs.meta.style.marginBottom = 0;
+      }
+    },
     getPage(index) {
       return this.mustom$SitePosts[index] || {};
     },
@@ -180,7 +203,23 @@ export default {
     margin 0
     padding 0
 
+.Article.isReading
+  z-index 999999998
+  position fixed
+  top 0
+  left 0
+  width 100%
+  padding 0
+  margin 0
+  border-radius 0
+  height 100vh
+  overflow-x hidden
+  overflow-y auto
+  background var(--bg)
+  transition none
+
 .inner
+  position relative
   background var(--bg)
   padding $gap
   @media (max-width $smallestWidth)
@@ -188,7 +227,7 @@ export default {
 
 .meta
   text-align center
-  margin-bottom $gap * 2
+  margin-bottom $gap * 1.75
   @media (max-width $smallestWidth)
     margin-bottom 1.25rem
 
@@ -211,9 +250,9 @@ export default {
 
 .tail
   user-select none
-  margin-top $gap * 2
+  margin-top $gap * 1.75
   @media (max-width $smallestWidth)
-    margin-top 1.25rem
+    margin-top 1.5rem
 
 .ending
   color var(--article-ending)
@@ -343,4 +382,24 @@ export default {
     pointer-events none
     @media (max-width $smallestWidth)
       opacity 0
+
+.page-meta
+  margin-bottom s('calc(1rem + %s)', $gap)
+  &.contentEmpty
+    margin-bottom 0
+  @media (max-width $smallestWidth)
+    margin-bottom 1rem
+
+.readmode
+  position absolute
+  top 1rem
+  right 1rem
+  cursor pointer
+  color var(--underline)
+  line-height 1
+  opacity 0.5
+  font-size 0.7rem
+  user-select none
+  @media (max-width $smallestWidth)
+    display none
 </style>

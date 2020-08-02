@@ -27,7 +27,8 @@ export default (_, Vuex) => {
         mustom$SetExt: 'setExt',
         mustom$ToggleCanvas: 'toggleCanvas',
         mustom$TriggerResizeIncrement: 'triggerResizeIncrement',
-        mustom$SetSpin: 'setSpin'
+        mustom$SetSpin: 'setSpin',
+        mustom$ToggleReadmode: 'toggleReadmode'
       }),
       mustom$Scroll2Top() {
         if (typeof window === 'undefined') return;
@@ -111,7 +112,8 @@ export default (_, Vuex) => {
         mustom$Ext: 'ext',
         mustom$NoCanvas: 'noCanvas',
         mustom$TriggerResize: 'triggerResize',
-        mustom$IsSpinning: 'isSpinning'
+        mustom$IsSpinning: 'isSpinning',
+        mustom$Readmode: 'readmode'
       }),
       mustom$LangIndex() {
         return /^zh-/i.test(this.mustom$Lang) ? 0 : 1;
@@ -127,7 +129,7 @@ export default (_, Vuex) => {
       mustom$SiteTotalWords() {
         let result = 0;
         this.$site.pages
-          .filter(p => p.id === "post" || p.frontmatter.layout.toLowerCase() === "page")
+          .filter(p => p.id === "post")
           .forEach(page => {
             result += page.frontmatter.wordcount;
           });

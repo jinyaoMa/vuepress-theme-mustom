@@ -16,6 +16,7 @@
     "smoothscroll-polyfill": "^0.4.4",
     "vuepress": "^1.5.2",
     "vuepress-plugin-helper-live2d": "^1.0.2",
+    "vuepress-plugin-img-lazy": "^1.0.4",
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-nprogress": "^1.1.7",
     "vuepress-plugin-pangu": "^1.0.1",

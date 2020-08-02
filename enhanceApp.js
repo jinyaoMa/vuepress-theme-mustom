@@ -41,7 +41,10 @@ export default ({
         }
       }
     } else {
-      return false;
+      return window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     }
   }
 }

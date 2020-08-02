@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`GlobalLayout skin-${mustom$Skin}${mustom$IsNight ? ' nightshift' : ''}${mustom$Ext !== '' ? ' fixed': ''}`"
+    :class="`GlobalLayout ${extraClass}`"
     :style="mustom$Skin === 'default' && !mustom$IsNight ? { backgroundImage: `url('${backgroundImage}')` } : {}"
   >
     <transition name="fade">
@@ -18,7 +18,7 @@
         <div class="drawer">
           <Drawer ref="drawer" />
         </div>
-        <div class="center">
+        <div :class="`center ${$themeConfig.noEmpty ? 'noEmpty' : ''}`">
           <Translate
             v-if="!mustom$IsMobile"
             :isHighlight="isHighlight"
@@ -28,7 +28,7 @@
           <div ref="partial">
             <component :is="layout" />
           </div>
-          <Empty v-if="!mustom$IsMobile" />
+          <Empty v-if="!$themeConfig.noEmpty && !mustom$IsMobile" />
         </div>
         <div class="aside">
           <Aside ref="aside" />
@@ -93,7 +93,7 @@ export default {
         ) {
           return layout;
         }
-        return "Home";
+        return "Layout";
       }
       return "NotFound";
     },
@@ -103,6 +103,19 @@ export default {
         ? this.$themeConfig.customBackgrounds[this.backgroundImageIndex]
         : "#";
     },
+    extraClass() {
+      let c = `skin-${this.mustom$Skin}`;
+      if (this.mustom$IsNight) {
+        c += ' nightshift';
+      }
+      if (this.mustom$Ext !== '' || this.mustom$Readmode) {
+        c += ' fixed';
+      }
+      if (this.mustom$Skin === 'default' && this.mustom$NoCanvas) {
+        c += ' bg-transparent';
+      }
+      return c;
+    }
   },
   watch: {
     mustom$TriggerResize() {
@@ -247,22 +260,24 @@ export default {
             (this.$refs.aside.height() * (this.scrollDiff - 1)) /
               this.$refs.aside.height())
       );
-      this.wrapHeaderElements();
-      for (let i = 0; i < this.headerElements.length; i++) {
-        const el = this.headerElements[i];
-        if (
-          el.top >= window.scrollY &&
-          el.top < window.scrollY + window.innerHeight - 160 // 160 = (64px for header + 16px for 1rem) * 2
-        ) {
-          if (el.hash !== this.$route.hash) {
-            this.$vuepress.$set("disableScrollBehavior", true);
-            this.$router.replace(decodeURIComponent(el.hash), () => {
-              this.$nextTick(() => {
-                this.$vuepress.$set("disableScrollBehavior", false);
+      if (this.$page.id === "post") {
+        this.wrapHeaderElements();
+        for (let i = 0; i < this.headerElements.length; i++) {
+          const el = this.headerElements[i];
+          if (
+            el.top >= window.scrollY &&
+            el.top < window.scrollY + window.innerHeight - 160 // 160 = (64px for header + 16px for 1rem) * 2
+          ) {
+            if (el.hash !== this.$route.hash) {
+              this.$vuepress.$set("disableScrollBehavior", true);
+              this.$router.replace(decodeURIComponent(el.hash), () => {
+                this.$nextTick(() => {
+                  this.$vuepress.$set("disableScrollBehavior", false);
+                });
               });
-            });
+            }
+            break;
           }
-          break;
         }
       }
     },
@@ -302,6 +317,15 @@ export default {
       background-color var(--bg)
       &:nth-child(2n)
         background-color var(--highlight)
+  img
+    display block
+    + em
+      display block
+      font-size 0.75rem
+      line-height 2rem
+      padding 0 0.625rem
+      color var(--txt)
+      background var(--highlight)
 
 .frame
   padding $headerHeight $floatingSize 0
@@ -323,6 +347,8 @@ export default {
   grid-area center
   display grid
   grid-template-rows min-content min-content auto
+  &.noEmpty
+    grid-template-rows min-content min-content
   gap $gap
   padding-top $gap !important
   padding-bottom $gap !important

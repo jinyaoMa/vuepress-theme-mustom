@@ -9,6 +9,7 @@ updated: 2020-02-22 00:16:18
 ---
 
 Theme [Mustom](//github.com/jinyaoMa/hexo-theme-mustom) does NOT SUPPORT variable `photos` in front-matter.
+
 <!-- more -->
 
 GALLERY POST NOT SUPPORTTED!!!

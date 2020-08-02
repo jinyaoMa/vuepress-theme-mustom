@@ -102,7 +102,7 @@ module.exports = { // placeholder [::]
   },
 
   article: {
-    caption: '文章内容',
+    caption: '页面内容',
     minuteUnit: '[:time:] 分钟',
     ending: {
       left: '以上文章结束',
@@ -122,11 +122,21 @@ module.exports = { // placeholder [::]
       }
     },
     prev: '上一篇: ',
-    next: '下一篇: '
+    next: '下一篇: ',
+    readmode: {
+      open: '开启阅读模式',
+      close: '关闭阅读模式'
+    }
   },
 
   toc: {
     caption: '目录'
+  },
+
+  records: {
+    types: {
+      //books / article / paper / newspaper / report / picture / anime / video / movie / audio / project / website
+    }
   }
 
 }

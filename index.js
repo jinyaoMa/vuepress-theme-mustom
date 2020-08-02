@@ -1,4 +1,6 @@
 const md5 = require('md5');
+const path = require('path');
+const fs = require('fs');
 
 const combineThemeConfig = (themeConfig, object) => {
   for (const key in object) {
@@ -20,7 +22,46 @@ const combineThemeConfig = (themeConfig, object) => {
   }
 };
 
+const generateGallery = context => {
+  let result = {
+    page: {},
+    list: []
+  };
+  let projectPath = './';
+  const regex = /^.+\.(bmp|png|jpeg|jpg|gif|svg|webp)$/;
+  if (process.argv.length === 4 && /(dev|build)/.test(process.argv[2])) {
+    const projectName = process.argv[3];
+    projectPath = path.resolve(__dirname, projectName, '.vuepress/public/gallery');
+  } else if (process.argv.length === 3 && /(dev|build)/.test(process.argv[2])) {
+    projectPath = path.resolve(__dirname, '.vuepress/public/gallery');
+  }
+  if (fs.existsSync(projectPath) && fs.statSync(projectPath).isDirectory()) {
+    const ls = fs.readdirSync(projectPath);
+    if (ls && ls.length) {
+      ls.forEach(filename => {
+        regex.test(filename) && result.list.push({
+          name: filename,
+          url: context.base + 'gallery/' + filename
+        });
+      });
+      result.page = {
+        path: '/gallery/',
+        frontmatter: {
+          layout: 'Layout',
+          title: '图库 | Gallery',
+          gallery: {
+            enabled: true
+          }
+        }
+      };
+    }
+  }
+  return result;
+};
+
 module.exports = (themeConfig, context) => {
+
+  const gallery = generateGallery(context);
 
   combineThemeConfig(themeConfig, {
     skins: [{
@@ -56,7 +97,8 @@ module.exports = (themeConfig, context) => {
     hitokoto: {
       api: '//v1.hitokoto.cn',
       type: 'l' // https://developer.hitokoto.cn/sentence/#请求参数
-    }
+    },
+    gallery: gallery.list
   });
 
   const name = 'vuepress-theme-mustom';
@@ -172,6 +214,9 @@ module.exports = (themeConfig, context) => {
         isPlain: true
       }*/
     ],
+    [ // https://github.com/tolking/vuepress-plugin-img-lazy
+      'vuepress-plugin-img-lazy'
+    ],
   ];
 
   const alias = o => {
@@ -200,7 +245,8 @@ module.exports = (themeConfig, context) => {
       frontmatter: {
         layout: 'Home'
       }
-    }
+    },
+    gallery.page
   ];
 
   const extendPageData = $page => {
@@ -266,6 +312,11 @@ module.exports = (themeConfig, context) => {
     if (matches && matches.length === 3) {
       const pathArr = md5(decodeURIComponent(matches[1]));
       $page.frontmatter.permalink = '/post/' + pathArr;
+    }
+
+    // add empty content flag
+    if (typeof content !== 'string' || content === "" || content.trim().length === 0) {
+      $page.frontmatter.isContentEmpty = true;
     }
   };
 

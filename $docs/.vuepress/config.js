@@ -1,20 +1,32 @@
-const path = require('path');
 const secret = require('./_secret');
 
 module.exports = { // https://www.vuepress.cn/zh/config/
 
   theme: require.resolve('../../'),
 
+  base: '/blog/',
+
   title: '耀 の 个人网站 | Mark の Personal Website',
 
   description: '耀の个人网站, 耀的个人网站, Mark の Personal Website, Mark\'s Personal Website, 耀的部落阁, jinyaoMa, Mustom, VuePress',
 
   themeConfig: {
-    translate: secret.translate,
-    comment: secret.comment,
+    translate: secret.translate, // baidu translation
+    comment: secret.comment, // vssue setting
     author: 'jinyaoMa',
-    year: 2019,
-    maximizeLaunch: false,
+    year: 2019, // year of site started
+    maximizeLaunch: false, // full size image for launch
+    noEmpty: false, // hide empty component
+    images: { // for image replacment; no base needed; first layer key points to component name
+      avatar: '/assets/img/avatar.png',
+      brand: '/assets/img/brand.png',
+      hitokoto: {
+        left: '/assets/img/hitokoto.left.png',
+        right: '/assets/img/hitokoto.right.png',
+      },
+      empty: '/assets/img/empty.png',
+      records: '/assets/img/records.png',
+    },
     customBackgrounds: [
       //'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596065328389&di=ad7a9cc49e45547721005bd528325f0d&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2%2F58b4ef69ed377.jpg',
       //'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
@@ -22,21 +34,21 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     socialShare: { // https://sns.goyfe.com/guide/
       networks: ['qq', 'weibo', 'douban', 'email', 'whatsapp', 'facebook', 'reddit', 'telegram', 'line'],
       email: 'jinyao.ma@outlook.com',
-      fallbackImage: '~public/assets/img/avatar.png',
+      fallbackImage: '/assets/img/avatar.png',
       noGlobalSocialShare: true
     },
-    qrcodes: [{
+    qrcodes: [{ // qrcode for contact and friending
       locale: [
         'QQ', // zh
         'QQ' // en
       ],
-      path: '/assets/img/qq.png'
+      path: '/assets/img/qq.png' // no base needed
     }, {
       locale: [
         '微信', // zh
         'WeChat' // en
       ],
-      path: '/assets/img/wechat.png'
+      path: '/assets/img/wechat.png' // no base needed
     }],
     header: {
       sitename: [
@@ -113,12 +125,13 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       }]
     }],
     meting: {
-      server: 'netease',
-      type: 'playlist',
-      id: '4989572738',
+      server: 'netease', // netease, tencent, kugou, xiami, baidu
+      type: 'playlist', // song, playlist, album, search, artist
+      id: '4989572738', // song id / playlist id / album id / search keyword
       theme: 'var(--link)', // e.g. #ff3300
-      height: '297px'
+      height: '297px' // playlist height, 297px ==> 9 lines
     },
+    // external links; use for the component that displays after clicking on the left-top button of header
     portals: [{
       name: 'My Site',
       desc: '耀 の 个人网站 | Mark の Personal Website',
@@ -161,17 +174,24 @@ module.exports = { // https://www.vuepress.cn/zh/config/
         from: '一言开发者中心'
       }*/],
       type: 'i' // https://developer.hitokoto.cn/sentence/#请求参数
-    }
+    },
+    gallery: [/*{ format; these gallery items will be appended to public/gallery/
+      name: 'test image from baidu',
+      url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
+    }*/{
+        name: 'unsplash.com',
+        url: 'https://source.unsplash.com/1600x900/?wallpaper'
+      }]
   },
 
+  // https://www.vuepress.cn/zh/config/#markdown
   markdown: {
     lineNumbers: false,
     extractHeaders: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
   },
 
-  evergreen: true,
+  evergreen: true, // using old browser ?
 
-  base: '/blog/',
   /*
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {

@@ -6,7 +6,7 @@
       </span>
       <span v-html="mustom$Locale.brand.caption"></span>
     </div>
-    <div class="avatar" :style="{ backgroundImage: `url('${$withBase('/assets/img/brand.png')}')` }"></div>
+    <div class="avatar" :style="avatarStyle"></div>
     <div class="inner">
       <div class="author">{{$themeConfig.author}}</div>
       <div class="signature" v-html="$themeConfig.brand.signatures[mustom$LangIndex]"></div>
@@ -42,6 +42,13 @@
 <script>
 export default {
   name: "Brand",
+  computed: {
+    avatarStyle() {
+      return this.$themeConfig.images && this.$themeConfig.images.brand
+        ? { backgroundImage: `url('${this.$withBase(this.$themeConfig.images.brand)}')` }
+        : {};
+    },
+  },
 };
 </script>
 
@@ -72,6 +79,7 @@ export default {
 
 .avatar
   max-width s('calc(%s - 2rem)', $sideWidth)
+  background-image url('../../statics/brand.png')
   background-color var(--highlight)
   background-size cover
   border-radius $borderRadius

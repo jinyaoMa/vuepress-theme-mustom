@@ -7,8 +7,10 @@
       <span v-html="mustom$Locale.hitokoto.caption"></span>
     </div>
     <div class="inner">
+      <div class="before" :style="beforeStyle"></div>
       <div class="word" v-html="mustom$Hitokoto.word"></div>
       <div class="from" v-html="mustom$Hitokoto.from"></div>
+      <div class="after" :style="afterStyle"></div>
     </div>
     <div class="minimize" @click="mustom$ToggleMinimize"></div>
   </div>
@@ -19,7 +21,31 @@ export default {
   name: "Hitokoto",
   mounted() {
     this.mustom$InitHitokoto();
-  }
+  },
+  computed: {
+    beforeStyle() {
+      return this.$themeConfig.images &&
+        this.$themeConfig.images.hitokoto &&
+        this.$themeConfig.images.hitokoto.left
+        ? {
+            backgroundImage: `url('${this.$withBase(
+              this.$themeConfig.images.hitokoto.left
+            )}')`,
+          }
+        : {};
+    },
+    afterStyle() {
+      return this.$themeConfig.images &&
+        this.$themeConfig.images.hitokoto &&
+        this.$themeConfig.images.hitokoto.right
+        ? {
+            backgroundImage: `url('${this.$withBase(
+              this.$themeConfig.images.hitokoto.right
+            )}')`,
+          }
+        : {};
+    },
+  },
 };
 </script>
 
@@ -32,8 +58,7 @@ export default {
   @media (max-width $smallestWidth)
     padding-bottom $hitokotoImgHeight * 0.33
   text-align center
-  &:before, &:after
-    content ''
+  .before, .after
     position absolute
     bottom 0
     height $hitokotoImgHeight * 0.66
@@ -42,12 +67,12 @@ export default {
     @media (max-width $smallestWidth)
       height $hitokotoImgHeight * 0.33
       width $hitokotoImgWidth * 0.33
-  &:before
+  .before
     left 0
-    background-image url('../statics/qf3cu.huaji.left.png')
-  &:after
+    background-image url('../statics/hitokoto.left.png')
+  .after
     right 0
-    background-image url('../statics/qf3cu.huaji.right.png')
+    background-image url('../statics/hitokoto.right.png')
 
 .word
   padding 2rem

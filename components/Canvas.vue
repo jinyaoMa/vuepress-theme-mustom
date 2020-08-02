@@ -151,7 +151,7 @@ const wave = {
 
       TIME = (TIME + 1) % CYCLE;
       let angle = SCALE * TIME; // 当前正弦角度
-      let dAngle = 45; // 两个波峰相差的角度
+      let dAngle = 60; // 两个波峰相差的角度
       //if (colors.isNext(Math.floor(TIME * 5 / CYCLE))) {
       colors.roll();
       //}
@@ -159,12 +159,12 @@ const wave = {
       x.beginPath();
       x.moveTo(0, height * 0.77 + distance(WAVE_HEIGHT, angle, 0));
       x.bezierCurveTo(
-        width * 0.6,
+        width * 0.5,
         height * 0.77 + distance(WAVE_HEIGHT, angle, dAngle),
-        width * 0.4,
+        width * 0.5,
         height * 0.77 + distance(WAVE_HEIGHT, angle, 2 * dAngle),
         width,
-        height * 0.66 + distance(WAVE_HEIGHT, angle, 3 * dAngle)
+        height * 0.77 + distance(WAVE_HEIGHT, angle, 3 * dAngle)
       );
       x.lineTo(width, height);
       x.lineTo(0, height);
@@ -172,14 +172,14 @@ const wave = {
       x.fill();
 
       x.beginPath();
-      x.moveTo(0, height * 0.77 + distance(WAVE_HEIGHT, angle, -15));
+      x.moveTo(0, height * 0.77 + distance(WAVE_HEIGHT, angle, -5));
       x.bezierCurveTo(
-        width * 0.55,
-        height * 0.77 + distance(WAVE_HEIGHT, angle, dAngle - 15),
-        width * 0.45,
-        height * 0.77 + distance(WAVE_HEIGHT, angle, 2 * dAngle - 30),
+        width * 0.5,
+        height * 0.77 + distance(WAVE_HEIGHT, angle, dAngle - 5),
+        width * 0.5,
+        height * 0.77 + distance(WAVE_HEIGHT, angle, 2 * dAngle - 10),
         width,
-        height * 0.66 + distance(WAVE_HEIGHT, angle, 3 * dAngle - 45)
+        height * 0.77 + distance(WAVE_HEIGHT, angle, 3 * dAngle - 20)
       );
       x.lineTo(width, height);
       x.lineTo(0, height);
@@ -187,14 +187,14 @@ const wave = {
       x.fill();
 
       x.beginPath();
-      x.moveTo(0, height * 0.77 + distance(WAVE_HEIGHT, angle, -30));
+      x.moveTo(0, height * 0.77 + distance(WAVE_HEIGHT, angle, -10));
       x.bezierCurveTo(
         width * 0.5,
-        height * 0.77 + distance(WAVE_HEIGHT, angle, dAngle - 30),
+        height * 0.77 + distance(WAVE_HEIGHT, angle, dAngle - 10),
         width * 0.5,
-        height * 0.77 + distance(WAVE_HEIGHT, angle, 2 * dAngle - 60),
+        height * 0.77 + distance(WAVE_HEIGHT, angle, 2 * dAngle - 20),
         width,
-        height * 0.66 + distance(WAVE_HEIGHT, angle, 3 * dAngle - 90)
+        height * 0.77 + distance(WAVE_HEIGHT, angle, 3 * dAngle - 40)
       );
       x.lineTo(width, height);
       x.lineTo(0, height);
