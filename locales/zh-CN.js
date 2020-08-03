@@ -2,6 +2,11 @@ module.exports = { // placeholder [::]
 
   sitename: '耀 の 个人网站',
 
+  visibilitychange: {
+    away: '╭(°A°`)╮ 页面崩溃啦~ ',
+    back: '(ฅ>ω<*ฅ) 噫又好了~ '
+  },
+
   footer: {
     copyright: '© [:start_year:] - [:build_year:] [:author:]',
     powered: '由 [:vuepress:] 强力驱动',
@@ -31,7 +36,7 @@ module.exports = { // placeholder [::]
       about: '关于',
       resume: '简历小贴士',
       letter: '求职信小贴士',
-      library: '代码库',
+      codes: '代码库',
       icons: '图标字体库',
       records: '记录',
       gallery: '图库'
@@ -134,9 +139,42 @@ module.exports = { // placeholder [::]
   },
 
   records: {
+    empty: 'N/A',
+    labels: {
+      type: '类型：',
+      source: '链接/来源：',
+      author: '作者/相关：',
+      progress: '进度：',
+      summary: '总结：'
+    },
     types: {
-      //books / article / paper / newspaper / report / picture / anime / video / movie / audio / project / website
+      book: '书籍',
+      article: '文章',
+      paper: '论文',
+      newspaper: '报纸',
+      report: '报告',
+      picture: '图片',
+      anime: '动漫',
+      video: '视频',
+      movie: '电影',
+      audio: '音频',
+      project: '项目',
+      website: '网站'
     }
+  },
+
+  readme: {
+    caption: '历史更新',
+    more: '展开',
+    less: '收起'
+  },
+
+  stack: {
+    caption: '代码栈'
+  },
+
+  iframe: {
+    caption: '图标框'
   }
 
 }

@@ -18,14 +18,21 @@
       </div>
     </transition>
     <transition name="fade">
-      <div class="search" v-if="mustom$Ext === 'search'"></div>
+      <div class="search" v-if="mustom$Ext === 'search'">
+        <Search />
+      </div>
     </transition>
   </div>
 </template>
 
 <script>
+import Search from "./parts/Search";
+
 export default {
   name: "Ext",
+  components: {
+    Search,
+  },
 };
 </script>
 
@@ -41,7 +48,7 @@ export default {
   overflow-x hidden
   overflow-y auto
 
-.portal
+.portal, .search
   padding $headerHeight
   @media (max-width $smallestWidth)
     padding 1rem

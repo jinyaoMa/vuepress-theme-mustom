@@ -10,6 +10,7 @@
     <Spinner ref="spinner" />
     <Header />
     <Goingto />
+    <Addin />
     <transition name="slide-fade">
       <Ext v-if="mustom$Ext !== ''" />
     </transition>
@@ -55,6 +56,7 @@ import Empty from "@theme/components/Empty";
 import Ext from "@theme/components/Ext";
 import Canvas from "@theme/components/Canvas";
 import Translate from "@theme/components/Translate";
+import Addin from "@theme/components/Addin";
 
 export default {
   name: "GlobalLayout",
@@ -70,6 +72,7 @@ export default {
     Ext,
     Canvas,
     Translate,
+    Addin,
   },
   data() {
     return {
@@ -106,16 +109,16 @@ export default {
     extraClass() {
       let c = `skin-${this.mustom$Skin}`;
       if (this.mustom$IsNight) {
-        c += ' nightshift';
+        c += " nightshift";
       }
-      if (this.mustom$Ext !== '' || this.mustom$Readmode) {
-        c += ' fixed';
+      if (this.mustom$Ext !== "" || this.mustom$Readmode) {
+        c += " fixed";
       }
-      if (this.mustom$Skin === 'default' && this.mustom$NoCanvas) {
-        c += ' bg-transparent';
+      if (this.mustom$Skin === "default" && this.mustom$NoCanvas) {
+        c += " bg-transparent";
       }
       return c;
-    }
+    },
   },
   watch: {
     mustom$TriggerResize() {
@@ -150,6 +153,7 @@ export default {
       this.$refs.partial.addEventListener("mousedown", this.onMousedownPartial);
       document.addEventListener("mouseup", this.onMouseup);
       this.gotoHash();
+      this.setVisibilitychange();
     }
     this.$router.beforeEach((to, from, next) => {
       if (to.path !== from.path && !this.$vuepress.getVueComponent(to.name)) {
@@ -177,6 +181,22 @@ export default {
     document.removeEventListener("mouseup", this.onMouseup);
   },
   methods: {
+    setVisibilitychange() {
+      let origin = "";
+      let timer = null;
+      document.onvisibilitychange = (o) => {
+        if (document.hidden) {
+          origin = document.title;
+          document.title = this.mustom$Locale.visibilitychange.away + origin;
+          window.clearTimeout(timer);
+        } else {
+          document.title = this.mustom$Locale.visibilitychange.back + origin;
+          timer = window.setTimeout((e) => {
+            document.title = origin;
+          }, 1000);
+        }
+      };
+    },
     gotoHash() {
       this.wrapHeaderElements();
       if (this.$route.hash) {

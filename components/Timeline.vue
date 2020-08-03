@@ -134,8 +134,11 @@ export default {
     &:hover
       text-decoration underline
 
-.content-excerpt img
-  display none
+.content-excerpt.markdown-body
+  >>> img
+    display none
+  >>> p
+    margin 0
 
 @media (max-width $smallestWidth)
   .list

@@ -168,7 +168,7 @@ module.exports = (themeConfig, context) => {
       'vuepress-plugin-mathjax',
     ],
     [ // https://www.vuepress.cn/plugin/official/plugin-pwa.html
-      '@vuepress/pwa'
+      '@vuepress/pwa', themeConfig.pwa || {}
     ],
     [ // https://www.vuepress.cn/plugin/official/plugin-search.html
       '@vuepress/search',
@@ -260,6 +260,12 @@ module.exports = (themeConfig, context) => {
       $page.frontmatter.title = $page.title = pangunode($page.title || '');
       $page._strippedContent = pangunode($page._strippedContent || '');
       $page.excerpt = pangunode($page.excerpt || '');
+    }
+    if ($page.frontmatter.records && $page.frontmatter.records.items && $page.frontmatter.records.items.length) {
+      const pangunode = require('./scripts/pangunode');
+      $page.frontmatter.records.items.forEach(item => {
+        item.summary = pangunode(item.summary || '');
+      });
     }
 
     // word count

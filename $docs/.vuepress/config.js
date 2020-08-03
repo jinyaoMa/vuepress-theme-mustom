@@ -4,7 +4,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
 
   theme: require.resolve('../../'),
 
-  base: '/blog/',
+  base: '/vuepress-theme-mustom/',
 
   title: '耀 の 个人网站 | Mark の Personal Website',
 
@@ -18,6 +18,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     maximizeLaunch: false, // full size image for launch
     noEmpty: false, // hide empty component
     images: { // for image replacment; no base needed; first layer key points to component name
+      ad: '/assets/img/ad.png',
       avatar: '/assets/img/avatar.png',
       brand: '/assets/img/brand.png',
       hitokoto: {
@@ -108,8 +109,8 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       icon: '<i class="fas fa-ellipsis-h fa-fw"></i>',
       items: [{
         icon: '<i class="fas fa-box fa-fw"></i>',
-        text: 'library', // locale match
-        link: '/library/'
+        text: 'codes', // locale match
+        link: '/codes/'
       }, {
         icon: '<i class="fas fa-icons fa-fw"></i>',
         text: 'icons', // locale match
@@ -135,8 +136,8 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     portals: [{
       name: 'My Site',
       desc: '耀 の 个人网站 | Mark の Personal Website',
-      icon: 'https://ma-jinyao.cn/asset/img/author.medium.png',
-      link: 'https://ma-jinyao.cn/'
+      icon: 'https://jinyaoMa.github.io/asset/img/author.medium.png',
+      link: 'https://jinyaoMa.github.io/'
     }, {
       name: 'MPlayer',
       desc: 'APlayer 个人模仿练习版',
@@ -178,11 +179,21 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     gallery: [/*{ format; these gallery items will be appended to public/gallery/
       name: 'test image from baidu',
       url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
-    }*/{
-        name: 'unsplash.com',
-        url: 'https://source.unsplash.com/1600x900/?wallpaper'
-      }]
+    }*/]
   },
+
+  pwa: { // https://www.vuepress.cn/plugin/official/plugin-pwa.html
+    serviceWorker: true
+  },
+
+  head: [ // Include pwa settings, https://www.vuepress.cn/plugin/official/plugin-pwa.html
+    ['link', { rel: 'icon', href: '/favicon.ico', type: "image/x-icon" }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['meta', { name: 'theme-color', content: 'white' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#000000' }],
+    ['link', { rel: 'apple-touch-icon', href: '/assets/img/apple-touch-icon.png' }]
+  ],
 
   // https://www.vuepress.cn/zh/config/#markdown
   markdown: {
@@ -190,7 +201,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     extractHeaders: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
   },
 
-  evergreen: true, // using old browser ?
+  evergreen: false, // using old browser ?
 
   /*
   configureWebpack: () => {

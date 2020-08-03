@@ -48,7 +48,7 @@
         <div class="friend">
           <div v-html="mustom$Locale.article.friend.text"></div>
           <div class="button" v-html="mustom$Locale.article.friend.button" @click="friend"></div>
-          <div class="qrcode" ref="qrcode">
+          <div class="qrcode" ref="qrcode" v-if="($themeConfig.qrcodes instanceof Array)">
             <div v-for="(item, i) in $themeConfig.qrcodes" :key="i">
               <img :src="$withBase(item.path)" />
               <div v-html="item.locale[mustom$LangIndex]"></div>
@@ -96,7 +96,11 @@
           >{{getPage(nextIndex).title}}</router-link>
         </div>
       </div>
-      <div class="readmode" v-if="!mustom$IsMobile && !$page.frontmatter.isContentEmpty" @click="mustom$ToggleReadmode">
+      <div
+        class="readmode"
+        v-if="!mustom$IsMobile && !$page.frontmatter.isContentEmpty"
+        @click="mustom$ToggleReadmode"
+      >
         <span
           v-html="mustom$Readmode ? mustom$Locale.article.readmode.close : mustom$Locale.article.readmode.open"
         ></span>
@@ -151,7 +155,9 @@ export default {
     fixMargin() {
       const target = this.$el.querySelector(".markdown-body");
       if (target && target.innerText === "") {
-        this.$refs.meta.style.marginBottom = 0;
+        this.$refs.meta.classList.add('fixMargin');
+      } else {
+        this.$refs.meta.classList.remove('fixMargin');
       }
     },
     getPage(index) {
@@ -217,6 +223,9 @@ export default {
   overflow-y auto
   background var(--bg)
   transition none
+  >>> img
+    cursor default
+    pointer-events none
 
 .inner
   position relative
@@ -402,4 +411,7 @@ export default {
   user-select none
   @media (max-width $smallestWidth)
     display none
+
+.fixMargin
+  margin-bottom 0 !important
 </style>

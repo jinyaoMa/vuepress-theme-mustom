@@ -10,9 +10,11 @@ $floatingSize = $fontSize * 4
 $maxWidth = 1366px
 $minWidth = 320px
 $sideWidth = 280px
-$smallWidth = 640px + $sideWidth * 2 + $floatingSize * 2
-$smallerWidth = 640px + $sideWidth + $floatingSize * 2
-$smallestWidth = 480px + $floatingSize * 2
+$realSmallWidth = 640px
+$realSmallestWidth = 480px
+$smallWidth = $realSmallWidth + $sideWidth * 2 + $floatingSize * 2
+$smallerWidth = $realSmallWidth + $sideWidth + $floatingSize * 2
+$smallestWidth = $realSmallestWidth + $floatingSize * 2
 // Spinner
 $spinnerSize = $fontSize * 4
 $spinnerborderSize = $fontSize * 0.8

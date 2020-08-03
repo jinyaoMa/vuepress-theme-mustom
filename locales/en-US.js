@@ -2,6 +2,11 @@ module.exports = {
 
   sitename: 'Mark の Personal Website',
 
+  visibilitychange: {
+    away: '╭(°A°`)╮ Opps, page crashes~ ',
+    back: '(ฅ>ω<*ฅ) Eh, restore again~ '
+  },
+
   footer: {
     copyright: '© [:start_year:] - [:build_year:] [:author:]',
     powered: 'Powered by [:vuepress:]',
@@ -33,7 +38,7 @@ module.exports = {
       about: 'About',
       resume: 'Resume Tips',
       letter: 'Cover Letter Tips',
-      library: 'Code Library',
+      codes: 'Code Library',
       icons: 'Icon Font Library',
       records: 'Records',
       gallery: 'Gallery'
@@ -133,6 +138,45 @@ module.exports = {
 
   toc: {
     caption: 'TABLE OF CONTENTS'
+  },
+
+  records: {
+    empty: 'N/A',
+    labels: {
+      type: 'Type: ',
+      source: 'Link/Source: ',
+      author: 'Author/Relevent: ',
+      progress: 'Progress: ',
+      summary: 'Summary: '
+    },
+    types: {
+      book: 'Book',
+      article: 'Article',
+      paper: 'Papaer',
+      newspaper: 'Newspaper',
+      report: 'Report',
+      picture: 'Picture',
+      anime: 'Anime',
+      video: 'Video',
+      movie: 'Movie',
+      audio: 'Audio',
+      project: 'Project',
+      website: 'Website'
+    }
+  },
+
+  readme: {
+    caption: 'UPDATES',
+    more: 'MORE',
+    less: 'LESS'
+  },
+
+  stack: {
+    caption: 'CODE STACK'
+  },
+
+  iframe: {
+    caption: 'ICON FRAME'
   }
 
 }
