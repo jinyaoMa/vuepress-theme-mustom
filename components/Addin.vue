@@ -95,6 +95,7 @@ export default {
     display none
 
 .ad, .qrcode
+  color black
   animation appear 0.6s
 
 .ad

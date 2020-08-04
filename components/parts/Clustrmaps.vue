@@ -7,7 +7,7 @@
       <span v-html="mustom$Locale.clustrmaps.caption"></span>
     </div>
     <div class="inner">
-      <script v-if="isIt" :id="$themeConfig.clustrmaps.id" :src="$themeConfig.clustrmaps.src"></script>
+      <script v-if="isIt" :id="$themeConfig.clustrmaps.id" ref="script"></script>
     </div>
     <div class="minimize" @click="mustom$ToggleMinimize"></div>
   </div>
@@ -16,11 +16,20 @@
 <script>
 export default {
   name: "Clustrmaps",
-  computed:{
+  computed: {
     isIt() {
-      return this.$themeConfig.clustrmaps && this.$themeConfig.clustrmaps.id && this.$themeConfig.clustrmaps.src;
+      return (
+        this.$themeConfig.clustrmaps &&
+        this.$themeConfig.clustrmaps.id &&
+        this.$themeConfig.clustrmaps.src
+      );
+    },
+  },
+  mounted() {
+    if (this.isIt) {
+      this.$refs.script.src = this.$themeConfig.clustrmaps.src;
     }
-  }
+  },
 };
 </script>
 

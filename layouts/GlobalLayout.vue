@@ -128,7 +128,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this);
+    //console.log(this);
     if (!this.mustom$IsMobile) {
       const bgSwitcher = window.setInterval((o) => {
         let tempIndex = this.backgroundImageIndex + 1;
