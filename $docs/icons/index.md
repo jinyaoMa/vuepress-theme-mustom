@@ -7,5 +7,5 @@ github:
     enabled: true
   iframe:
     enabled: true
-    url: https://ma-jinyao.cn/icon-lib/
+    url: https://blog.ma-jinyao.cn/icon-lib/
 ---
