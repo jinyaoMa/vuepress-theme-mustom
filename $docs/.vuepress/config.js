@@ -204,7 +204,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
 
   evergreen: false, // using old browser ?
 
-  /*
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {
       return {
@@ -214,5 +213,5 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       }
     }
   }
-  */
+
 }
