@@ -4,13 +4,14 @@ module.exports = { // https://www.vuepress.cn/zh/config/
 
   theme: require.resolve('../../'),
 
-  base: '/vuepress-theme-mustom/',
+  base: '/',
 
   title: '耀 の 个人网站 | Mark の Personal Website',
 
   description: '耀の个人网站, 耀的个人网站, Mark の Personal Website, Mark\'s Personal Website, 耀的部落阁, jinyaoMa, Mustom, VuePress',
 
   themeConfig: {
+    domain: 'https://ma-jinyao.cn', // for sitemap generate
     translate: secret.translate, // baidu translation
     comment: secret.comment, // vssue setting
     author: 'jinyaoMa',
@@ -141,33 +142,33 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     }, {
       name: 'MPlayer',
       desc: 'APlayer 个人模仿练习版',
-      icon: 'https://ma-jinyao.cn/asset/img/icon.medium.png',
-      link: 'https://ma-jinyao.cn/MPlayer'
+      icon: 'https://blog.ma-jinyao.cn/asset/img/icon.medium.png',
+      link: 'https://blog.ma-jinyao.cn/MPlayer'
     }, {
       name: 'Resume',
       desc: 'Resume Template',
-      icon: 'https://ma-jinyao.cn/extension/resume/icon.png',
-      link: 'https://ma-jinyao.cn/extension/resume/english/'
+      icon: 'https://blog.ma-jinyao.cn/extension/resume/icon.png',
+      link: 'https://blog.ma-jinyao.cn/extension/resume/english/'
     }, {
       name: '简历',
       desc: '简历模板',
-      icon: 'https://ma-jinyao.cn/extension/resume/icon.reverse.png',
-      link: 'https://ma-jinyao.cn/extension/resume/chinese/'
+      icon: 'https://blog.ma-jinyao.cn/extension/resume/icon.reverse.png',
+      link: 'https://blog.ma-jinyao.cn/extension/resume/chinese/'
     }, {
       name: 'Cover Letter',
       desc: 'Cover Letter Template',
-      icon: 'https://ma-jinyao.cn/extension/letter/icon.png',
-      link: 'https://ma-jinyao.cn/extension/letter/english/'
+      icon: 'https://blog.ma-jinyao.cn/extension/letter/icon.png',
+      link: 'https://blog.ma-jinyao.cn/extension/letter/english/'
     }, {
       name: '求职信',
       desc: '求职信模板',
-      icon: 'https://ma-jinyao.cn/extension/letter/icon.reverse.png',
-      link: 'https://ma-jinyao.cn/extension/letter/chinese/'
+      icon: 'https://blog.ma-jinyao.cn/extension/letter/icon.reverse.png',
+      link: 'https://blog.ma-jinyao.cn/extension/letter/chinese/'
     }, {
       name: 'Palette',
       desc: '想知道图片主题色？',
-      icon: 'https://ma-jinyao.cn/extension/palette/icon.png',
-      link: 'https://ma-jinyao.cn/extension/palette/'
+      icon: 'https://blog.ma-jinyao.cn/extension/palette/icon.png',
+      link: 'https://blog.ma-jinyao.cn/extension/palette/'
     }],
     hitokoto: {
       customs: [/*{ // format; if customs exist, API will be ignored, and customs will be in use
