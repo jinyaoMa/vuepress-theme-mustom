@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "jinyaoMa",
   "license": "MIT",
+  "repository": "git@github.com:jinyaoMa/vuepress-theme-mustom.git",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "@vuepress/plugin-blog": "^1.9.2",
