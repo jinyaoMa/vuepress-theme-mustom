@@ -14,6 +14,11 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     domain: 'https://ma-jinyao.cn', // for sitemap generate
     translate: secret.translate, // baidu translation
     comment: secret.comment, // vssue setting
+    // clustrmaps setting
+    clustrmaps: {
+      id: "clustrmaps", // clstr_globe / clustrmaps
+      src: "//cdn.clustrmaps.com/map_v2.js?cl=333333&w=a&t=t&d=kuCCiVvtASTqmAMxPSTLcjxs-p8j6ht3LUi9z9Q-OKc&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=333333"
+    },
     author: 'jinyaoMa',
     year: 2019, // year of site started
     maximizeLaunch: false, // full size image for launch
@@ -193,7 +198,11 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     ['meta', { name: 'theme-color', content: 'white' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#000000' }],
-    ['link', { rel: 'apple-touch-icon', href: '/assets/img/apple-touch-icon.png' }]
+    ['link', { rel: 'apple-touch-icon', href: '/assets/img/apple-touch-icon.png' }],
+
+    // Search engine verify
+    ['meta', { name: 'google-site-verification', content: 'DR-3xvCA7YBP7TIeg7__j5lxaniGh2pzocrfywyn8o0' }],
+    ['meta', { name: 'baidu-site-verification', content: 'zQef3H7nga' }]
   ],
 
   // https://www.vuepress.cn/zh/config/#markdown

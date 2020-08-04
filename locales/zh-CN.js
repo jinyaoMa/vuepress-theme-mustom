@@ -175,6 +175,10 @@ module.exports = { // placeholder [::]
 
   iframe: {
     caption: '图标框'
+  },
+
+  clustrmaps: {
+    caption: 'Clustrmaps'
   }
 
 }

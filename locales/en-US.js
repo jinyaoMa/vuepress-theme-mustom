@@ -177,6 +177,10 @@ module.exports = {
 
   iframe: {
     caption: 'ICON FRAME'
+  },
+
+  clustrmaps: {
+    caption: 'Clustrmaps'
   }
 
 }
