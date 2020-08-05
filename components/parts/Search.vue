@@ -210,6 +210,7 @@ export default {
     color var(--txt)
     display inline-block
     border 1px solid var(--highlight)
+    box-shadow 0 0 1px var(--txt)
     border-radius $borderRadius
     font-size 0.9rem
     line-height 2rem
@@ -226,6 +227,7 @@ export default {
     position absolute
     top 2 rem
     border 1px solid var(--highlight)
+    box-shadow 0 0 1px var(--txt)
     border-radius $borderRadius
     padding 0.4rem
     list-style-type none

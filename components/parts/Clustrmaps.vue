@@ -36,8 +36,6 @@ export default {
 <style lang="stylus" scoped>
 .inner
   padding 0.25rem
-  @media (max-width $smallestWidth)
-    padding 0
   >>> a:before
     display none
 </style>
