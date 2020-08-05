@@ -2,6 +2,11 @@ module.exports = {
 
   sitename: 'Mark の Personal Website',
 
+  notfound: {
+    caption: '404',
+    text: 'Page [:path:] not found.'
+  },
+
   visibilitychange: {
     away: '╭(°A°`)╮ Opps, page crashes~ ',
     back: '(ฅ>ω<*ฅ) Eh, restore again~ '

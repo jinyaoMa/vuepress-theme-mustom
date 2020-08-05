@@ -2,6 +2,11 @@ module.exports = { // placeholder [::]
 
   sitename: '耀 の 个人网站',
 
+  notfound: {
+    caption: '404',
+    text: '找不到页面 [:path:] 了，或许本来就没有 ๑乛◡乛๑'
+  },
+
   visibilitychange: {
     away: '╭(°A°`)╮ 页面崩溃啦~ ',
     back: '(ฅ>ω<*ฅ) 噫又好了~ '
