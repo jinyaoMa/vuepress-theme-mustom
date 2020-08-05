@@ -314,7 +314,7 @@ module.exports = (themeConfig, context) => {
     }
 
     // change post link
-    if (typeof $page.regularPath !== undefined) {
+    if (typeof $page.regularPath !== "undefined") {
       const matches = $page.regularPath.match(/\/_posts\/(.+)(\.html)/);
       if (matches && matches.length === 3) {
         const pathArr = md5(decodeURIComponent(matches[1]));
