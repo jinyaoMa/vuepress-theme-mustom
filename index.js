@@ -314,10 +314,12 @@ module.exports = (themeConfig, context) => {
     }
 
     // change post link
-    const matches = $page.regularPath.match(/\/_posts\/(.+)(\.html)/);
-    if (matches && matches.length === 3) {
-      const pathArr = md5(decodeURIComponent(matches[1]));
-      $page.frontmatter.permalink = '/post/' + pathArr;
+    if (typeof $page.regularPath !== undefined) {
+      const matches = $page.regularPath.match(/\/_posts\/(.+)(\.html)/);
+      if (matches && matches.length === 3) {
+        const pathArr = md5(decodeURIComponent(matches[1]));
+        $page.frontmatter.permalink = '/post/' + pathArr;
+      }
     }
 
     // add empty content flag
