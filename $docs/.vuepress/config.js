@@ -185,11 +185,10 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     gallery: [/*{ format; these gallery items will be appended to public/gallery/
       name: 'test image from baidu',
       url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
-    }*/]
-  },
-
-  pwa: { // https://www.vuepress.cn/plugin/official/plugin-pwa.html
-    serviceWorker: true
+    }*/],
+    pwa: { // https://www.vuepress.cn/plugin/official/plugin-pwa.html
+      serviceWorker: true
+    }
   },
 
   head: [ // Include pwa settings, https://www.vuepress.cn/plugin/official/plugin-pwa.html
