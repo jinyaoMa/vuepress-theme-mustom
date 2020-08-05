@@ -26,4 +26,6 @@ export default {
   background-repeat-x no-repeat
   background-position-x center
   min-height $emptyMinHeight
+  @media (max-width $smallestWidth)
+    display none
 </style>

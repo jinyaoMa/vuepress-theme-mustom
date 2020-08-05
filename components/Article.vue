@@ -363,11 +363,13 @@ export default {
   gap 1rem
   .prev
     grid-area prev
+    @media (max-width $smallestWidth)
+      text-align center
   .next
     grid-area next
     text-align right
     @media (max-width $smallestWidth)
-      text-align left
+      text-align center
     &:before
       left auto
       right 0

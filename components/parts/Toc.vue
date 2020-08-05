@@ -31,6 +31,8 @@ export default {
 <style lang="stylus" scoped>
 .Toc
   user-select none
+  @media (max-width $smallestWidth)
+    display none
 
 .inner
   padding 0.5rem 1rem

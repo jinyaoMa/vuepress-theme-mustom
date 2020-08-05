@@ -98,6 +98,8 @@ export default {
   overflow visible
   zIndex(32)
   transition transform 0.233s
+  @media (max-width $smallestWidth)
+    display none
 
 .bar
   display grid

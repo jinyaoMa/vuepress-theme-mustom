@@ -282,6 +282,8 @@ export default {
   height 100vh
   width 100vw
   pointer-events none
+  @media (max-width $smallestWidth)
+    display none
 
 canvas
   width 100%

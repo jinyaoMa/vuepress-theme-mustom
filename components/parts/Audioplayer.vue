@@ -48,11 +48,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.caption, .minimize
-  display none
-  @media (max-width $smallestWidth)
-    display block
-
 .inner
   background var(--highlight)
 </style>

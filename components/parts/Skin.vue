@@ -50,4 +50,8 @@ export default {
       bottom 0
       padding 0.25rem
       color var(--bg)
+
+@media (max-width $smallestWidth)
+  .Skin
+    display none
 </style>
