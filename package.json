@@ -31,6 +31,7 @@
   "scripts": {
     "dev": "vuepress dev $docs",
     "build": "vuepress build $docs",
+    "deploy": "deploy.sh",
     "publish": "yarn publish"
   }
 }
