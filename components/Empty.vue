@@ -23,7 +23,7 @@ export default {
 .Empty
   background-color var(--highlight)
   background-image url('../statics/empty.png')
-  background-repeat-x no-repeat
+  background-repeat repeat-y
   background-position-x center
   min-height $emptyMinHeight
   @media (max-width $smallestWidth)

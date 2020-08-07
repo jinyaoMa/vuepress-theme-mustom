@@ -41,6 +41,7 @@
         </div>
       </div>
     </div>
+    <Notification ref="notification" />
   </div>
 </template>
 
@@ -145,6 +146,24 @@ export default {
       document.addEventListener("scroll", this.onScroll);
       window.setTimeout((o) => {
         this.onResize();
+        if (
+          this.$themeConfig.notification &&
+          this.$themeConfig.notification.length
+        ) {
+          const looper = (i) => {
+            if (i < this.$themeConfig.notification.length) {
+              this.$refs.notification.showNotification(
+                this.$themeConfig.notification[i].type,
+                this.$themeConfig.notification[i].msg[this.mustom$LangIndex],
+                () => {
+                  i += 1;
+                  looper(i);
+                }
+              );
+            }
+          };
+          looper(0);
+        }
       }, 600);
       this.$refs.translate.$el.addEventListener(
         "mousedown",
