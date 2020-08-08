@@ -57,8 +57,8 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       { // welcome msg
         type: 'default',
         msg: [
-          '欢迎来到我的个人网站！技术交流请加 QQ 群：595614161，也可以加本人QQ：907881445，或者点击页面左下角扫码找我哦~', // zh
-          'Welcome to my personal website! ' // en
+          '<strong>欢迎来到我的个人网站！技术交流请加 QQ 群：595614161，也可以加本人QQ：907881445，或者点击页面左下角扫码找我哦~<strong>', // zh
+          '<strong>Welcome to my personal website! <strong>' // en
         ]
       },
     ],

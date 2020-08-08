@@ -25,9 +25,12 @@
 <script>
 export default {
   name: "Settigns",
+  mounted() {
+    this.mustom$NoCanvas && document.documentElement.classList.add('NO_LIVE2D');
+  },
   computed: {
     isChecked() {
-      return function(name) {
+      return function (name) {
         switch (name) {
           case "nightshift":
             return this.mustom$IsNight;
@@ -37,7 +40,7 @@ export default {
             return /^en-/i.test(this.mustom$Lang);
         }
       };
-    }
+    },
   },
   methods: {
     doSetting(name) {
@@ -47,9 +50,9 @@ export default {
           break;
         case "nocanvas":
           if (this.mustom$NoCanvas) {
-            this.$root.$el.classList.remove('NO_CANVAS');
+            document.documentElement.classList.remove("NO_LIVE2D");
           } else {
-            this.$root.$el.classList.add('NO_CANVAS');
+            document.documentElement.classList.add("NO_LIVE2D");
           }
           this.mustom$ToggleCanvas();
           break;
@@ -57,8 +60,8 @@ export default {
           this.mustom$SwapLang();
           break;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -119,11 +122,4 @@ export default {
 
 .hide
   display none
-</style>
-
-<style lang="stylus">
-#app.NO_CANVAS
-  #live2d-widget
-    opacity 0 !important
-    transition opacity 0.6s
 </style>
