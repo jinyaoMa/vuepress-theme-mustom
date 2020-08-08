@@ -25,6 +25,9 @@
             <div v-html="item.locale[mustom$LangIndex]"></div>
           </div>
         </div>
+        <div class="close" @click="clearCurrent">
+          <i class="fas fa-times"></i>
+        </div>
       </div>
     </transition>
   </div>
@@ -37,6 +40,11 @@ export default {
     return {
       current: "",
     };
+  },
+  mounted() {
+    if (!this.mustom$IsMobile) {
+      this.current = "ad";
+    }
   },
   methods: {
     setCurrent(name) {
@@ -53,6 +61,9 @@ export default {
           this.current = "";
       }
     },
+    clearCurrent() {
+      this.current = "";
+    }
   },
 };
 </script>
@@ -91,6 +102,7 @@ export default {
   border-radius $borderRadius
   background white
   overflow hidden
+  box-shadow 0 0 1px
   @media (max-width $smallestWidth)
     display none
 
@@ -116,9 +128,24 @@ export default {
   text-align center
   > div
     margin 1rem
+    margin-bottom 0.75rem
     line-height 1
     &:last-child
       margin-left 0
     &:hover > div
       animation shake 0.1s linear infinite
+
+.close
+  position absolute
+  top 0
+  right 0
+  line-height 1rem
+  font-size 0.7rem
+  width 1.5rem
+  text-align center
+  background var(--link)
+  color white
+  cursor pointer
+  overflow hidden
+  border-radius 0 $borderRadius 0 $borderRadius
 </style>

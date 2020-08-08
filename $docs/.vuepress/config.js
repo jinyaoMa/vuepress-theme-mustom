@@ -47,18 +47,18 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     // startup notification; priority => index 0 = highest
     // type: 'default', 'warning', 'error'
     notification: [
-      {
-        type: 'warning',
-        msg: [
-          '<strong>我的旧 Hexo 版网站已经搬迁至 <a target="_blank" href="https://blog.ma-jinyao.cn">https://blog.ma-jinyao.cn</a> ！</strong>', // zh
-          '<strong>If you are looking for the Hexo version of my site, <a target="_blank" href="https://blog.ma-jinyao.cn">click here</a> ！</strong>' // en
-        ]
-      },
       { // welcome msg
         type: 'default',
         msg: [
           '<strong>欢迎来到我的个人网站！技术交流请加 QQ 群：595614161，也可以加本人QQ：907881445，或者点击页面左下角扫码找我哦~<strong>', // zh
           '<strong>Welcome to my personal website! <strong>' // en
+        ]
+      },
+      {
+        type: 'warning',
+        msg: [
+          '<strong>我的旧 Hexo 版网站已经搬迁至 <a target="_blank" href="https://blog.ma-jinyao.cn">https://blog.ma-jinyao.cn</a> ！</strong>', // zh
+          '<strong>If you are looking for the Hexo version of my site, <a target="_blank" href="https://blog.ma-jinyao.cn">click here</a> ！</strong>' // en
         ]
       },
     ],
