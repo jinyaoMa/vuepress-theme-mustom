@@ -111,7 +111,7 @@ export default {
   animation appear 0.6s
 
 .ad
-  width s('calc(50vw - %s)', $headerHeight)
+  max-width s('calc(50vw - %s)', $headerHeight)
   min-width $realSmallestWidth
   img
     display block

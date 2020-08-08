@@ -35,6 +35,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       records: '/assets/img/records.png',
     },
     customBackgrounds: [
+      '/assets/img/background.png'
       //'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596065328389&di=ad7a9cc49e45547721005bd528325f0d&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2%2F58b4ef69ed377.jpg',
       //'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
     ],
@@ -200,7 +201,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       }*/],
       type: 'i' // https://developer.hitokoto.cn/sentence/#请求参数
     },
-    gallery: [/*{ format; these gallery items will be appended to public/gallery/
+    gallery: [/*{ format; these gallery items will be appended to /gallery/ page
       name: 'test image from baidu',
       url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
     }*/],
@@ -212,9 +213,9 @@ module.exports = { // https://www.vuepress.cn/zh/config/
   head: [ // Include pwa settings, https://www.vuepress.cn/plugin/official/plugin-pwa.html
     ['link', { rel: 'icon', href: '/favicon.ico', type: "image/x-icon" }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: 'white' }],
+    ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#000000' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#ffffff' }],
     ['link', { rel: 'apple-touch-icon', href: '/assets/img/apple-touch-icon.png' }],
 
     // Search engine verify

@@ -1,7 +1,7 @@
 <template>
   <div
     :class="`GlobalLayout ${extraClass}`"
-    :style="mustom$Skin === 'default' && !mustom$IsNight ? { backgroundImage: `url('${backgroundImage}')` } : {}"
+    :style="mustom$Skin === 'default' && !mustom$IsNight ? backgroundImage : {}"
   >
     <transition name="fade">
       <Canvas v-if="mustom$Skin === 'default' && !mustom$IsMobile && !mustom$NoCanvas" />
@@ -102,10 +102,17 @@ export default {
       return "NotFound";
     },
     backgroundImage() {
-      return this.$themeConfig.customBackgrounds &&
+      if (
+        this.$themeConfig.customBackgrounds &&
         this.$themeConfig.customBackgrounds.length
-        ? this.$themeConfig.customBackgrounds[this.backgroundImageIndex]
-        : "#";
+      ) {
+        return {
+          backgroundImage: `url('${
+            this.$withBase(this.$themeConfig.customBackgrounds[this.backgroundImageIndex])
+          }')`,
+        };
+      }
+      return {};
     },
     extraClass() {
       let c = `skin-${this.mustom$Skin}`;
