@@ -206,7 +206,18 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
     }*/],
     pwa: { // https://www.vuepress.cn/plugin/official/plugin-pwa.html
-      serviceWorker: true
+      serviceWorker: true,
+      popupComponent: 'CustomSWUpdatePopup',
+      updatePopup: {
+        message: [
+          '检测到可用的新内容。', // zh
+          'New content is available.' // en
+        ],
+        buttonText: [
+          '更新缓存', // zh
+          'Refresh' // en
+        ]
+      }
     }
   },
 
