@@ -13,7 +13,7 @@ export default savedata => {
       },
     },
     mutations: {
-      setAddin(state, name) {
+      setAddin(state, { name, callback }) {
         const ad = "ad";
         const qrcode = "qrcode";
         switch (name) {
@@ -26,6 +26,7 @@ export default savedata => {
           default:
             state.addin = "";
         }
+        typeof callback === 'function' && callback(state.addin);
         savedata.__set__('addin', state.addin);
       }
     },

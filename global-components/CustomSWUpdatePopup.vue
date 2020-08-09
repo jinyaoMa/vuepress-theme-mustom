@@ -3,7 +3,7 @@
     <div v-if="enabled" class="my-sw-update-popup">
       <div class="msg" v-html="message[mustom$LangIndex]"></div>
       <div>
-        <button @click="reload">{{ buttonText[mustom$LangIndex] }}</button>
+        <span class="btn" @click="reload">{{ buttonText[mustom$LangIndex] }}</span>
       </div>
     </div>
   </SWUpdatePopup>
@@ -26,7 +26,6 @@ export default {
   width 100%
   line-height 1
   padding 1.25rem
-  border-radius $borderRadius $borderRadius 0 0
   color #ffffff
   background #3eaf7c
   display flex
@@ -37,11 +36,14 @@ export default {
 .msg
   margin-right 1.25rem
 
-button
+.btn
+  display inline-block
   border none
   padding 0.5rem
   margin -0.5rem
   border-radius $borderRadius
   cursor pointer
   white-space nowrap
+  background #dddddd
+  color #000000
 </style>
