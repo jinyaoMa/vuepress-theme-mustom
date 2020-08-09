@@ -1,31 +1,34 @@
 <template>
   <div class="Addin">
     <div
-      :class="`top ${current === 'ad' ? 'current' : ''}`"
-      @click="setCurrent('ad')"
+      :class="`top ${mustom$Addin === 'ad' ? 'current' : ''}`"
+      @click="mustom$SetAddin('ad')"
       v-if="!!$themeConfig.images.ad"
     >
       <i class="fas fa-ad"></i>
     </div>
     <div
-      :class="`bottom ${current === 'qrcode' ? 'current' : ''}`"
-      @click="setCurrent('qrcode')"
+      :class="`bottom ${mustom$Addin === 'qrcode' ? 'current' : ''}`"
+      @click="mustom$SetAddin('qrcode')"
       v-if="$themeConfig.qrcodes && $themeConfig.qrcodes.length"
     >
       <i class="fas fa-qrcode"></i>
     </div>
     <transition name="fade">
-      <div class="floating" v-if="current !== ''">
-        <div class="ad" v-if="current === 'ad' && !!$themeConfig.images.ad">
+      <div class="floating" v-if="mustom$Addin !== ''">
+        <div class="ad" v-if="mustom$Addin === 'ad' && !!$themeConfig.images.ad">
           <img :src="$withBase($themeConfig.images.ad)" />
         </div>
-        <div class="qrcode" v-if="current === 'qrcode' && ($themeConfig.qrcodes instanceof Array)">
+        <div
+          class="qrcode"
+          v-if="mustom$Addin === 'qrcode' && ($themeConfig.qrcodes instanceof Array)"
+        >
           <div v-for="(item, i) in $themeConfig.qrcodes" :key="i">
             <img :src="$withBase(item.path)" />
             <div v-html="item.locale[mustom$LangIndex]"></div>
           </div>
         </div>
-        <div class="close" @click="clearCurrent">
+        <div class="close" @click="resetAddin">
           <i class="fas fa-times"></i>
         </div>
       </div>
@@ -36,34 +39,15 @@
 <script>
 export default {
   name: "Addin",
-  data() {
-    return {
-      current: "",
-    };
-  },
   mounted() {
-    if (!this.mustom$IsMobile) {
-      this.current = "ad";
+    if (!this.mustom$IsMobile && this.mustom$FirstTimeAddin) {
+      this.mustom$SetAddin("ad");
     }
   },
   methods: {
-    setCurrent(name) {
-      const ad = "ad";
-      const qrcode = "qrcode";
-      switch (name) {
-        case ad:
-          this.current = this.current === ad ? "" : ad;
-          break;
-        case qrcode:
-          this.current = this.current === qrcode ? "" : qrcode;
-          break;
-        default:
-          this.current = "";
-      }
+    resetAddin() {
+      this.mustom$SetAddin("ad");
     },
-    clearCurrent() {
-      this.current = "";
-    }
   },
 };
 </script>

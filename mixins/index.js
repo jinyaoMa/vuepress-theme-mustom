@@ -28,7 +28,8 @@ export default (_, Vuex) => {
         mustom$ToggleCanvas: 'toggleCanvas',
         mustom$TriggerResizeIncrement: 'triggerResizeIncrement',
         mustom$SetSpin: 'setSpin',
-        mustom$ToggleReadmode: 'toggleReadmode'
+        mustom$ToggleReadmode: 'toggleReadmode',
+        mustom$SetAddin: 'setAddin'
       }),
       mustom$Scroll2Top() {
         if (typeof window === 'undefined') return;
@@ -113,7 +114,9 @@ export default (_, Vuex) => {
         mustom$NoCanvas: 'noCanvas',
         mustom$TriggerResize: 'triggerResize',
         mustom$IsSpinning: 'isSpinning',
-        mustom$Readmode: 'readmode'
+        mustom$Readmode: 'readmode',
+        mustom$Addin: 'addin',
+        mustom$FirstTimeAddin: 'firstTimeAddin'
       }),
       mustom$LangIndex() {
         return /^zh-/i.test(this.mustom$Lang) ? 0 : 1;

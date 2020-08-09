@@ -7,6 +7,7 @@ import ext from "./ext";
 import trigger from "./trigger";
 import spin from "./spin";
 import readmode from "./readmode";
+import addin from "./addin";
 
 const savedata = _storage.get() || {};
 savedata.__set__ = (key, value) => {
@@ -30,5 +31,5 @@ const combine = (...stores) => {
 export default Vuex => {
   return new Vuex.Store(combine({
     state: {}
-  }, lang(savedata), skin(savedata), nightshift(savedata), canvas(savedata), ext, trigger, spin, readmode)); // Add-in here
+  }, lang(savedata), skin(savedata), nightshift(savedata), canvas(savedata), addin(savedata), ext, trigger, spin, readmode)); // Add-in here
 }
