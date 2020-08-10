@@ -18,9 +18,13 @@ Language:
 - [中文](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.zh.md)
 - [English](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.md)
 
+> **If you still feel confused after reading this documentation, please read and learn how my `$docs` is structured [here](./$docs), or welcome to ask me questions via Github Issues.**
+
+> **Any Bug reports or suggestions can be posted into Github Issues in any format.**
+
 # Installation
 
-Create a folder with structure as below, and for detailed source folder structure `$docs`, see [\$docs](./$docs).
+Create a folder with structure as below, and for detailed source folder structure `$docs`, see [\$docs](./$docs). `_posts` folder refers to [\$docs/_posts](./$docs/_posts).
 
 ```yml
 # inside the new folder of your site
@@ -426,7 +430,7 @@ hitokoto: {
 
 ### gallery
 
-You can add online images to gallery page, and they will be inserted to very top of the page and following by your local images that are auto appended.
+You can add online images to gallery page, and they will be inserted to very top of the page and following by your local images that are auto appended. Local images are located at `/$docs/.vuepress/public/gallery`. To see mine, click [here](./$docs/.vuepress/public/gallery).
 
 ```js
 gallery: [/*{ format; these gallery items will be appended to /gallery/ page
@@ -436,6 +440,10 @@ gallery: [/*{ format; these gallery items will be appended to /gallery/ page
 ```
 
 ### pwa
+
+> `message` and `buttonText` strings should be in current sequence/index. 0 => `zh`, 1 => `en`
+
+`message` and `buttonText` contain both string in `zh` and `en`.
 
 `popupComponent` is set to the custom component in theme source code. If you don't like the update popup, you can set `updatePopup` to `false`. Or if you don't want to use service worker, you can set both `serviceWorker` and `updatePopup` to `false`.
 
