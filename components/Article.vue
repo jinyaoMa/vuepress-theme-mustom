@@ -134,6 +134,9 @@ export default {
       this.fixMargin();
     }
   },
+  beforeDestroy() {
+    this.mustom$CloseReadmode();
+  },
   computed: {
     min2Read() {
       return function (min) {

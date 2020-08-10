@@ -29,6 +29,7 @@ export default (_, Vuex) => {
         mustom$TriggerResizeIncrement: 'triggerResizeIncrement',
         mustom$SetSpin: 'setSpin',
         mustom$ToggleReadmode: 'toggleReadmode',
+        mustom$CloseReadmode: 'closeReadmode',
         mustom$SetAddin: 'setAddin'
       }),
       mustom$Scroll2Top() {
@@ -87,7 +88,8 @@ export default (_, Vuex) => {
       },
       mustom$ToggleMinimize(e) {
         if (typeof window === 'undefined') return;
-        const parent = e.path[1]; // .card
+        const path = event.path || (event.composedPath && event.composedPath());
+        const parent = path[1]; // .card
         if (parent.classList.contains('mini')) {
           parent.classList.remove('mini');
           window.setTimeout(o => {
