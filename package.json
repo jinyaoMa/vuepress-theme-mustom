@@ -11,9 +11,6 @@
   "main": "index.js",
   "license": "MIT",
   "repository": "git@github.com:jinyaoMa/vuepress-theme-mustom.git",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "@vuepress/plugin-blog": "^1.9.2",
@@ -41,8 +38,6 @@
     "dev": "vuepress dev $docs",
     "build": "vuepress build $docs",
     "deploy": "deploy.sh",
-    "login:npm": "npm login --registry=https://registry.npmjs.org/",
-    "login:github": "npm login --registry=https://npm.pkg.github.com/",
     "adduser": "npm adduser",
     "publish": "npm publish"
   }
