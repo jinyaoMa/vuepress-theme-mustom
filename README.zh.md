@@ -15,8 +15,8 @@ Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Person
 ![preview](./$screenshots/preview.jpg)
 
 文档语言:
-- [中文](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.zh.md)
-- [English](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.md)
+- [中文](./README.zh.md)
+- [English](./README.md)
 
 > **当你看完本文档之后，如果还是感觉不会不清楚，请仔细研究我 [\$docs](./$docs) 的目录结构，或者也可以在 Github Issues 里面放出你的问题，我有空就回复。最好是加 QQ 群：595614161。**
 
