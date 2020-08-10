@@ -1,24 +1,28 @@
 <h1 align="center">Mustom</h1>
 
-<p align="center">
+<div align="center">
 
 Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Personal Website (QQ Group: 595614161)
 
-</p>
+</div>
 
-<p align="center">
+<div align="center">
 
 ![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square) ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/jinyaoMa/vuepress-theme-mustom?style=flat-square) ![License](https://img.shields.io/github/license/jinyaoMa/vuepress-theme-mustom?style=flat-square)
 
-</p>
+</div>
 
 ![preview](./$screenshots/preview.jpg)
 
-## Installation
+Language:
+- [中文](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.zh.md)
+- [English](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.md)
+
+# Installation
 
 Create a folder with structure as below, and for detailed source folder structure `$docs`, see [\$docs](./$docs).
 
-```md
+```yml
 # inside the new folder of your site
 
 + $docs # folder contains source of your site
@@ -47,7 +51,7 @@ or manually download the clone `.zip` file [here](https://github.com/jinyaoMa/vu
 theme: require.resolve('../../vuepress-theme-mustom-master/')
 ```
 
-## Explanation of `_secret.tpl.js`
+# Explanation of `_secret.tpl.js`
 
 To see how my `_secret.tpl.js` looks like, click [here](./$docs/.vuepress/_secret.tpl.js).
 
@@ -68,11 +72,11 @@ module.exports = { // https://www.vuepress.cn/zh/config/
 }
 ```
 
-## Explanation of `config.js`
+# Explanation of `config.js`
 
 To see how my `config.js` looks like, click [here](./$docs/.vuepress/config.js).
 
-### General VuePress Settings
+## General VuePress Settings
 
 ```js
 module.exports = { // https://www.vuepress.cn/zh/config/
@@ -130,7 +134,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
 }
 ```
 
-### Configuration of `themeConfig`
+## Configuration of `themeConfig`
 
 > All of following attributes are inside `themeConfig` of `config.js`
 
@@ -150,14 +154,14 @@ images: { // for image replacment; no base needed; first layer key points to com
 },
 ```
 
-#### domain
+### domain
 
 This attribute is for sitemap generation **ONLY**.
 
 - My value: `'https://ma-jinyao.cn'`
 - Your Value: `'https://yourdomain.com/'`
 
-#### clustrmaps
+### clustrmaps
 
 ![clustrmaps](./$screenshots/clustrmaps.jpg)
 
@@ -170,7 +174,7 @@ clustrmaps: {
 },
 ```
 
-#### customBackgrounds
+### customBackgrounds
 
 This attribute is for adding background images to the site under `skin-default`. If there are multiple images, they will be in slide show. You can have value looking like the below.
 
@@ -182,7 +186,7 @@ customBackgrounds: [
 ],
 ```
 
-#### socialShare
+### socialShare
 
 ![socialShare](./$screenshots/socialShare.jpg)
 
@@ -197,7 +201,7 @@ socialShare: { // https://sns.goyfe.com/guide/
 },
 ```
 
-#### notification
+### notification
 
 ![notification](./$screenshots/notification.jpg)
 
@@ -217,7 +221,7 @@ notification: [
 ],
 ```
 
-#### qrcodes
+### qrcodes
 
 ![qrcodes](./$screenshots/qrcodes.jpg)
 
@@ -241,7 +245,7 @@ qrcodes: [{ // qrcode for contact and friending
 }],
 ```
 
-#### header
+### header
 
 ![header](./$screenshots/header.jpg)
 
@@ -258,7 +262,7 @@ header: {
 },
 ```
 
-#### brand
+### brand
 
 ![brand](./$screenshots/brand.jpg)
 
@@ -288,7 +292,7 @@ brand: {
 },
 ```
 
-#### menus
+### menus
 
 You can erase some of the items. This attribute isn't necessary to be edited if you have the same structure as my [\$docs](./$docs). Here, the significant part is `text` under `items`. These values are keys matching the locale string in folder `locales` of the theme source, which means you need to edit the theme source code.
 
@@ -344,7 +348,7 @@ menus: [{
 }],
 ```
 
-#### meting
+### meting
 
 ![meting](./$screenshots/meting.jpg)
 
@@ -360,7 +364,7 @@ meting: {
 },
 ```
 
-#### portals
+### portals
 
 ![portals](./$screenshots/portals.jpg)
 
@@ -406,7 +410,7 @@ portals: [{
 }],
 ```
 
-#### hitokoto
+### hitokoto
 
 You can put your words to `customs` for displaying, and these words are randomly picked on home page loaded. `type` is for hitokoto service setting referred to [developer.hitokoto.cn](https://developer.hitokoto.cn/sentence/#请求参数)
 
@@ -420,7 +424,7 @@ hitokoto: {
 },
 ```
 
-#### gallery
+### gallery
 
 You can add online images to gallery page, and they will be inserted to very top of the page and following by your local images that are auto appended.
 
@@ -431,7 +435,7 @@ gallery: [/*{ format; these gallery items will be appended to /gallery/ page
 }*/],
 ```
 
-#### pwa
+### pwa
 
 `popupComponent` is set to the custom component in theme source code. If you don't like the update popup, you can set `updatePopup` to `false`. Or if you don't want to use service worker, you can set both `serviceWorker` and `updatePopup` to `false`.
 
