@@ -49,6 +49,20 @@ yarn add vuepress-theme-mustom -D
 npm i vuepress-theme-mustom -D
 ```
 
+安装成功后，使用以下命令运行到 `localhost`。
+
+```bash
+vuepress dev \$docs
+```
+
+或者生成到 `$docs/.vuepress/dist`
+
+```bash
+vuepress build \$docs
+```
+
+> 注意：上面命令里的反斜杠（“\\”）属于转义符，用于在命令行或终端里对特殊符号进行转义。
+
 或点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/archive/master.zip) 手动下载并解压主题文件夹到上一步的新建文件夹。接着对照下方代码设置 `config.js` 中属性 `theme`。
 
 ```js

@@ -55,6 +55,20 @@ or manually download the clone `.zip` file [here](https://github.com/jinyaoMa/vu
 theme: require.resolve('../../vuepress-theme-mustom-master/')
 ```
 
+After installation succeeded, your site should be run on `localhost` using the command below.
+
+```bash
+vuepress dev \$docs
+```
+
+or built into `$docs/.vuepress/dist`
+
+```bash
+vuepress build \$docs
+```
+
+> Note: The backward slash ("\\") above is an escape character here while typing commands in command line or terminal.
+
 # Explanation of `_secret.tpl.js`
 
 To see how my `_secret.tpl.js` looks like, click [here](./$docs/.vuepress/_secret.tpl.js).
