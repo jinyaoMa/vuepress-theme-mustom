@@ -29,25 +29,6 @@ module.exports = { // placeholder [::]
     tagCount: '标签计数'
   },
 
-  menus: {
-    captions: {
-      main: '本站',
-      job: '工作',
-      others: '其他'
-    },
-    texts: {
-      home: '首页',
-      archive: '归档',
-      about: '关于',
-      resume: '简历小贴士',
-      letter: '求职信小贴士',
-      codes: '代码库',
-      icons: '图标字体库',
-      records: '记录',
-      gallery: '图库'
-    }
-  },
-
   skins: {
     caption: '皮肤',
     names: {

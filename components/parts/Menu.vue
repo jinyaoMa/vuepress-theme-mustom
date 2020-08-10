@@ -3,12 +3,12 @@
     <div class="card" v-for="(menu, i) in $themeConfig.menus" :key="i">
       <div class="caption">
         <span class="icon" v-html="menu.icon"></span>
-        <span v-html="mustom$Locale.menus.captions[menu.caption]"></span>
+        <span v-html="menu.caption[mustom$LangIndex]"></span>
       </div>
       <div class="inner">
         <router-link v-for="(item, j) in menu.items" :key="j" :to="item.link">
           <span class="icon" v-html="item.icon"></span>
-          <span v-html="mustom$Locale.menus.texts[item.text]"></span>
+          <span v-html="item.text[mustom$LangIndex]"></span>
         </router-link>
       </div>
       <div class="minimize" @click="mustom$ToggleMinimize"></div>

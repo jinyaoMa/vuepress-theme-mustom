@@ -102,51 +102,87 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       }]
     },
     menus: [{
-      caption: 'main', // locale match
+      caption: [
+        '本站', // zh
+        'MAIN' // en
+      ],
       icon: '<i class="fas fa-sitemap fa-fw"></i>',
       items: [{
         icon: '<i class="fas fa-home fa-fw"></i>',
-        text: 'home', // locale match
+        text: [
+          '首页', // zh
+          'Home' // en
+        ],
         link: '/'
       }, {
         icon: '<i class="fas fa-archive fa-fw"></i>',
-        text: 'archive', // locale match
+        text: [
+          '归档', // zh
+          'Archive' // en
+        ],
         link: '/archive/'
       }, {
         icon: '<i class="fas fa-user fa-fw"></i>',
-        text: 'about', // locale match
+        text: [
+          '关于', // zh
+          'About' // en
+        ],
         link: '/about/'
       }]
     }, {
-      caption: 'job', // locale match
+      caption: [
+        '工作', // zh
+        'JOB RELATED' // en
+      ],
       icon: '<i class="fas fa-briefcase fa-fw"></i>',
       items: [{
         icon: '<i class="fas fa-paper-plane fa-fw"></i>',
-        text: 'resume', // locale match
+        text: [
+          '简历小贴士', // zh
+          'Resume Tips' // en
+        ],
         link: '/resume/'
       }, {
         icon: '<i class="fas fa-file-contract fa-fw"></i>',
-        text: 'letter', // locale match
+        text: [
+          '求职信小贴士', // zh
+          'Cover Letter Tips' // en
+        ],
         link: '/letter/'
       }]
     }, {
-      caption: 'others', // locale match
+      caption: [
+        '其他', // zh
+        'OTHERS' // en
+      ],
       icon: '<i class="fas fa-ellipsis-h fa-fw"></i>',
       items: [{
         icon: '<i class="fas fa-box fa-fw"></i>',
-        text: 'codes', // locale match
+        text: [
+          '代码库', // zh
+          'Code Library' // en
+        ],
         link: '/codes/'
       }, {
         icon: '<i class="fas fa-icons fa-fw"></i>',
-        text: 'icons', // locale match
+        text: [
+          '图标字体库', // zh
+          'Icon Font Library' // en
+        ],
         link: '/icons/'
       }, {
         icon: '<i class="fas fa-edit fa-fw"></i>',
-        text: 'records', // locale match
+        text: [
+          '记录', // zh
+          'Records' // en
+        ],
         link: '/records/'
       }, {
         icon: '<i class="fas fa-images fa-fw"></i>',
-        text: 'gallery', // locale match
+        text: [
+          '图库', // zh
+          'Gallery' // en
+        ],
         link: '/gallery/'
       }]
     }],

@@ -302,55 +302,112 @@ brand: {
 
 ### menus
 
-你可以删除某些链接。如果你有一个跟我一样的 [\$docs](./$docs) 目录结构，那这个属性不必要改。重要的部分是 `items` 下的 `text`。它是跟语言文件里的字符串对应的，所以想要改链接名称就必须，在主题资源文件夹中，对 `locales` 文件夹里的语言文件做改动。
+> `caption` 和 `text` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
+
+`caption` 和 `text` 必需按顺序存放中英文的字符串。
+
+你可以删除某些链接。如果你有一个跟我一样的 [\$docs](./$docs) 目录结构，那这个属性不必要改。
+
+```yml
+# 在创建的新文件夹里
+
++ $docs # 放网站资源
+  - _posts # 放文章资源，自动生成“主页”和“归档”页面
+  - .vuepress # 放静态资源和配置
+  - about # “关于”页面
+  - codes # “代码库”页面
+  - icons # “图标字体库”页面
+  - letter # “求职信小贴士”页面
+  - records # “记录”页面
+  - resume # “简历小贴士”页面
+  # “图库”页面为自动生成
+```
+
+以下代码对应以上目录结构。
 
 ```js
 menus: [{
-  caption: 'main', // locale match
+  caption: [
+    '本站', // zh
+    'MAIN' // en
+  ],
   icon: '<i class="fas fa-sitemap fa-fw"></i>',
   items: [{
     icon: '<i class="fas fa-home fa-fw"></i>',
-    text: 'home', // locale match
+    text: [
+      '首页', // zh
+      'Home' // en
+    ],
     link: '/'
   }, {
     icon: '<i class="fas fa-archive fa-fw"></i>',
-    text: 'archive', // locale match
+    text: [
+      '归档', // zh
+      'Archive' // en
+    ],
     link: '/archive/'
   }, {
     icon: '<i class="fas fa-user fa-fw"></i>',
-    text: 'about', // locale match
+    text: [
+      '关于', // zh
+      'About' // en
+    ],
     link: '/about/'
   }]
 }, {
-  caption: 'job', // locale match
+  caption: [
+    '工作', // zh
+    'JOB RELATED' // en
+  ],
   icon: '<i class="fas fa-briefcase fa-fw"></i>',
   items: [{
     icon: '<i class="fas fa-paper-plane fa-fw"></i>',
-    text: 'resume', // locale match
+    text: [
+      '简历小贴士', // zh
+      'Resume Tips' // en
+    ],
     link: '/resume/'
   }, {
     icon: '<i class="fas fa-file-contract fa-fw"></i>',
-    text: 'letter', // locale match
+    text: [
+      '求职信小贴士', // zh
+      'Cover Letter Tips' // en
+    ],
     link: '/letter/'
   }]
 }, {
-  caption: 'others', // locale match
+  caption: [
+    '其他', // zh
+    'OTHERS' // en
+  ],
   icon: '<i class="fas fa-ellipsis-h fa-fw"></i>',
   items: [{
     icon: '<i class="fas fa-box fa-fw"></i>',
-    text: 'codes', // locale match
+    text: [
+      '代码库', // zh
+      'Code Library' // en
+    ],
     link: '/codes/'
   }, {
     icon: '<i class="fas fa-icons fa-fw"></i>',
-    text: 'icons', // locale match
+    text: [
+      '图标字体库', // zh
+      'Icon Font Library' // en
+    ],
     link: '/icons/'
   }, {
     icon: '<i class="fas fa-edit fa-fw"></i>',
-    text: 'records', // locale match
+    text: [
+      '记录', // zh
+      'Records' // en
+    ],
     link: '/records/'
   }, {
     icon: '<i class="fas fa-images fa-fw"></i>',
-    text: 'gallery', // locale match
+    text: [
+      '图库', // zh
+      'Gallery' // en
+    ],
     link: '/gallery/'
   }]
 }],
@@ -468,4 +525,99 @@ pwa: { // https://www.vuepress.cn/plugin/official/plugin-pwa.html
     ]
   }
 }
+```
+
+## 文章 Front-Matter
+
+> `categories` 和 `tags` 必须只有一层，即一维数组。本主题**不支持**分类标签使用多维数组。
+
+每篇文章都需要有跟以下结构相似的 front-matter。
+
+```yml
+---
+title: 'Post Title'
+categories: # flat, ONLY ONE layer acceptable
+  - cate1
+  - cate2
+tags: # flat, ONLY ONE layer acceptable
+  - tag1
+  - tag2
+date: 2020-12-12 00:00:00
+updated: 2020-12-12 00:00:00
+---
+```
+
+## 普通页面 Front-Matter
+
+从我的“关于”页面找的例子，或者查看原 `index.md` 文件可以点 [这里](./$docs/about/index.md)。
+
+```yml
+---
+title: 关于 | About
+---
+```
+
+### 想要做和我的“记录”页面相似的页面？
+
+根据以下格式写代码，或者查看我的“记录”页面原 `index.md` 文件可以点 [这里](./$docs/records/index.md)。
+
+```yml
+---
+title: # page title
+records:
+  enabled: true # set this to true to enable Records component
+  items:
+    - cover: # [empty] to use default cover
+      date: # string
+      title:
+      # e.g. [empty]
+      # e.g. book / article / paper / newspaper / report / picture / anime / video / movie / audio / project / website
+      # e.g. [customized] --> "Journal"
+      type:
+      author:
+      source:
+      # format 'number/total' OR '100%' OR [customized]; [empty] to use 'N/A', NO DECIMAL POINT ALLOW
+      # e.g. 12 / 34 ; 32/52 ; 22% ; 88% ; "Latest" ; "Complete"
+      progress:
+      summary:
+---
+```
+
+### 想要做和我的“代码库”页面相似的页面？
+
+> 代码库在 Github 仓库中的结构可以参考 [jinyaoMa/code-lib](https://github.com/jinyaoMa/code-lib)
+
+根据以下格式写代码，或者查看我的“代码库”页面原 `index.md` 文件可以点 [这里](./$docs/codes/index.md)。
+
+```yml
+---
+title: # page title
+github:
+  user: # Github username
+  repo: # Github repo
+  readme:
+    enabled: true # set this to true to enable Readme component
+  stack:
+    enabled: true # set this to true to enable Stack component
+---
+```
+
+### 想要做和我的“图标字体库”页面相似的页面？
+
+> 图标字体库在 Github 仓库中的结构可以参考 [jinyaoMa/icon-lib](https://github.com/jinyaoMa/icon-lib)
+
+根据以下格式写代码，或者查看我的“图标字体库”页面原 `index.md` 文件可以点 [这里](./$docs/icons/index.md)。
+
+```yml
+---
+title: # page title
+github:
+  user: # Github username
+  repo: # Github repo
+  readme:
+    enabled: true # set this to true to enable Readme component
+  iframe:
+    enabled: true # set this to true to enable Iframe component
+    url: https://blog.ma-jinyao.cn/icon-lib/ # subpage should be in same-origin
+---
 ```

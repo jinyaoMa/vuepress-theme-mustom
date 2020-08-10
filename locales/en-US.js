@@ -29,27 +29,6 @@ module.exports = {
     tagCount: 'Count of Tags'
   },
 
-  menus: {
-    captions: {
-      main: 'MAIN',
-      job: 'JOB RELATED',
-      others: 'OTHERS'
-    },
-    texts: {
-      home: 'Home',
-      archive: 'Archive',
-      category: 'Category',
-      tag: 'Tag',
-      about: 'About',
-      resume: 'Resume Tips',
-      letter: 'Cover Letter Tips',
-      codes: 'Code Library',
-      icons: 'Icon Font Library',
-      records: 'Records',
-      gallery: 'Gallery'
-    }
-  },
-
   skins: {
     caption: 'SKIN',
     names: {

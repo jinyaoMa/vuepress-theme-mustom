@@ -298,55 +298,112 @@ brand: {
 
 ### menus
 
-You can erase some of the items. This attribute isn't necessary to be edited if you have the same structure as my [\$docs](./$docs). Here, the significant part is `text` under `items`. These values are keys matching the locale string in folder `locales` of the theme source, which means you need to edit the theme source code.
+> `caption` and `text` strings should be in current sequence/index. 0 => `zh`, 1 => `en`
+
+`caption` and `text` contain both string in `zh` and `en`.
+
+You can erase some of the items. This attribute isn't necessary to be edited if you have the same structure as my [\$docs](./$docs).
+
+```yml
+# inside the new folder of your site
+
++ $docs # folder contains source of your site
+  - _posts # folder contains posts, 'Home' and 'Archive' pages are auto-generated
+  - .vuepress # folder contains static source and config
+  - about # 'About' page
+  - codes # 'Code Library' page
+  - icons # 'Icon Font Library' page
+  - letter # 'Cover Letter Tips' page
+  - records # 'Records' page
+  - resume # 'Resume Tips' page
+  # 'Gallery' page is auto-generated
+```
+
+The following example matches the structure of above.
 
 ```js
 menus: [{
-  caption: 'main', // locale match
+  caption: [
+    '本站', // zh
+    'MAIN' // en
+  ],
   icon: '<i class="fas fa-sitemap fa-fw"></i>',
   items: [{
     icon: '<i class="fas fa-home fa-fw"></i>',
-    text: 'home', // locale match
+    text: [
+      '首页', // zh
+      'Home' // en
+    ],
     link: '/'
   }, {
     icon: '<i class="fas fa-archive fa-fw"></i>',
-    text: 'archive', // locale match
+    text: [
+      '归档', // zh
+      'Archive' // en
+    ],
     link: '/archive/'
   }, {
     icon: '<i class="fas fa-user fa-fw"></i>',
-    text: 'about', // locale match
+    text: [
+      '关于', // zh
+      'About' // en
+    ],
     link: '/about/'
   }]
 }, {
-  caption: 'job', // locale match
+  caption: [
+    '工作', // zh
+    'JOB RELATED' // en
+  ],
   icon: '<i class="fas fa-briefcase fa-fw"></i>',
   items: [{
     icon: '<i class="fas fa-paper-plane fa-fw"></i>',
-    text: 'resume', // locale match
+    text: [
+      '简历小贴士', // zh
+      'Resume Tips' // en
+    ],
     link: '/resume/'
   }, {
     icon: '<i class="fas fa-file-contract fa-fw"></i>',
-    text: 'letter', // locale match
+    text: [
+      '求职信小贴士', // zh
+      'Cover Letter Tips' // en
+    ],
     link: '/letter/'
   }]
 }, {
-  caption: 'others', // locale match
+  caption: [
+    '其他', // zh
+    'OTHERS' // en
+  ],
   icon: '<i class="fas fa-ellipsis-h fa-fw"></i>',
   items: [{
     icon: '<i class="fas fa-box fa-fw"></i>',
-    text: 'codes', // locale match
+    text: [
+      '代码库', // zh
+      'Code Library' // en
+    ],
     link: '/codes/'
   }, {
     icon: '<i class="fas fa-icons fa-fw"></i>',
-    text: 'icons', // locale match
+    text: [
+      '图标字体库', // zh
+      'Icon Font Library' // en
+    ],
     link: '/icons/'
   }, {
     icon: '<i class="fas fa-edit fa-fw"></i>',
-    text: 'records', // locale match
+    text: [
+      '记录', // zh
+      'Records' // en
+    ],
     link: '/records/'
   }, {
     icon: '<i class="fas fa-images fa-fw"></i>',
-    text: 'gallery', // locale match
+    text: [
+      '图库', // zh
+      'Gallery' // en
+    ],
     link: '/gallery/'
   }]
 }],
@@ -462,4 +519,99 @@ pwa: { // https://www.vuepress.cn/plugin/official/plugin-pwa.html
     ]
   }
 }
+```
+
+## Front-Matter for Posts
+
+> `categories` and `tags` should be in flat. This theme does NOT support multi-dimensional arrays.
+
+Every post should have similar structure of front-matter as showed below.
+
+```yml
+---
+title: 'Post Title'
+categories: # flat, ONLY ONE layer acceptable
+  - cate1
+  - cate2
+tags: # flat, ONLY ONE layer acceptable
+  - tag1
+  - tag2
+date: 2020-12-12 00:00:00
+updated: 2020-12-12 00:00:00
+---
+```
+
+## Front-Matter for Normal Pages
+
+Example from my 'About' page, or to look at the original `index.md` file, click [here](./$docs/about/index.md).
+
+```yml
+---
+title: 关于 | About
+---
+```
+
+### Want to have a page similar to my 'Records' page?
+
+Follow the format as showed below, or to look at the original `index.md` file of my 'Records' page, click [here](./$docs/records/index.md).
+
+```yml
+---
+title: # page title
+records:
+  enabled: true # set this to true to enable Records component
+  items:
+    - cover: # [empty] to use default cover
+      date: # string
+      title:
+      # e.g. [empty]
+      # e.g. book / article / paper / newspaper / report / picture / anime / video / movie / audio / project / website
+      # e.g. [customized] --> "Journal"
+      type:
+      author:
+      source:
+      # format 'number/total' OR '100%' OR [customized]; [empty] to use 'N/A', NO DECIMAL POINT ALLOW
+      # e.g. 12 / 34 ; 32/52 ; 22% ; 88% ; "Latest" ; "Complete"
+      progress:
+      summary:
+---
+```
+
+### Want to have a page similar to my 'Code Library' page?
+
+> To see how the Code Library structured in a Github Repository, refer to [jinyaoMa/code-lib](https://github.com/jinyaoMa/code-lib)
+
+Follow the format as showed below, or to look at the original `index.md` file of my 'Code Library' page, click [here](./$docs/codes/index.md).
+
+```yml
+---
+title: # page title
+github:
+  user: # Github username
+  repo: # Github repo
+  readme:
+    enabled: true # set this to true to enable Readme component
+  stack:
+    enabled: true # set this to true to enable Stack component
+---
+```
+
+### Want to have a page similar to my 'Icon Font Library' page?
+
+> To see how the Icon Font Library structured in a Github Repository, refer to [jinyaoMa/icon-lib](https://github.com/jinyaoMa/icon-lib)
+
+Follow the format as showed below, or to look at the original `index.md` file of my 'Icon Font Library' page, click [here](./$docs/icons/index.md).
+
+```yml
+---
+title: # page title
+github:
+  user: # Github username
+  repo: # Github repo
+  readme:
+    enabled: true # set this to true to enable Readme component
+  iframe:
+    enabled: true # set this to true to enable Iframe component
+    url: https://blog.ma-jinyao.cn/icon-lib/ # subpage should be in same-origin
+---
 ```
