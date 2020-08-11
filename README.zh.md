@@ -49,6 +49,12 @@ yarn add vuepress-theme-mustom -D
 npm i vuepress-theme-mustom -D
 ```
 
+或点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/archive/master.zip) 手动下载并解压主题文件夹到上一步的新建文件夹。接着对照下方代码设置 `config.js` 中属性 `theme`。
+
+```js
+theme: require.resolve('../../vuepress-theme-mustom-master/')
+```
+
 安装成功后，使用以下命令运行到 `localhost`。
 
 ```bash
@@ -63,17 +69,11 @@ vuepress build \$docs
 
 > 注意：上面命令里的反斜杠（“\\”）属于转义符，用于在命令行或终端里对特殊符号进行转义。
 
-或点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/archive/master.zip) 手动下载并解压主题文件夹到上一步的新建文件夹。接着对照下方代码设置 `config.js` 中属性 `theme`。
-
-```js
-theme: require.resolve('../../vuepress-theme-mustom-master/')
-```
-
 # 简单讲解 `_secret.tpl.js`
 
 想看我的 `_secret.tpl.js` 长啥样可以点 [这里](./$docs/.vuepress/_secret.tpl.js)。
 
-使用一个分离的保密文件的话，`appid` 和 `appkey` 什么的就不用上传到线上，有一些保密作用吧。可以参照一下代码在 `config.js` 引用保密文件。
+使用一个分离的保密文件的话，`appid` 和 `appkey` 什么的就不用上传到线上，有一些保密作用吧。可以参照以下代码在 `config.js` 引用保密文件。
 
 ```js
 const secret = require('./_secret');
