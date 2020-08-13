@@ -200,6 +200,11 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       icon: 'https://jinyaoMa.github.io/asset/img/author.medium.png',
       link: 'https://jinyaoMa.github.io/'
     }, {
+      name: 'Palette',
+      desc: '想知道图片主题色？',
+      icon: 'https://blog.ma-jinyao.cn/Palette/icon.png',
+      link: 'https://blog.ma-jinyao.cn/Palette/'
+    }, {
       name: 'MPlayer',
       desc: 'APlayer 个人模仿练习版',
       icon: 'https://blog.ma-jinyao.cn/asset/img/icon.medium.png',
@@ -224,11 +229,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       desc: '求职信模板',
       icon: 'https://blog.ma-jinyao.cn/extension/letter/icon.reverse.png',
       link: 'https://blog.ma-jinyao.cn/extension/letter/chinese/'
-    }, {
-      name: 'Palette',
-      desc: '想知道图片主题色？',
-      icon: 'https://blog.ma-jinyao.cn/extension/palette/icon.png',
-      link: 'https://blog.ma-jinyao.cn/extension/palette/'
     }],
     hitokoto: {
       customs: [/*{ // format; if customs exist, API will be ignored, and customs will be in use
