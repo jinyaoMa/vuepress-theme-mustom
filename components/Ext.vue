@@ -1,6 +1,5 @@
 <template>
-  <div class="Ext">
-    <div class="before" :style="backgroundImageStyle"></div>
+  <div class="Ext" :style="backgroundImageStyle">
     <div class="portal" v-if="mustom$Ext === 'portal'">
       <a
         target="_blank"
@@ -56,12 +55,8 @@ export default {
   background var(--bg)
   overflow-x hidden
   overflow-y auto
-
-.before
-  width 100%
-  height 100%
-  position absolute
-  animation appear 0.6s linear
+  background-attachment fixed
+  background-repeat no-repeat
 
 .portal, .search
   animation appear 0.6s linear
