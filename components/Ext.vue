@@ -1,27 +1,24 @@
 <template>
   <div class="Ext">
-    <transition name="fade">
-      <div class="portal" v-if="mustom$Ext === 'portal'">
-        <a
-          target="_blank"
-          v-for="(portal, i) in $themeConfig.portals"
-          :key="i"
-          :href="portal.link"
-          :title="portal.name"
-        >
-          <div class="icon" :style="{ backgroundImage: 'url(\'' + portal.icon + '\')' }"></div>
-          <div class="info">
-            <div class="name">{{portal.name}}</div>
-            <div class="desc">{{portal.desc}}</div>
-          </div>
-        </a>
-      </div>
-    </transition>
-    <transition name="fade">
-      <div class="search" v-if="mustom$Ext === 'search'">
-        <Search />
-      </div>
-    </transition>
+    <div class="before" :style="backgroundImageStyle"></div>
+    <div class="portal" v-if="mustom$Ext === 'portal'">
+      <a
+        target="_blank"
+        v-for="(portal, i) in $themeConfig.portals"
+        :key="i"
+        :href="portal.link"
+        :title="portal.name"
+      >
+        <div class="icon" :style="{ backgroundImage: 'url(\'' + portal.icon + '\')' }"></div>
+        <div class="info">
+          <div class="name">{{portal.name}}</div>
+          <div class="desc">{{portal.desc}}</div>
+        </div>
+      </a>
+    </div>
+    <div class="search" v-if="mustom$Ext === 'search'">
+      <Search />
+    </div>
   </div>
 </template>
 
@@ -32,6 +29,18 @@ export default {
   name: "Ext",
   components: {
     Search,
+  },
+  computed: {
+    backgroundImageStyle() {
+      return this.$themeConfig.images.background
+        ? {
+            backgroundImage:
+              "url('" +
+              this.$withBase(this.$themeConfig.images.background) +
+              "')",
+          }
+        : {};
+    },
   },
 };
 </script>
@@ -48,7 +57,14 @@ export default {
   overflow-x hidden
   overflow-y auto
 
+.before
+  width 100%
+  height 100%
+  position absolute
+  animation appear 0.6s linear
+
 .portal, .search
+  animation appear 0.6s linear
   padding $headerHeight
   @media (max-width $smallestWidth)
     padding 1rem
@@ -62,6 +78,7 @@ export default {
   @media (max-width $smallestWidth)
     gap 0.5rem
     grid-template-columns 100%
+    margin-bottom $headerHeight
   > a
     display inline-block
     width 100%
@@ -70,11 +87,12 @@ export default {
     color var(--txt)
     position relative
     border-radius $borderRadius
+    background-color var(--bg)
     transition background 0.6s, box-shadow 0.6s
     &:before
       display none
     &:hover
-      box-shadow 0 0 1px
+      box-shadow 0 0 0 1px
 
 .icon
   height 4rem
@@ -82,7 +100,6 @@ export default {
   position absolute
   left 1rem
   top 1rem
-  background-color var(--highlight)
   background-size cover
   border-radius $borderRadius
 

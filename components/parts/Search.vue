@@ -223,21 +223,21 @@ export default {
       cursor auto
       border-color var(--readme-more-bg)
   .suggestions
-    background var(--bg)
+    // background var(--bg)
     position absolute
     top 2 rem
-    border 1px solid var(--highlight)
-    box-shadow 0 0 1px var(--txt)
+    // border 1px solid var(--highlight)
+    // box-shadow 0 0 1px var(--txt)
     border-radius $borderRadius
-    padding 0.4rem
+    // padding 0.4rem
     list-style-type none
     width 100%
     margin-top 1rem
     margin-bottom $headerHeight
-    min-height s('calc(100vh - 3rem - %s)', $headerHeight * 3)
+    // min-height s('calc(100vh - 3rem - %s)', $headerHeight * 3)
     @media (max-width $smallestWidth)
       margin-bottom 1rem
-      min-height s('calc(100vh - 5rem - %s)', $headerHeight)
+      // min-height s('calc(100vh - 5rem - %s)', $headerHeight)
     &.align-right
       right 0
   .suggestion

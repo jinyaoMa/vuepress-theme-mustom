@@ -33,6 +33,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       },
       empty: '/assets/img/empty.png',
       records: '/assets/img/records.png',
+      background: '/assets/img/background.png'
     },
     customBackgrounds: [
       //'/assets/img/background.png',
