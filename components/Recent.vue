@@ -69,19 +69,17 @@ export default {
 
 <style lang="stylus" scoped>
 .list-item
-  padding $gap 0 s('calc(%s - 0.25rem)', $gap)
-  margin 0 $gap
+  position relative
+  padding $gap $gap s('calc(%s - 0.25rem)', $gap)
   @media (max-width $smallestWidth)
-    padding 1rem 0 0.75rem
-    margin 0 1rem
-  display flex
-  flex-direction row
+    padding 1rem 1rem 0.75rem
   &:not(:last-child)
     border-bottom 0.25rem solid var(--highlight)
 
 .item-info
-  min-width 66%
-  > div
+  z-index 1
+  position relative
+  >>> div, >>> p
     margin-bottom 0.75rem
 
 .item-title
@@ -98,14 +96,22 @@ export default {
 
 .item-cover
   width 100%
+  height 100%
+  background-repeat no-repeat
   background-size cover
-  background-color var(--highlight)
-  margin-left 1rem
-  border-radius 0.25rem
+  background-position top
+  // background-color var(--txt-shadow)
+  // margin-left 1rem
+  position absolute
+  left 0
+  top 0
+  opacity 0.1
 
 .item-excerpt
   >>> img
     display none
+  >>> p:last-child
+    margin-bottom 0
 
 .more
   user-select none

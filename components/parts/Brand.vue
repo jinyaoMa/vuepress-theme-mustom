@@ -62,7 +62,7 @@ export default {
   grid-template-areas 'avatar' 'inner'
   @media (max-width $smallWidth)
     grid-template-areas 'avatar inner'
-    grid-template-columns 12rem auto
+    grid-template-columns 9rem auto
   @media (max-width $smallestWidth)
     grid-template-areas 'caption' 'avatar' 'inner'
     grid-template-columns auto
@@ -100,6 +100,7 @@ export default {
 
 .inner
   text-align center
+  position relative
   @media (max-width $smallWidth) and (min-width $smallestWidth)
     text-align left
     > div
@@ -113,7 +114,7 @@ export default {
   line-height 1
   margin -1rem -1rem
   padding 1rem 1rem
-  //background var(--highlight)
+  // background var(--highlight)
   text-shadow 1rem 1rem var(--txt-shadow)
   transform translate3d(-0.325rem, -0.625rem, 0)
   font-weight 500
@@ -137,10 +138,14 @@ export default {
 
 .contact
   margin-top 0.5rem !important
+  @media (max-width $smallWidth) and (min-width $smallestWidth)
+    position absolute
+    top 0
+    right 0
   a
     display inline-block
     color var(--txt)
-    background var(--highlight)
+    //background var(--highlight)
     font-size 1.25rem
     width 2.5rem
     transition color 0.6s

@@ -276,7 +276,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     extractHeaders: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
   },
 
-  evergreen: true, // using old browser ?
+  evergreen: false, // using old browser ?
 
   configureWebpack: () => {
     if (process.env.NODE_ENV === 'production') {

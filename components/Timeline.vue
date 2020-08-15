@@ -65,7 +65,7 @@ export default {
       return function (length) {
         return this.mustom$Locale.timeline.yearTotal.replace(
           "[:total:]",
-          `<strong style="color: var(--underline); text-decoration: underline">${length}</strong>`
+          `<strong style="color: var(--underline)">${length}</strong>`
         );
       };
     },
@@ -92,9 +92,8 @@ export default {
 
 .year-flag
   text-align center
-  background-color var(--highlight)
+  background var(--highlight)
   font-size 2rem
-  font-weight bold
 
 .year-total
   font-size 0.88rem
@@ -117,7 +116,7 @@ export default {
     content ''
     height 2rem
     width @height
-    background-color var(--txt)
+    background var(--txt)
     border 0.5rem solid var(--highlight)
     border-radius 50%
     position absolute
