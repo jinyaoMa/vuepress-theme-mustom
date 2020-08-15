@@ -112,7 +112,7 @@ export default {
 .sq
   line-height 3
   text-align center
-  background var(--highlight)
+  background var(--bg)
 
 .locales
   background var(--bg)
@@ -151,7 +151,7 @@ export default {
 .copy
   cursor pointer
   &:hover
-    color var(--bg)
+    color var(--readme-more-txt)
     background var(--underline)
 
 .result

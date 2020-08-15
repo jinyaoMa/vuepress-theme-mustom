@@ -70,14 +70,6 @@ export default {
   border-radius $borderRadius $borderRadius 0 0
   position relative
   overflow hidden
-  &:before
-    content ''
-    position absolute
-    top 0
-    left 0
-    width 100%
-    height $borderRadius
-    background var(--highlight)
 
 .footerCount
   @media (max-width $smallWidth) and (min-width $smallerWidth)

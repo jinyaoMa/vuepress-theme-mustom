@@ -55,10 +55,12 @@ export default {
   cursor pointer
   &:hover
     background var(--highlight)
+    @media (max-width $smallestWidth)
+      background var(--header-bg)
   &.portal
-    color var(--bg)
+    color var(--readme-more-txt)
     background var(--link)
   &.search
-    color var(--bg)
+    color var(--readme-more-txt)
     background var(--underline)
 </style>

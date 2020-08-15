@@ -230,11 +230,18 @@ export default {
     cursor default
     pointer-events none
 
+.caption
+  border-radius $borderRadius $borderRadius 0 0
+  @media (max-width $smallestWidth)
+    border-radius 0
+
 .inner
   position relative
   background var(--bg)
+  border-radius 0 0 $borderRadius $borderRadius
   padding $gap
   @media (max-width $smallestWidth)
+    border-radius 0
     padding 1rem
 
 .meta
@@ -406,8 +413,8 @@ export default {
 
 .readmode
   position absolute
-  top 1rem
-  right 1rem
+  top -1.55rem
+  right 0.75rem
   cursor pointer
   color var(--underline)
   line-height 1

@@ -43,7 +43,8 @@ export default {
 
 @media (max-width $smallWidth)
   .Drawer
-    position initial
+    position relative
+    top auto
     height auto
     width 100%
 </style>

@@ -70,10 +70,11 @@ export default {
     color var(--txt)
     position relative
     border-radius $borderRadius
+    transition background 0.6s, box-shadow 0.6s
     &:before
       display none
     &:hover
-      background var(--highlight)
+      box-shadow 0 0 1px
 
 .icon
   height 4rem

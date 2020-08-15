@@ -45,7 +45,11 @@ export default {
   computed: {
     avatarStyle() {
       return this.$themeConfig.images && this.$themeConfig.images.brand
-        ? { backgroundImage: `url('${this.$withBase(this.$themeConfig.images.brand)}')` }
+        ? {
+            backgroundImage: `url('${this.$withBase(
+              this.$themeConfig.images.brand
+            )}')`,
+          }
         : {};
     },
   },
@@ -109,7 +113,9 @@ export default {
   line-height 1
   margin -1rem -1rem
   padding 1rem 1rem
-  background var(--highlight)
+  //background var(--highlight)
+  text-shadow 1rem 1rem var(--txt-shadow)
+  transform translate3d(-0.325rem, -0.625rem, 0)
   font-weight 500
   @media (max-width $smallWidth) and (min-width $smallestWidth)
     line-height 2
