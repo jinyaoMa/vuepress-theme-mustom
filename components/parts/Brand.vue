@@ -78,10 +78,8 @@ export default {
   @media (max-width $smallestWidth)
     display block
 
-.avatar, .inner
-  margin 1rem
-
 .avatar
+  margin 1rem
   max-width s('calc(%s - 2rem)', $sideWidth)
   background-image url('../../statics/brand.png')
   background-color var(--highlight)
@@ -92,20 +90,25 @@ export default {
   @media (max-width $smallestWidth)
     margin 1rem auto
     width 100%
-    max-width calc(100% - 2rem)
+    max-width $sideWidth
   &:before
     content ''
     display block
     padding-top 100%
 
 .inner
-  text-align center
   position relative
+  grid-area inner
+  padding 1.5rem 1rem 1rem 1rem
+  border-top 0.25rem dashed var(--article-ending)
+  text-align center
   @media (max-width $smallWidth) and (min-width $smallestWidth)
+    padding 1rem 1rem 1rem 1.5rem
+    border-top none
+    border-left 0.25rem dashed var(--article-ending)
     text-align left
     > div
       margin 0 0 0 -1rem
-  grid-area inner
   > div:not(.author)
     padding 0 0.5rem
 
