@@ -82,7 +82,7 @@ module.exports = (themeConfig, context) => {
       icon: '<i class="fas fa-adjust fa-fw"></i>'
     }, {
       name: 'nocanvas',
-      icon: '<i class="fas fa-video fa-fw"></i>'
+      icon: '<i class="fas fa-video-slash fa-fw"></i>'
     }, {
       name: 'language',
       icon: '<i class="fas fa-globe-asia fa-fw"></i>'

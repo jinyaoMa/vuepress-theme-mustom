@@ -224,11 +224,14 @@ export default {
   height 100vh
   overflow-x hidden
   overflow-y auto
-  background var(--bg)
+  background var(--header-bg)
   transition none
   >>> img
     cursor default
     pointer-events none
+  .caption, .inner
+    max-width $readingWidth
+    margin 0 auto
 
 .caption
   border-radius $borderRadius $borderRadius 0 0
