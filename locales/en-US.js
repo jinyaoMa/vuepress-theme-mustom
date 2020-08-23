@@ -61,7 +61,7 @@ module.exports = {
 
   translate: {
     tooltip: 'Highlight words to translate - Supported by Baidu Translation API',
-    copytip: 'Click to copy highlighted content below translation bar',
+    copytip: 'Click to copy highlighted content above translation bar',
     result: 'Translation Result',
     copied: 'Copied!',
     zh: '中文',

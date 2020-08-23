@@ -61,7 +61,7 @@ module.exports = { // placeholder [::]
 
   translate: {
     tooltip: '划词翻译 - 百度通用翻译API提供支持',
-    copytip: '点击复制翻译条底下区域高亮内容',
+    copytip: '点击复制翻译条上方区域高亮内容',
     result: '翻译结果',
     copied: '复制成功！',
     zh: '中文',
