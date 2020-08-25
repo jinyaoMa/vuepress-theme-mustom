@@ -6,9 +6,9 @@ module.exports = { // https://www.vuepress.cn/zh/config/
 
   base: '/',
 
-  title: '耀 の 个人网站 | Mark の Personal Website',
+  title: '耀 の 博客 | Mark\'s BLOG',
 
-  description: '耀の个人网站, 耀的个人网站, Mark の Personal Website, Mark\'s Personal Website, 耀的部落阁, jinyaoMa, Mustom, VuePress',
+  description: '耀, Mark, jinyaoMa, 部落阁, 博客, Blog, Mustom, VuePress, 耀の个人网站, 耀的个人网站, Mark の Personal Website, Mark\'s Personal Website',
 
   themeConfig: {
     domain: 'https://ma-jinyao.cn', // for sitemap generate
@@ -23,6 +23,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     year: 2019, // year of site started
     maximizeLaunch: false, // full size image for launch
     noEmpty: false, // hide empty component
+    recentPostOffset: 5, // number of recent posts each time click on 'more post'
     images: { // for image replacment; no base needed; first layer key points to component name
       ad: '/assets/img/ad.png',
       avatar: '/assets/img/avatar.png',
@@ -48,8 +49,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     },
     // startup notification; priority => index 0 = highest
     // type: 'default', 'warning', 'error'
-    notification: [
-      { // welcome msg
+    notification: [{ // welcome msg
         type: 'default',
         msg: [
           '<strong>欢迎来到我的个人网站！技术交流请加 QQ 群：595614161，也可以加本人QQ：907881445，或者点击页面左下角扫码找我哦~<strong>', // zh
@@ -65,12 +65,20 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       },
     ],
     qrcodes: [{ // qrcode for contact and friending
+      tooltip: [
+        '扫码加我 QQ', // zh
+        'Scan QR code to friend me via QQ' // en
+      ],
       locale: [
         'QQ', // zh
         'QQ' // en
       ],
       path: '/assets/img/qq.png' // no base needed
     }, {
+      tooltip: [
+        '扫码加我微信', // zh
+        'Scan QR code to friend me via WeChat' // en
+      ],
       locale: [
         '微信', // zh
         'WeChat' // en
@@ -79,14 +87,14 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     }],
     header: {
       sitename: [
-        '耀 の 个人网站', // zh
-        'Mark の Personal Website' // en
+        '<em><span>耀 の</span></em><strong><span><s>瞎几把</s>博客</span></strong>', // zh
+        '<em><span>Mark\'s</span></em><strong><span>BLOG</span></strong>' // en
       ]
     },
     brand: {
       signatures: [
-        '我只想安静地做笔记', // zh
-        'I just wanna note silently' // en
+        '问题, 方法, 程序, 标准, 解决', // zh
+        'issue, func, flow, std, solve' // en
       ],
       contacts: [{
         icon: '<i class="fab fa-github fa-fw"></i>',
@@ -132,27 +140,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       }]
     }, {
       caption: [
-        '工作', // zh
-        'JOB RELATED' // en
-      ],
-      icon: '<i class="fas fa-briefcase fa-fw"></i>',
-      items: [{
-        icon: '<i class="fas fa-paper-plane fa-fw"></i>',
-        text: [
-          '简历小贴士', // zh
-          'Resume Tips' // en
-        ],
-        link: '/resume/'
-      }, {
-        icon: '<i class="fas fa-file-contract fa-fw"></i>',
-        text: [
-          '求职信小贴士', // zh
-          'Cover Letter Tips' // en
-        ],
-        link: '/letter/'
-      }]
-    }, {
-      caption: [
         '其他', // zh
         'OTHERS' // en
       ],
@@ -186,6 +173,27 @@ module.exports = { // https://www.vuepress.cn/zh/config/
         ],
         link: '/gallery/'
       }]
+    }, {
+      caption: [
+        '工作', // zh
+        'JOB RELATED' // en
+      ],
+      icon: '<i class="fas fa-briefcase fa-fw"></i>',
+      items: [{
+        icon: '<i class="fas fa-paper-plane fa-fw"></i>',
+        text: [
+          '简历小贴士', // zh
+          'Resume Tips' // en
+        ],
+        link: '/resume/'
+      }, {
+        icon: '<i class="fas fa-file-contract fa-fw"></i>',
+        text: [
+          '求职信小贴士', // zh
+          'Cover Letter Tips' // en
+        ],
+        link: '/letter/'
+      }]
     }],
     meting: {
       server: 'netease', // netease, tencent, kugou, xiami, baidu
@@ -198,18 +206,18 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     portals: [{
       name: 'My Site',
       desc: '耀 の 个人网站 | Mark の Personal Website',
-      icon: 'https://jinyaoMa.github.io/asset/img/author.medium.png',
-      link: 'https://jinyaoMa.github.io/'
+      icon: '/assets/img/avatar.png',
+      link: '/'
     }, {
       name: 'Palette',
       desc: '想知道图片主题色？',
-      icon: 'https://blog.ma-jinyao.cn/Palette/icon.png',
-      link: 'https://blog.ma-jinyao.cn/Palette/'
+      icon: 'https://jinyaoma.github.io/Palette/icon.png',
+      link: 'https://jinyaoma.github.io/Palette/'
     }, {
       name: 'MPlayer',
       desc: 'APlayer 个人模仿练习版',
       icon: 'https://blog.ma-jinyao.cn/asset/img/icon.medium.png',
-      link: 'https://blog.ma-jinyao.cn/MPlayer'
+      link: 'https://jinyaoma.github.io/MPlayer/'
     }, {
       name: 'Resume',
       desc: 'Resume Template',
@@ -232,16 +240,20 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       link: 'https://blog.ma-jinyao.cn/extension/letter/chinese/'
     }],
     hitokoto: {
-      customs: [/*{ // format; if customs exist, API will be ignored, and customs will be in use
-        word: 'https://developer.hitokoto.cn',
-        from: '一言开发者中心'
-      }*/],
+      customs: [
+        /*{ // format; if customs exist, API will be ignored, and customs will be in use
+                word: 'https://developer.hitokoto.cn',
+                from: '一言开发者中心'
+              }*/
+      ],
       type: 'i' // https://developer.hitokoto.cn/sentence/#请求参数
     },
-    gallery: [/*{ format; these gallery items will be appended to /gallery/ page
-      name: 'test image from baidu',
-      url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
-    }*/],
+    gallery: [
+      /*{ format; these gallery items will be appended to /gallery/ page
+            name: 'test image from baidu',
+            url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596063652971&di=8b659ee5cd46f4006d082b626eb3bd0d&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180330%2F4-1P330160644.jpg'
+          }*/
+    ],
     pwa: { // https://www.vuepress.cn/plugin/official/plugin-pwa.html
       serviceWorker: true,
       popupComponent: 'CustomSWUpdatePopup',
@@ -259,16 +271,41 @@ module.exports = { // https://www.vuepress.cn/zh/config/
   },
 
   head: [ // Include pwa settings, https://www.vuepress.cn/plugin/official/plugin-pwa.html
-    ['link', { rel: 'icon', href: '/favicon.ico', type: "image/x-icon" }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#ffffff' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#ffffff' }],
-    ['link', { rel: 'apple-touch-icon', href: '/assets/img/apple-touch-icon.png' }],
+    ['link', {
+      rel: 'icon',
+      href: '/favicon.ico',
+      type: "image/x-icon"
+    }],
+    ['link', {
+      rel: 'manifest',
+      href: '/manifest.json'
+    }],
+    ['meta', {
+      name: 'theme-color',
+      content: '#ffffff'
+    }],
+    ['meta', {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes'
+    }],
+    ['meta', {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: '#ffffff'
+    }],
+    ['link', {
+      rel: 'apple-touch-icon',
+      href: '/assets/img/apple-touch-icon.png'
+    }],
 
     // Search engine verify
-    ['meta', { name: 'google-site-verification', content: 'DR-3xvCA7YBP7TIeg7__j5lxaniGh2pzocrfywyn8o0' }],
-    ['meta', { name: 'baidu-site-verification', content: 'zQef3H7nga' }]
+    ['meta', {
+      name: 'google-site-verification',
+      content: 'DR-3xvCA7YBP7TIeg7__j5lxaniGh2pzocrfywyn8o0'
+    }],
+    ['meta', {
+      name: 'baidu-site-verification',
+      content: 'zQef3H7nga'
+    }]
   ],
 
   // https://www.vuepress.cn/zh/config/#markdown

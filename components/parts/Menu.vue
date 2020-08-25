@@ -37,8 +37,9 @@ a
   position relative
   &:before
     display none
-  &:hover
-    background var(--highlight)
+  @media (min-width $smallestWidth)
+    &:hover
+      background var(--highlight)
   &:after
     content ''
     height 1rem

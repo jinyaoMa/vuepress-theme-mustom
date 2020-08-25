@@ -76,8 +76,9 @@ export default {
     padding 1rem
     line-height 1
     cursor pointer
-    &:hover
-      background var(--highlight)
+    @media (min-width $smallestWidth)
+      &:hover
+        background var(--highlight)
     &.active .switch
       &:before
         background var(--txt)

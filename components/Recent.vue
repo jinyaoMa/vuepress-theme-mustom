@@ -56,12 +56,17 @@ export default {
   name: "Recent",
   data() {
     return {
-      offset: 3,
+      increment: 0,
     };
+  },
+  computed: {
+    offset() {
+      return parseInt(this.$themeConfig.recentPostOffset) + this.increment;
+    }
   },
   methods: {
     incrementOffset() {
-      this.offset += 3;
+      this.increment += parseInt(this.$themeConfig.recentPostOffset) || 3;
     },
   },
 };

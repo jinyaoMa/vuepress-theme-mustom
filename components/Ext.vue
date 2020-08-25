@@ -57,6 +57,7 @@ export default {
   overflow-y auto
   background-attachment fixed
   background-repeat no-repeat
+  background-position left center
 
 .portal, .search
   animation appear 0.6s linear

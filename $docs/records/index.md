@@ -12,11 +12,29 @@ records:
       # e.g. [customized] --> "Journal"
       type: website
       author: jinyaoMa
-      source: "https://ma-jinyao.cn"
+      source: "https://github.com/jinyaoMa/vuepress-theme-mustom"
       # format 'number/total' OR '100%' OR [customized]; [empty] to use 'N/A', NO DECIMAL POINT ALLOW
       # e.g. 12 / 34 ; 32/52 ; 22% ; 88% ; "Latest" ; "Complete"
       progress: Latest
       summary: 耀 の 个人网站 | Mark の Personal Website , shift from Hexo to VuePress
+
+    - cover: "https://jinyaoma.github.io/Palette/icon.png"
+      date: 2020/08 - 2020/08
+      title: Color Palette
+      type: project
+      author: jinyaoMa
+      source: "https://github.com/jinyaoMa/Palette/"
+      progress: Complete
+      summary: Color Palette; 调色板; Color Extract; 颜色提取
+
+    - cover: 
+      date: 2020/05 - 2020/06
+      title: MPlayer
+      type: project
+      author: jinyaoMa
+      source: "https://github.com/jinyaoMa/MPlayer/"
+      progress: Complete
+      summary: A HTML5 Audio Player; APlayer 个人随便模仿版
 
     - cover: "https://blog.ma-jinyao.cn/extension/letter/icon.png"
       date: 2020/03 - 2020/03
@@ -35,15 +53,6 @@ records:
       source: "https://blog.ma-jinyao.cn/extension/resume/english/"
       progress: Latest
       summary: My Resume
-
-    - cover: "https://blog.ma-jinyao.cn/extension/palette/icon.png"
-      date: 2020/04 - 2020/04
-      title: Color Palette
-      type: project
-      author: jinyaoMa
-      source: "https://blog.ma-jinyao.cn/extension/palette/"
-      progress: Complete
-      summary: Color Palette; 调色板; Color Extract; 颜色提取
 
     - cover: "https://blog.ma-jinyao.cn/extension/test/icon.png"
       date: 20??/?? - ????/??

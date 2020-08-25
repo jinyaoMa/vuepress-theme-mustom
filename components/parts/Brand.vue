@@ -120,7 +120,7 @@ export default {
   // background var(--highlight)
   text-shadow 1rem 1rem var(--txt-shadow)
   transform translate3d(-0.325rem, -0.625rem, 0)
-  font-weight 500
+  font-weight 666
   @media (max-width $smallWidth) and (min-width $smallestWidth)
     line-height 2
     padding 0 0 0 1rem
@@ -128,6 +128,9 @@ export default {
 
 .signature
   margin-top 1.25rem
+  line-height 1.5
+  padding-top 0.25rem
+  padding-bottom 0.25rem
 
 .counter
   padding 0 0.5rem
@@ -148,7 +151,7 @@ export default {
   a
     display inline-block
     color var(--txt)
-    //background var(--highlight)
+    // background var(--highlight)
     font-size 1.25rem
     width 2.5rem
     transition color 0.6s

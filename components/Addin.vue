@@ -20,7 +20,11 @@
           <img :src="$withBase($themeConfig.images.ad)" />
         </div>
         <div class="qrcode" v-if="current === 'qrcode' && ($themeConfig.qrcodes instanceof Array)">
-          <div v-for="(item, i) in $themeConfig.qrcodes" :key="i">
+          <div
+            v-for="(item, i) in $themeConfig.qrcodes"
+            :key="i"
+            :title="item.tooltip[mustom$LangIndex]"
+          >
             <img :src="$withBase(item.path)" />
             <div v-html="item.locale[mustom$LangIndex]"></div>
           </div>

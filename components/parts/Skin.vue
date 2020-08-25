@@ -32,7 +32,7 @@ export default {
   display flex
   flex-flow row
   > div
-    width 3rem
+    width s('calc((%s - 5rem) / 4)', $sideWidth)
     height @width
     border-radius $borderRadius
     cursor pointer

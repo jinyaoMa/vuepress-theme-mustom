@@ -1,10 +1,16 @@
 <template>
   <div class="Header">
-    <div :class="`ext ${mustom$Ext === 'portal' ? mustom$Ext : ''}`" @click="mustom$SetExt('portal')">
+    <div
+      :class="`ext ${mustom$Ext === 'portal' ? mustom$Ext : ''}`"
+      @click="mustom$SetExt('portal')"
+    >
       <i class="fas fa-cube"></i>
     </div>
     <div class="sitename" v-html="$themeConfig.header.sitename[mustom$LangIndex]"></div>
-    <div :class="`ext ${mustom$Ext === 'search' ? mustom$Ext : ''}`" @click="mustom$SetExt('search')">
+    <div
+      :class="`ext ${mustom$Ext === 'search' ? mustom$Ext : ''}`"
+      @click="mustom$SetExt('search')"
+    >
       <i class="fas fa-search"></i>
     </div>
   </div>
@@ -42,10 +48,37 @@ export default {
   overflow hidden
   text-overflow ellipsis
   line-height $headerHeight
-  font-size $headerHeight * 0.3
+  font-size s('calc(%s / 3)', $headerHeight)
   @media (max-width $smallestWidth)
-    font-size $headerHeight * 0.25
+    font-size s('calc(%s / 3.25)', $headerHeight)
   font-weight 555
+  >>> em, >>> strong
+    display inline-block
+    position relative
+    + strong
+      margin-left 0.5rem
+    + em
+      margin-right 0.5rem
+  >>> em
+    font-style normal
+    span
+      display inline-block
+      margin 0 0.2rem
+      transform scale(1.1)
+  >>> strong
+    padding 0 0.5rem
+    &:before
+      content ''
+      position absolute
+      top s('calc(%s / 5 + 1px)', $headerHeight) // 1px offset manually set
+      left 0
+      height s('calc(%s / 5 * 3)', $headerHeight)
+      width 100%
+      background var(--link)
+      border-radius $borderRadius * 1.5
+    span
+      position relative
+      color var(--readme-more-txt)
 
 .ext
   height $headerHeight

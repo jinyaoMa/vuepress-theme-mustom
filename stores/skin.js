@@ -1,7 +1,7 @@
 export default savedata => {
   return {
     state: {
-      skin: savedata.skin || 'default'
+      skin: savedata.skin || 'jshine'
     },
     getters: {
       skin(state) {

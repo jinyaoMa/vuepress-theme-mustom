@@ -10,7 +10,9 @@
         </div>
       </div>
       <div class="inner">
-        <img :src="pic.url" />
+        <a target="_blank" :href="pic.url">
+          <img :src="pic.url" />
+        </a>
       </div>
       <div class="minimize" @click="mustom$ToggleMinimize"></div>
     </div>
@@ -32,6 +34,11 @@ export default {
 
 .inner
   padding 0.5rem
+
+a
+  display block
+  &:before
+    display none
 
 img
   max-width 100%
