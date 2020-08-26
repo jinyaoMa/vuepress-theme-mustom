@@ -50,7 +50,7 @@ export default {
   line-height $headerHeight
   font-size s('calc(%s / 3)', $headerHeight)
   @media (max-width $smallestWidth)
-    font-size s('calc(%s / 3.25)', $headerHeight)
+    font-size s('calc(%s / 4)', $headerHeight)
   font-weight 555
   >>> em, >>> strong
     display inline-block
@@ -63,14 +63,14 @@ export default {
     font-style normal
     span
       display inline-block
-      margin 0 0.2rem
+      margin 0 0.1rem
       transform scale(1.1)
   >>> strong
     padding 0 0.5rem
     &:before
       content ''
       position absolute
-      top s('calc(%s / 5 + 1px)', $headerHeight) // 1px offset manually set
+      top s('calc(%s / 5)', $headerHeight) // 1px offset manually set
       left 0
       height s('calc(%s / 5 * 3)', $headerHeight)
       width 100%

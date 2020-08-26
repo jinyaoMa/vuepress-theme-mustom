@@ -66,7 +66,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     ],
     qrcodes: [{ // qrcode for contact and friending
       tooltip: [
-        '扫码加我 QQ', // zh
+        '扫码加我QQ', // zh
         'Scan QR code to friend me via QQ' // en
       ],
       locale: [
@@ -87,7 +87,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     }],
     header: {
       sitename: [
-        '<em><span>耀 の</span></em><strong><span><s>瞎几把</s>博客</span></strong>', // zh
+        '<em><span>耀 の</span></em><strong><span>部落阁</span></strong>', // zh
         '<em><span>Mark\'s</span></em><strong><span>BLOG</span></strong>' // en
       ]
     },
@@ -140,6 +140,27 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       }]
     }, {
       caption: [
+        '工作', // zh
+        'JOB RELATED' // en
+      ],
+      icon: '<i class="fas fa-briefcase fa-fw"></i>',
+      items: [{
+        icon: '<i class="fas fa-paper-plane fa-fw"></i>',
+        text: [
+          '简历小贴士', // zh
+          'Resume Tips' // en
+        ],
+        link: '/resume/'
+      }, {
+        icon: '<i class="fas fa-file-contract fa-fw"></i>',
+        text: [
+          '求职信小贴士', // zh
+          'Cover Letter Tips' // en
+        ],
+        link: '/letter/'
+      }]
+    }, {
+      caption: [
         '其他', // zh
         'OTHERS' // en
       ],
@@ -172,27 +193,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
           'Gallery' // en
         ],
         link: '/gallery/'
-      }]
-    }, {
-      caption: [
-        '工作', // zh
-        'JOB RELATED' // en
-      ],
-      icon: '<i class="fas fa-briefcase fa-fw"></i>',
-      items: [{
-        icon: '<i class="fas fa-paper-plane fa-fw"></i>',
-        text: [
-          '简历小贴士', // zh
-          'Resume Tips' // en
-        ],
-        link: '/resume/'
-      }, {
-        icon: '<i class="fas fa-file-contract fa-fw"></i>',
-        text: [
-          '求职信小贴士', // zh
-          'Cover Letter Tips' // en
-        ],
-        link: '/letter/'
       }]
     }],
     meting: {

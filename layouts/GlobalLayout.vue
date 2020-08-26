@@ -372,6 +372,10 @@ export default {
       padding 0 0.625rem
       color var(--txt)
       background var(--highlight)
+  h1, h2, h3, h4, h5, h6
+    margin-top $gap
+    @media (max-width $smallestWidth)
+      margin-top 1.5rem
 
 .frame
   padding $headerHeight $floatingSize 0
