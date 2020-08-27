@@ -24,6 +24,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     maximizeLaunch: false, // full size image for launch
     noEmpty: false, // hide empty component
     recentPostOffset: 5, // number of recent posts each time click on 'more post'
+    searchMaxSuggestions: 19, // max number of search results display
     images: { // for image replacment; no base needed; first layer key points to component name
       ad: '/assets/img/ad.png',
       avatar: '/assets/img/avatar.png',
