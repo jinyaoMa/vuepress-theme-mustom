@@ -96,6 +96,10 @@ export default {
 
 .item-meta
   user-select none
+  @media (min-width $smallestWidth)
+    display grid
+    grid-template-columns max-content max-content auto
+    gap 1.25rem
   a
     color var(--link)
 

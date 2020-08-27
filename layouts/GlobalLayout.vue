@@ -430,7 +430,7 @@ export default {
 
 @media (max-width $smallerWidth)
   .main
-    grid-template-columns auto
+    grid-template-columns 100%
     grid-template-rows min-content min-content min-content min-content
     grid-template-areas 'drawer' 'center' 'aside' 'footer'
     min-height auto

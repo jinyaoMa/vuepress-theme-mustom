@@ -62,7 +62,7 @@ export default {
   grid-template-areas 'avatar' 'inner'
   @media (max-width $smallWidth)
     grid-template-areas 'avatar inner'
-    grid-template-columns 9rem auto
+    grid-template-columns 8.125rem auto
   @media (max-width $smallestWidth)
     grid-template-areas 'caption' 'avatar' 'inner'
     grid-template-columns auto
@@ -89,8 +89,9 @@ export default {
   padding inherit
   @media (max-width $smallestWidth)
     margin 1rem auto
-    width 100%
+    width 50%
     max-width $sideWidth
+    border-radius 50%
   &:before
     content ''
     display block
@@ -119,7 +120,7 @@ export default {
   padding 1rem 1rem
   // background var(--highlight)
   text-shadow 1rem 1rem var(--txt-shadow)
-  transform translate3d(-0.325rem, -0.625rem, 0)
+  transform translate3d(-0.325rem, -0.6rem, 0)
   font-weight 666
   @media (max-width $smallWidth) and (min-width $smallestWidth)
     line-height 2
@@ -135,6 +136,9 @@ export default {
 .counter
   padding 0 0.5rem
   user-select none
+  @media (max-width $smallWidth) and (min-width $smallestWidth)
+    margin-top 0.5rem !important
+    line-height 1
   span
     display inline-block
     &:not(:last-child)

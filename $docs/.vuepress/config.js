@@ -6,7 +6,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
 
   base: '/',
 
-  title: '耀 の 博客 | Mark\'s BLOG',
+  title: '耀 の 部落阁 | Mark\'s BLOG',
 
   description: '耀, Mark, jinyaoMa, 部落阁, 博客, Blog, Mustom, VuePress, 耀の个人网站, 耀的个人网站, Mark の Personal Website, Mark\'s Personal Website',
 

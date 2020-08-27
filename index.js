@@ -190,9 +190,9 @@ module.exports = (themeConfig, context) => {
           model: 'haruto',
           display: {
             position: "right",
-            width: 200,
-            height: 300,
-            hOffset: 64,
+            width: 180,
+            height: 270,
+            hOffset: 48,
             vOffset: 0,
           },
           mobile: {

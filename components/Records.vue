@@ -184,6 +184,8 @@ export default {
 
 .field
   display inline-block
+  line-height 1.25
+  margin 0.2rem 0 0.4rem
 
 .bar
   width 100%
