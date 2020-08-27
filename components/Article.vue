@@ -395,12 +395,14 @@ export default {
     padding-left $gap
     padding-right $gap
   &:before
-    line-height (8 / 3)
-    top 0.6rem
-    right s('calc(16px + %s)', $gap)
-    margin-right s('calc(-16px - %s)', $gap)
-    padding-left 0.625rem
-    padding-right s('calc(16px + %s)', $gap)
+    line-height 1.5
+    top 0
+    right 0
+    text-align center
+    min-width $gap
+    padding $borderRadius 0.5rem
+    margin-right $gap
+    border-radius 0 0 $borderRadius $borderRadius
     background var(--article-language-bg)
     color var(--article-language-txt)
     pointer-events none

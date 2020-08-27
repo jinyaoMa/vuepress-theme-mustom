@@ -91,8 +91,10 @@ export default {
   font-size 1.5rem
   a
     color var(--link)
+    font-weight 666
   @media (max-width $smallestWidth)
     font-size 1rem
+    font-weight 555
 
 .item-meta
   user-select none
@@ -101,7 +103,10 @@ export default {
     grid-template-columns max-content max-content auto
     gap 1.25rem
   a
-    color var(--link)
+    color var(--link-markdown)
+    font-weight 666
+    @media (max-width $smallestWidth)
+      font-weight 400
 
 .item-cover
   width 100%
