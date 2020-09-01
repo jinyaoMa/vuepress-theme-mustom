@@ -28,6 +28,8 @@ export default {
 
 .inner
   padding 0.5rem 0
+  @media (min-width $smallestWidth) and (max-width $smallWidth)
+    padding 0.5rem
 
 a
   display block
@@ -54,4 +56,12 @@ a
     &:after
       background var(--underline)
       border 2px solid
+  @media (min-width $smallestWidth) and (max-width $smallWidth)
+    display inline-block
+    border-radius $borderRadius
+    &.router-link-exact-active
+      background var(--txt)
+      color var(--bg)
+      &:after
+        display none
 </style>
