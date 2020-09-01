@@ -59,6 +59,7 @@ a
   @media (min-width $smallestWidth) and (max-width $smallWidth)
     display inline-block
     border-radius $borderRadius
+    margin-right 0.5rem
     &.router-link-exact-active
       background var(--txt)
       color var(--bg)
