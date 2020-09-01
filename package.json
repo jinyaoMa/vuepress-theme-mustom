@@ -39,6 +39,8 @@
     "build": "vuepress build $docs",
     "deploy": "deploy.sh",
     "adduser": "npm adduser",
-    "publish": "npm publish"
+    "usenpm": "npmuser.sh npm",
+    "usegithub": "npmuser.sh github",
+    "publish": "npm publish --access=public"
   }
 }

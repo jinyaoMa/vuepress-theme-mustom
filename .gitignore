@@ -1,4 +1,6 @@
 _secret.js
+.npmrc
+npmuser.sh
 
 # Logs
 logs
