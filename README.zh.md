@@ -12,19 +12,19 @@ Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Person
 
 </div>
 
-![preview](./$screenshots/preview.jpg)
+![preview](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/preview.jpg)
 
 文档语言:
-- [中文](./README.zh.md)
-- [English](./README.md)
+- [中文](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.zh.md)
+- [English](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.md)
 
-> **当你看完本文档之后，如果还是感觉不会不清楚，请仔细研究我 [\$docs](./$docs) 的目录结构，或者也可以在 Github Issues 里面放出你的问题，我有空就回复。最好是加 QQ 群：595614161。**
+> **当你看完本文档之后，如果还是感觉不会不清楚，请仔细研究我 [\$docs](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs) 的目录结构，或者也可以在 Github Issues 里面放出你的问题，我有空就回复。最好是加 QQ 群：595614161。**
 
 > **要是主题出 Bug 了或者有什么建议想提，可以发到 Github Issues 里，不用在意什么报告的格式啥的。当然最好加 QQ 群：595614161。**
 
 # 安装
 
-创建以下结构的文件夹，如果想看 `$docs` 的详细结构，点这里 [\$docs](./$docs)。`_posts` 文件夹请参考 [\$docs/_posts](./$docs/_posts)。
+创建以下结构的文件夹，如果想看 `$docs` 的详细结构，点这里 [\$docs](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs)。`_posts` 文件夹请参考 [\$docs/_posts](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs/_posts)。
 
 ```yml
 # 在创建的新文件夹里
@@ -71,7 +71,7 @@ vuepress build \$docs
 
 # 简单讲解 `_secret.tpl.js`
 
-想看我的 `_secret.tpl.js` 长啥样可以点 [这里](./$docs/.vuepress/_secret.tpl.js)。
+想看我的 `_secret.tpl.js` 长啥样可以点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs/.vuepress/_secret.tpl.js)。
 
 使用一个分离的保密文件的话，`appid` 和 `appkey` 什么的就不用上传到线上，有一些保密作用吧。可以参照以下代码在 `config.js` 引用保密文件。
 
@@ -92,7 +92,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
 
 # 简单讲解 `config.js`
 
-想看我的 `config.js` 长啥样可以点 [这里](./$docs/.vuepress/config.js)。
+想看我的 `config.js` 长啥样可以点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs/.vuepress/config.js)。
 
 > 很多代码太长就不翻译了 ~ 习惯了代码里写英文，这是病，以后要改。。。
 
@@ -183,7 +183,7 @@ images: { // for image replacment; no base needed; first layer key points to com
 
 ### clustrmaps
 
-![clustrmaps](./$screenshots/clustrmaps.jpg)
+![clustrmaps](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/clustrmaps.jpg)
 
 设置 `clustrmaps` 为 `null` 或者直接删掉它可以关掉这访问监测组件。这个组件需要 [clustrmaps.com](https://clustrmaps.com/) 的服务，就是要注册一下。
 
@@ -210,7 +210,7 @@ customBackgrounds: [
 
 ### socialShare
 
-![socialShare](./$screenshots/socialShare.jpg)
+![socialShare](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/socialShare.jpg)
 
 参考 [这里](https://sns.goyfe.com/guide/) 来设置。以下代码会生成上图的结果。
 
@@ -225,7 +225,7 @@ socialShare: { // https://sns.goyfe.com/guide/
 
 ### notification
 
-![notification](./$screenshots/notification.jpg)
+![notification](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/notification.jpg)
 
 > `msg` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
 
@@ -245,7 +245,7 @@ notification: [
 
 ### qrcodes
 
-![qrcodes](./$screenshots/qrcodes.jpg)
+![qrcodes](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/qrcodes.jpg)
 
 > `locale` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
 
@@ -269,7 +269,7 @@ qrcodes: [{ // qrcode for contact and friending
 
 ### header
 
-![header](./$screenshots/header.jpg)
+![header](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/header.jpg)
 
 > `sitename` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
 
@@ -286,7 +286,7 @@ header: {
 
 ### brand
 
-![brand](./$screenshots/brand.jpg)
+![brand](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/brand.jpg)
 
 > `signatures` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
 
@@ -320,7 +320,7 @@ brand: {
 
 `caption` 和 `text` 必需按顺序存放中英文的字符串。
 
-你可以删除某些链接。如果你有一个跟我一样的 [\$docs](./$docs) 目录结构，那这个属性不必要改。
+你可以删除某些链接。如果你有一个跟我一样的 [\$docs](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs) 目录结构，那这个属性不必要改。
 
 ```yml
 # 在创建的新文件夹里
@@ -429,7 +429,7 @@ menus: [{
 
 ### meting
 
-![meting](./$screenshots/meting.jpg)
+![meting](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/meting.jpg)
 
 以下代码会生成上图的结果。
 
@@ -445,7 +445,7 @@ meting: {
 
 ### portals
 
-![portals](./$screenshots/portals.jpg)
+![portals](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/portals.jpg)
 
 以下代码会生成上图的结果。
 
@@ -507,7 +507,7 @@ hitokoto: {
 
 ### gallery
 
-你可以添加线上的图片到图库页面。添加的图片会置顶显示，接着才是自动检测的本地图片。本地图片都是凡在 `/$docs/.vuepress/public/gallery` 中，点 [这里](./$docs/.vuepress/public/gallery) 看我是怎么样子放的。
+你可以添加线上的图片到图库页面。添加的图片会置顶显示，接着才是自动检测的本地图片。本地图片都是凡在 `/$docs/.vuepress/public/gallery` 中，点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs/.vuepress/public/gallery) 看我是怎么样子放的。
 
 ```js
 gallery: [/*{ format; these gallery items will be appended to /gallery/ page
@@ -563,7 +563,7 @@ updated: 2020-12-12 00:00:00
 
 ## 普通页面 Front-Matter
 
-从我的“关于”页面找的例子，或者查看原 `index.md` 文件可以点 [这里](./$docs/about/index.md)。
+从我的“关于”页面找的例子，或者查看原 `index.md` 文件可以点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs/about/index.md)。
 
 ```yml
 ---
@@ -573,7 +573,7 @@ title: 关于 | About
 
 ### 想要做和我的“记录”页面相似的页面？
 
-根据以下格式写代码，或者查看我的“记录”页面原 `index.md` 文件可以点 [这里](./$docs/records/index.md)。
+根据以下格式写代码，或者查看我的“记录”页面原 `index.md` 文件可以点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs/records/index.md)。
 
 ```yml
 ---
@@ -601,7 +601,7 @@ records:
 
 > 代码库在 Github 仓库中的结构可以参考 [jinyaoMa/code-lib](https://github.com/jinyaoMa/code-lib)
 
-根据以下格式写代码，或者查看我的“代码库”页面原 `index.md` 文件可以点 [这里](./$docs/codes/index.md)。
+根据以下格式写代码，或者查看我的“代码库”页面原 `index.md` 文件可以点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs/codes/index.md)。
 
 ```yml
 ---
@@ -620,7 +620,7 @@ github:
 
 > 图标字体库在 Github 仓库中的结构可以参考 [jinyaoMa/icon-lib](https://github.com/jinyaoMa/icon-lib)
 
-根据以下格式写代码，或者查看我的“图标字体库”页面原 `index.md` 文件可以点 [这里](./$docs/icons/index.md)。
+根据以下格式写代码，或者查看我的“图标字体库”页面原 `index.md` 文件可以点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$docs/icons/index.md)。
 
 ```yml
 ---

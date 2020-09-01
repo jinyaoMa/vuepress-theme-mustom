@@ -1,6 +1,6 @@
 {
-  "name": "vuepress-theme-mustom",
-  "version": "1.1.1-20200901.1245.1",
+  "name": "@jinyaoma/vuepress-theme-mustom",
+  "version": "1.1.1-20200901.1245.2",
   "author": "jinyaoMa <jinyao.ma@outlook.com>",
   "description": "Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Personal Website (QQ Group: 595614161)",
   "keywords": [
@@ -33,6 +33,9 @@
     "vuepress-plugin-table-of-contents": "^1.1.6",
     "vuepress-plugin-zooming": "^1.1.7",
     "vuex": "^3.5.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "dev": "vuepress dev $docs",
