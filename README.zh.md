@@ -12,7 +12,7 @@ Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Person
 
 </div>
 
-![preview](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/preview.jpg)
+![preview](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/preview.jpg?raw=true)
 
 文档语言:
 - [中文](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.zh.md)
@@ -40,13 +40,13 @@ Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Person
 在新文件夹中运行一下其中一个命令，安装 `vuepress` 和 `vuepress-theme-mustom`。
 
 ```bash
-yarn add vuepress-theme-mustom -D
+yarn add @jinyaoma/vuepress-theme-mustom -D
 ```
 
 或使用 npm
 
 ```bash
-npm i vuepress-theme-mustom -D
+npm i @jinyaoma/vuepress-theme-mustom -D
 ```
 
 或点 [这里](https://github.com/jinyaoMa/vuepress-theme-mustom/archive/master.zip) 手动下载并解压主题文件夹到上一步的新建文件夹。接着对照下方代码设置 `config.js` 中属性 `theme`。
@@ -183,7 +183,7 @@ images: { // for image replacment; no base needed; first layer key points to com
 
 ### clustrmaps
 
-![clustrmaps](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/clustrmaps.jpg)
+![clustrmaps](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/clustrmaps.jpg?raw=true)
 
 设置 `clustrmaps` 为 `null` 或者直接删掉它可以关掉这访问监测组件。这个组件需要 [clustrmaps.com](https://clustrmaps.com/) 的服务，就是要注册一下。
 
@@ -210,7 +210,7 @@ customBackgrounds: [
 
 ### socialShare
 
-![socialShare](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/socialShare.jpg)
+![socialShare](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/socialShare.jpg?raw=true)
 
 参考 [这里](https://sns.goyfe.com/guide/) 来设置。以下代码会生成上图的结果。
 
@@ -225,7 +225,7 @@ socialShare: { // https://sns.goyfe.com/guide/
 
 ### notification
 
-![notification](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/notification.jpg)
+![notification](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/notification.jpg?raw=true)
 
 > `msg` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
 
@@ -245,7 +245,7 @@ notification: [
 
 ### qrcodes
 
-![qrcodes](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/qrcodes.jpg)
+![qrcodes](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/qrcodes.jpg?raw=true)
 
 > `locale` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
 
@@ -269,7 +269,7 @@ qrcodes: [{ // qrcode for contact and friending
 
 ### header
 
-![header](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/header.jpg)
+![header](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/header.jpg?raw=true)
 
 > `sitename` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
 
@@ -286,7 +286,7 @@ header: {
 
 ### brand
 
-![brand](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/brand.jpg)
+![brand](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/brand.jpg?raw=true)
 
 > `signatures` 中字符串必须按照特定顺序/下标. 0 => `zh`, 1 => `en`
 
@@ -429,7 +429,7 @@ menus: [{
 
 ### meting
 
-![meting](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/meting.jpg)
+![meting](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/meting.jpg?raw=true)
 
 以下代码会生成上图的结果。
 
@@ -445,7 +445,7 @@ meting: {
 
 ### portals
 
-![portals](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/portals.jpg)
+![portals](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/portals.jpg?raw=true)
 
 以下代码会生成上图的结果。
 

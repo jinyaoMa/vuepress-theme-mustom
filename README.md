@@ -12,7 +12,7 @@ Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Person
 
 </div>
 
-![preview](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/preview.jpg)
+![preview](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/preview.jpg?raw=true)
 
 Language:
 - [中文](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.zh.md)
@@ -40,13 +40,13 @@ Create a folder with structure as below, and for detailed source folder structur
 Run one of the following commands in the new folder of your site to install `vuepress` and `vuepress-theme-mustom`.
 
 ```bash
-yarn add vuepress-theme-mustom -D
+yarn add @jinyaoma/vuepress-theme-mustom -D
 ```
 
 or with npm
 
 ```bash
-npm i vuepress-theme-mustom -D
+npm i @jinyaoma/vuepress-theme-mustom -D
 ```
 
 or manually download the clone `.zip` file [here](https://github.com/jinyaoMa/vuepress-theme-mustom/archive/master.zip), and extract the theme source code to the new folder of your site. Then, set `theme` attribute of `config.js` as below.
@@ -181,7 +181,7 @@ This attribute is for sitemap generation **ONLY**.
 
 ### clustrmaps
 
-![clustrmaps](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/clustrmaps.jpg)
+![clustrmaps](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/clustrmaps.jpg?raw=true)
 
 Set `clustrmaps` to `null` or ignore it to disable above. This requires service from [clustrmaps.com](https://clustrmaps.com/).
 
@@ -206,7 +206,7 @@ customBackgrounds: [
 
 ### socialShare
 
-![socialShare](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/socialShare.jpg)
+![socialShare](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/socialShare.jpg?raw=true)
 
 Looking to [this](https://sns.goyfe.com/guide/) for reference. The following example generates the result of above.
 
@@ -221,7 +221,7 @@ socialShare: { // https://sns.goyfe.com/guide/
 
 ### notification
 
-![notification](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/notification.jpg)
+![notification](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/notification.jpg?raw=true)
 
 > `msg` strings should be in current sequence/index. 0 => `zh`, 1 => `en`
 
@@ -241,7 +241,7 @@ notification: [
 
 ### qrcodes
 
-![qrcodes](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/qrcodes.jpg)
+![qrcodes](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/qrcodes.jpg?raw=true)
 
 > `locale` strings should be in current sequence/index. 0 => `zh`, 1 => `en`
 
@@ -265,7 +265,7 @@ qrcodes: [{ // qrcode for contact and friending
 
 ### header
 
-![header](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/header.jpg)
+![header](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/header.jpg?raw=true)
 
 > `sitename` strings should be in current sequence/index. 0 => `zh`, 1 => `en`
 
@@ -282,7 +282,7 @@ header: {
 
 ### brand
 
-![brand](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/brand.jpg)
+![brand](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/brand.jpg?raw=true)
 
 > `signatures` strings should be in current sequence/index. 0 => `zh`, 1 => `en`
 
@@ -425,7 +425,7 @@ menus: [{
 
 ### meting
 
-![meting](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/meting.jpg)
+![meting](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/meting.jpg?raw=true)
 
 The following example generates the result of above.
 
@@ -441,7 +441,7 @@ meting: {
 
 ### portals
 
-![portals](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/portals.jpg)
+![portals](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/portals.jpg?raw=true)
 
 The following example generates the result of above.
 
