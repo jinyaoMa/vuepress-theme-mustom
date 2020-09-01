@@ -100,8 +100,9 @@ To see how my `config.js` looks like, click [here](https://github.com/jinyaoMa/v
 module.exports = { // https://www.vuepress.cn/zh/config/
   // Entry of used theme
   // theme: require.resolve('../../'), // My value
-  // theme: require.resolve('../../vuepress-theme-mustom-master/'), // manually download theme
-  theme: 'vuepress-theme-mustom', // Your value
+  // manually download theme, and folder `vuepress-theme-mustom-master` is in the root of the project
+  // theme: require.resolve('../../vuepress-theme-mustom-master/'),
+  theme: '@jinyaoma/vuepress-theme-mustom', // Your value
   // Site base
   // base: '/', // My value, due to https://ma-jinyao.cn/
   base: '/MyBlog/', // Your value, if https://yourUsername.github.io/MyBlog/
