@@ -1,6 +1,6 @@
 {
   "name": "@jinyaoma/vuepress-theme-mustom",
-  "version": "1.1.1-20200901.1245.4",
+  "version": "1.1.1-20200901.1245.5",
   "author": "jinyaoMa <jinyao.ma@outlook.com>",
   "description": "Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Personal Website (QQ Group: 595614161)",
   "keywords": [
@@ -11,7 +11,7 @@
   "main": "index.js",
   "license": "MIT",
   "repository": "git@github.com:jinyaoMa/vuepress-theme-mustom.git",
-  "devDependencies": {
+  "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/plugin-pwa": "^1.5.2",
