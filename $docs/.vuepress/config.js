@@ -220,6 +220,11 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       icon: 'https://blog.ma-jinyao.cn/asset/img/icon.medium.png',
       link: 'https://jinyaoma.github.io/MPlayer/'
     }, {
+      name: '求职信仓库',
+      desc: 'Cover Letter Library',
+      icon: 'https://jinyaoma.github.io/cover-letter-lib/favicon.ico',
+      link: 'https://jinyaoma.github.io/cover-letter-lib/'
+    }, {
       name: 'Resume',
       desc: 'Resume Template',
       icon: 'https://blog.ma-jinyao.cn/extension/resume/icon.png',
@@ -229,16 +234,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       desc: '简历模板',
       icon: 'https://blog.ma-jinyao.cn/extension/resume/icon.reverse.png',
       link: 'https://blog.ma-jinyao.cn/extension/resume/chinese/'
-    }, {
-      name: 'Cover Letter',
-      desc: 'Cover Letter Template',
-      icon: 'https://blog.ma-jinyao.cn/extension/letter/icon.png',
-      link: 'https://blog.ma-jinyao.cn/extension/letter/english/'
-    }, {
-      name: '求职信',
-      desc: '求职信模板',
-      icon: 'https://blog.ma-jinyao.cn/extension/letter/icon.reverse.png',
-      link: 'https://blog.ma-jinyao.cn/extension/letter/chinese/'
     }],
     hitokoto: {
       customs: [

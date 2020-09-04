@@ -36,14 +36,14 @@ records:
       progress: Complete
       summary: A HTML5 Audio Player; APlayer 个人随便模仿版
 
-    - cover: "https://blog.ma-jinyao.cn/extension/letter/icon.png"
-      date: 2020/03 - 2020/03
-      title: Cover Letter Template/Generator
+    - cover: "https://jinyaoma.github.io/cover-letter-lib/icon.png"
+      date: 2020/08 - 2020/09
+      title: Cover Letter Library
       type: project
       author: jinyaoMa
-      source: "https://blog.ma-jinyao.cn/extension/letter/english/"
+      source: "https://github.com/jinyaoMa/cover-letter-lib"
       progress: Latest
-      summary: Cover Letter
+      summary: A library of cover letters
 
     - cover: "https://blog.ma-jinyao.cn/extension/resume/icon.png"
       date: 2020/02 - 2020/03
