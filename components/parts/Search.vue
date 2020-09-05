@@ -236,7 +236,7 @@ export default {
     margin-bottom $headerHeight
     // min-height s('calc(100vh - 3rem - %s)', $headerHeight * 3)
     @media (max-width $smallestWidth)
-      margin-bottom 1rem
+      margin-bottom s('calc(%s + 1rem)', $headerHeight)
       // min-height s('calc(100vh - 5rem - %s)', $headerHeight)
     &.align-right
       right 0
