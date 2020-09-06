@@ -46,14 +46,8 @@ export default {
     };
   },
   mounted() {
-    if (!this.mustom$IsMobile && this.mustom$FirstTimeAddin) {
-      const that = this;
-      this.mustom$SetAddin({
-        name: "ad",
-        callback(name) {
-          that.current = name;
-        },
-      });
+    if (!this.mustom$IsMobile && this.mustom$FirstTimeAddin && this.mustom$IsChinese) {
+      this.setAddin('ad');
     } else {
       this.current = this.mustom$Addin;
     }
