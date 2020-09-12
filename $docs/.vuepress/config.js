@@ -113,8 +113,8 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     },
     menus: [{
       caption: [
-        '本站', // zh
-        'MAIN' // en
+        '菜单', // zh
+        'MENU' // en
       ],
       icon: '<i class="fas fa-sitemap fa-fw"></i>',
       items: [{
@@ -138,14 +138,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
           'About' // en
         ],
         link: '/about/'
-      }]
-    }, {
-      caption: [
-        '工作', // zh
-        'JOB RELATED' // en
-      ],
-      icon: '<i class="fas fa-briefcase fa-fw"></i>',
-      items: [{
+      }, {
         icon: '<i class="fas fa-paper-plane fa-fw"></i>',
         text: [
           '简历小贴士', // zh
@@ -159,14 +152,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
           'Cover Letter Tips' // en
         ],
         link: '/letter/'
-      }]
-    }, {
-      caption: [
-        '其他', // zh
-        'OTHERS' // en
-      ],
-      icon: '<i class="fas fa-ellipsis-h fa-fw"></i>',
-      items: [{
+      }, {
         icon: '<i class="fas fa-box fa-fw"></i>',
         text: [
           '代码库', // zh
