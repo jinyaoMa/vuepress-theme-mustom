@@ -37,6 +37,11 @@ module.exports = { // https://www.vuepress.cn/zh/config/
       records: '/assets/img/records.png',
       background: '/assets/img/background.png'
     },
+    dateFormatter: time => { // for sitemap dateFormatter used
+      const regexAM = /├\w\d\d: AM┤/;
+      const regexPM = /├\w\d\d: PM┤/;
+      return new Date(time.replace(regexAM, "AM").replace(regexPM, "PM")).toISOString();
+    },
     customBackgrounds: [
       //'/assets/img/background.png',
       //'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596065328389&di=ad7a9cc49e45547721005bd528325f0d&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2%2F58b4ef69ed377.jpg',

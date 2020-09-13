@@ -132,7 +132,8 @@ module.exports = (themeConfig, context) => {
           scopeLayout: 'Archive'
         }],
         sitemap: {
-          hostname: themeConfig.domain || 'https://ma-jinyao.cn'
+          hostname: themeConfig.domain || 'https://ma-jinyao.cn',
+          dateFormatter: themeConfig.dateFormatter || (time => new Date(time).toISOString())
         },
         comment: themeConfig.comment, /* { // https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#comment
           service: 'vssue',
