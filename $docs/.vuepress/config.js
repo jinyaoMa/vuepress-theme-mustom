@@ -307,7 +307,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     if (process.env.NODE_ENV === 'production') {
       return {
         output: {
-          publicPath: 'https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@gh-pages/'
+          publicPath: 'https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.1-20200912.1938/'
         }
       }
     }
