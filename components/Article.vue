@@ -343,7 +343,7 @@ export default {
   margin $gap * 0.5 0
   font-size 0.95rem
 
-.frame
+>>> .frame
   line-height 2
   padding 0.5rem 0.25rem 0.5rem 0.75rem
   white-space nowrap

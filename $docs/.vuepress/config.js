@@ -137,27 +137,6 @@ module.exports = { // https://www.vuepress.cn/zh/config/
         ],
         link: '/archive/'
       }, {
-        icon: '<i class="fas fa-user fa-fw"></i>',
-        text: [
-          '关于', // zh
-          'About' // en
-        ],
-        link: '/about/'
-      }, {
-        icon: '<i class="fas fa-paper-plane fa-fw"></i>',
-        text: [
-          '简历小贴士', // zh
-          'Resume Tips' // en
-        ],
-        link: '/resume/'
-      }, {
-        icon: '<i class="fas fa-file-contract fa-fw"></i>',
-        text: [
-          '求职信小贴士', // zh
-          'Cover Letter Tips' // en
-        ],
-        link: '/letter/'
-      }, {
         icon: '<i class="fas fa-box fa-fw"></i>',
         text: [
           '代码库', // zh
@@ -185,6 +164,27 @@ module.exports = { // https://www.vuepress.cn/zh/config/
           'Gallery' // en
         ],
         link: '/gallery/'
+      }, {
+        icon: '<i class="fas fa-paper-plane fa-fw"></i>',
+        text: [
+          '简历小贴士', // zh
+          'Resume Tips' // en
+        ],
+        link: '/resume/'
+      }, {
+        icon: '<i class="fas fa-file-contract fa-fw"></i>',
+        text: [
+          '求职信小贴士', // zh
+          'Cover Letter Tips' // en
+        ],
+        link: '/letter/'
+      }, {
+        icon: '<i class="fas fa-user fa-fw"></i>',
+        text: [
+          '关于', // zh
+          'About' // en
+        ],
+        link: '/about/'
       }]
     }],
     meting: {
@@ -307,7 +307,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     if (process.env.NODE_ENV === 'production') {
       return {
         output: {
-          publicPath: 'https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.1-20200912.1938/'
+          publicPath: 'https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.1-20200918.1233/'
         }
       }
     }
