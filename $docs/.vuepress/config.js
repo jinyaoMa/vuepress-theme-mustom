@@ -26,7 +26,7 @@ module.exports = { // https://www.vuepress.cn/zh/config/
     recentPostOffset: 5, // number of recent posts each time click on 'more post'
     searchMaxSuggestions: 19, // max number of search results display
     images: { // for image replacment; no base needed; first layer key points to component name
-      ad: '/assets/img/ad.png',
+      ad: 'https://raw.githubusercontent.com/jinyaoMa/jinyaoMa/master/qrcode.png',
       avatar: '/assets/img/avatar.png',
       brand: '/assets/img/brand.png',
       hitokoto: {

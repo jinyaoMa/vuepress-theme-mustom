@@ -46,11 +46,7 @@ export default {
     };
   },
   mounted() {
-    if (!this.mustom$IsMobile && this.mustom$FirstTimeAddin && this.mustom$IsChinese) {
-      this.setAddin('ad');
-    } else {
-      this.current = this.mustom$Addin;
-    }
+    this.current = this.mustom$Addin;
   },
   methods: {
     setAddin(name) {
