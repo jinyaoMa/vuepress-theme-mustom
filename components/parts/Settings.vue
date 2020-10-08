@@ -116,7 +116,7 @@ export default {
     height 1.5rem
     width 1.5rem
     border-radius $borderRadius
-    background var(--highlight)
+    background var(--settings-highlight)
     transition transform 0.2s, background 0.6s
     transform scale(3)
     z-index 1

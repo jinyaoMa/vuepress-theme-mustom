@@ -102,7 +102,7 @@ export default {
     list-style none
   .top
     > li:not(:last-child)
-      border-bottom 1px solid var(--bg)
+      border-bottom 2px solid var(--bg)
   .low
     overflow-y hidden
     height 0
@@ -113,10 +113,16 @@ export default {
       white-space nowrap
       overflow hidden
       text-overflow ellipsis
+      &:not(:last-child)
+        border-bottom 1px dashed
       i
         margin-right 0.25rem
       a
         color var(--readme-more-bg)
+        &:before
+          display none
+        &:hover
+          text-decoration underline
     &.extend
       height auto
       padding 0.5rem $gap
