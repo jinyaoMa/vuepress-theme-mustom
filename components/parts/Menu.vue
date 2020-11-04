@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "Menu"
+  name: "Menu",
 };
 </script>
 
@@ -61,9 +61,12 @@ a
     border-radius $borderRadius
     margin-right 0.5rem
     margin-bottom 0.5rem
+    padding 0.5rem
     &.router-link-exact-active
       background var(--txt)
       color var(--bg)
       &:after
         display none
+    .icon
+      display none
 </style>
