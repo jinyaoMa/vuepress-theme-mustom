@@ -382,7 +382,7 @@ module.exports = {
       return {
         output: {
           publicPath:
-            "https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.1-20201103.0823/"
+            "https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.1-20201103.2131/"
         }
       };
     }
