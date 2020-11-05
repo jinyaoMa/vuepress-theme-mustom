@@ -14,6 +14,8 @@ Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Person
 
 ![preview](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/$screenshots/preview.jpg?raw=true)
 
+Sample: [vuepress-theme-mustom-sample](https://github.com/jinyaoMa/vuepress-theme-mustom-sample)
+
 Language:
 - [中文](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.zh.md)
 - [English](https://github.com/jinyaoMa/vuepress-theme-mustom/blob/master/README.md)
