@@ -202,22 +202,6 @@ module.exports = {
             link: "/gallery/"
           },
           {
-            icon: '<i class="fas fa-paper-plane fa-fw"></i>',
-            text: [
-              "简历小贴士", // zh
-              "Resume Tips" // en
-            ],
-            link: "/resume/"
-          },
-          {
-            icon: '<i class="fas fa-file-contract fa-fw"></i>',
-            text: [
-              "求职信小贴士", // zh
-              "Cover Letter Tips" // en
-            ],
-            link: "/letter/"
-          },
-          {
             icon: '<i class="fas fa-user fa-fw"></i>',
             text: [
               "关于", // zh
@@ -382,7 +366,7 @@ module.exports = {
       return {
         output: {
           publicPath:
-            "https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.1-20201103.2131/"
+            "https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.2/"
         }
       };
     }
