@@ -4,7 +4,9 @@
     :style="mustom$Skin === 'default' && !mustom$IsNight ? backgroundImage : {}"
   >
     <transition name="fade">
-      <Canvas v-if="mustom$Skin === 'default' && !mustom$IsMobile && !mustom$NoCanvas" />
+      <Canvas
+        v-if="mustom$Skin === 'default' && !mustom$IsMobile && !mustom$NoCanvas"
+      />
     </transition>
     <Launch />
     <Spinner ref="spinner" />
@@ -107,9 +109,9 @@ export default {
         this.$themeConfig.customBackgrounds.length
       ) {
         return {
-          backgroundImage: `url('${
-            this.$withBase(this.$themeConfig.customBackgrounds[this.backgroundImageIndex])
-          }')`,
+          backgroundImage: `url('${this.$withBase(
+            this.$themeConfig.customBackgrounds[this.backgroundImageIndex]
+          )}')`,
         };
       }
       return {};
@@ -403,9 +405,9 @@ export default {
   padding-top $gap !important
   padding-bottom $gap !important
   @media (max-width $smallWidth)
-    padding-top 0 !important
-  @media (max-width $smallerWidth)
     padding-bottom 0 !important
+  @media (max-width $smallerWidth)
+    padding-top 0 !important
   @media (max-width $smallestWidth)
     gap 0
   >>> .card
@@ -422,11 +424,11 @@ export default {
 
 @media (max-width $smallWidth)
   .main
-    grid-template-columns auto $sideWidth
+    grid-template-columns $sideWidth s('calc(100% - %s)', $sideWidth)
     grid-template-rows auto auto min-content
-    grid-template-areas 'drawer aside' 'center aside' 'footer aside'
-  .drawer, .center, .footer
-    padding 0 $gap 0 0
+    grid-template-areas 'drawer center' 'drawer aside' 'drawer footer'
+  .aside, .center, .footer
+    padding 0 0 0 $gap
 
 @media (max-width $smallerWidth)
   .main
@@ -434,7 +436,7 @@ export default {
     grid-template-rows min-content min-content min-content min-content
     grid-template-areas 'drawer' 'center' 'aside' 'footer'
     min-height auto
-  .drawer, .center, .footer
+  .aside, .center, .footer
     padding 0
 
 @media (max-width $smallestWidth)

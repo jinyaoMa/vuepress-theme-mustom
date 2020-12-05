@@ -8,20 +8,23 @@
     </div>
     <div class="avatar" :style="avatarStyle"></div>
     <div class="inner">
-      <div class="author">{{$themeConfig.author}}</div>
-      <div class="signature" v-html="$themeConfig.brand.signatures[mustom$LangIndex]"></div>
+      <div class="author">{{ $themeConfig.author }}</div>
+      <div
+        class="signature"
+        v-html="$themeConfig.brand.signatures[mustom$LangIndex]"
+      ></div>
       <div class="counter">
         <span :title="mustom$Locale.brand.pstCount">
           <i class="fas fa-archive fa-fw"></i>
-          {{mustom$SiteTotalPosts}}
-        </span>|
+          {{ mustom$SiteTotalPosts }} </span
+        >|
         <span :title="mustom$Locale.brand.catCount">
           <i class="fas fa-folder-open fa-fw"></i>
-          {{mustom$SiteTotalCategoriess}}
-        </span>|
+          {{ mustom$SiteTotalCategoriess }} </span
+        >|
         <span :title="mustom$Locale.brand.tagCount">
           <i class="fas fa-tags fa-fw"></i>
-          {{mustom$SiteTotalTags}}
+          {{ mustom$SiteTotalTags }}
         </span>
       </div>
       <div class="contact">
@@ -60,7 +63,7 @@ export default {
 .Brand
   display grid
   grid-template-areas 'avatar' 'inner'
-  @media (max-width $smallWidth)
+  @media (max-width $smallerWidth)
     grid-template-areas 'avatar inner'
     grid-template-columns 8.125rem auto
   @media (max-width $smallestWidth)
@@ -100,10 +103,10 @@ export default {
 .inner
   position relative
   grid-area inner
-  padding 1.5rem 1rem 1rem 1rem
+  padding 1.5rem 1rem 1rem
   border-top 0.25rem dashed var(--article-ending)
   text-align center
-  @media (max-width $smallWidth) and (min-width $smallestWidth)
+  @media (max-width $smallerWidth) and (min-width $smallestWidth)
     padding 1rem 1rem 1rem 1.5rem
     border-top none
     border-left 0.25rem dashed var(--article-ending)
@@ -116,13 +119,13 @@ export default {
 .author
   font-size 1.5rem
   line-height 1
-  margin -1rem -1rem
-  padding 1rem 1rem
+  margin -1rem
+  padding 1rem
   // background var(--highlight)
   text-shadow 1rem 1rem var(--txt-shadow)
   transform translate3d(-0.325rem, -0.6rem, 0)
   font-weight 666
-  @media (max-width $smallWidth) and (min-width $smallestWidth)
+  @media (max-width $smallerWidth) and (min-width $smallestWidth)
     line-height 2
     padding 0 0 0 1rem
     border-radius $borderRadius
@@ -136,7 +139,7 @@ export default {
 .counter
   padding 0 0.5rem
   user-select none
-  @media (max-width $smallWidth) and (min-width $smallestWidth)
+  @media (max-width $smallerWidth) and (min-width $smallestWidth)
     margin-top 0.5rem !important
     line-height 1
   span
@@ -148,7 +151,7 @@ export default {
 
 .contact
   margin-top 0.5rem !important
-  @media (max-width $smallWidth) and (min-width $smallestWidth)
+  @media (max-width $smallerWidth) and (min-width $smallestWidth)
     position absolute
     top 0
     right 0

@@ -28,7 +28,7 @@ export default {
 
 .inner
   padding 0.5rem 0
-  @media (min-width $smallestWidth) and (max-width $smallWidth)
+  @media (min-width $smallestWidth) and (max-width $smallerWidth)
     padding 0.5rem 1rem
 
 a
@@ -56,7 +56,7 @@ a
     &:after
       background var(--underline)
       border 2px solid
-  @media (min-width $smallestWidth) and (max-width $smallWidth)
+  @media (min-width $smallestWidth) and (max-width $smallerWidth)
     display inline-block
     border-radius $borderRadius
     margin-right 0.5rem

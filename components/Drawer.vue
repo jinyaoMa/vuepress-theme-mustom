@@ -41,7 +41,7 @@ export default {
   width $sideWidth
   overflow hidden
 
-@media (max-width $smallWidth)
+@media (max-width $smallerWidth)
   .Drawer
     position relative
     top auto

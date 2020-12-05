@@ -2,7 +2,13 @@
   <div class="Aside">
     <Panel />
     <Audioplayer />
-    <Clustrmaps v-if="$themeConfig.clustrmaps && $themeConfig.clustrmaps.id && $themeConfig.clustrmaps.src"/>
+    <Clustrmaps
+      v-if="
+        $themeConfig.clustrmaps &&
+        $themeConfig.clustrmaps.id &&
+        $themeConfig.clustrmaps.src
+      "
+    />
     <transition name="fade">
       <Toc v-if="$page.id === 'post' && !mustom$IsMobile" />
     </transition>
@@ -43,7 +49,7 @@ export default {
   width $sideWidth
   overflow hidden
 
-@media (max-width $smallerWidth)
+@media (max-width $smallWidth)
   .Aside
     position relative
     top auto
