@@ -1,6 +1,6 @@
 {
   "name": "@jinyaoma/vuepress-theme-mustom",
-  "version": "1.1.2-20201216.2023",
+  "version": "1.1.2-20201230.2124",
   "author": "jinyaoMa <jinyao.ma@outlook.com>",
   "description": "Simple design theme for VuePress，Blog，耀 の 个人网站 | Mark の Personal Website (QQ Group: 595614161)",
   "keywords": [
@@ -13,26 +13,26 @@
   "repository": "git@github.com:jinyaoMa/vuepress-theme-mustom.git",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
-    "@vuepress/plugin-blog": "^1.9.2",
-    "@vuepress/plugin-pwa": "^1.6.0",
-    "@vuepress/plugin-search": "^1.6.0",
+    "@vuepress/plugin-blog": "^1.9.3",
+    "@vuepress/plugin-pwa": "^1.7.1",
+    "@vuepress/plugin-search": "^1.7.1",
     "aplayer": "^1.10.1",
     "github-markdown-css": "^4.0.0",
+    "markdown-it-footnote": "^3.0.2",
     "md5": "^2.2.1",
     "meting": "^2.0.1",
     "smoothscroll-polyfill": "^0.4.4",
-    "vuepress": "^1.6.0",
+    "vuepress": "^1.7.1",
     "vuepress-plugin-helper-live2d": "^1.0.2",
     "vuepress-plugin-img-lazy": "^1.0.4",
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-nprogress": "^1.1.7",
-    "vuepress-plugin-pangu": "^1.0.1",
     "vuepress-plugin-serve": "^2.0.3",
     "vuepress-plugin-smooth-scroll": "^0.0.9",
     "vuepress-plugin-social-share": "^0.3.1",
     "vuepress-plugin-table-of-contents": "^1.1.6",
     "vuepress-plugin-zooming": "^1.1.7",
-    "vuex": "^3.5.1"
+    "vuex": "^3.6.0"
   },
   "scripts": {
     "dev": "vuepress dev $docs",

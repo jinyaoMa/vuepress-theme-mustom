@@ -111,8 +111,7 @@ module.exports = (themeConfig, context) => {
       }
     ],
     hitokoto: {
-      api: "//v1.hitokoto.cn",
-      type: "l" // https://developer.hitokoto.cn/sentence/#请求参数
+      api: "//v1.hitokoto.cn"
     },
     gallery: gallery.list
   });
@@ -210,10 +209,6 @@ module.exports = (themeConfig, context) => {
       }
     ],
     [
-      // https://shigma.github.io/markdown-it-pangu/vuepress.html
-      "vuepress-plugin-pangu"
-    ],
-    [
       // https://vuepress.github.io/zh/plugins/nprogress/
       "vuepress-plugin-nprogress"
     ],
@@ -297,7 +292,6 @@ module.exports = (themeConfig, context) => {
     if (content) {
       const pangunode = require("./scripts/pangunode");
       $page.frontmatter.title = $page.title = pangunode($page.title || "");
-      $page._strippedContent = pangunode($page._strippedContent || "");
       $page.excerpt = pangunode($page.excerpt || "");
     }
     if (
@@ -389,12 +383,17 @@ module.exports = (themeConfig, context) => {
     }
   };
 
+  const extendMarkdown = (md) => {
+    md.use(require("markdown-it-footnote"));
+  };
+
   return {
     name,
     plugins,
     alias,
     define,
     additionalPages,
-    extendPageData
+    extendPageData,
+    extendMarkdown
   };
 };
