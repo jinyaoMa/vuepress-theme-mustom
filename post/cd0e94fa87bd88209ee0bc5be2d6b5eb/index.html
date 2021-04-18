@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hexo 主题 Mustom 使用指南（对应主题 1.0 版） | 耀 の 部落阁 | Mark&#39;s BLOG</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <meta name="description" content="- 本主题[Mustom](//github.com/jinyaoMa/hexo-theme-mustom)是我参考了卡片式和窗口展示的样式设计的Hexo主题。- 本主题通过大量的replaceWith函数和PJAX来加载，而且用了Live2D的插件，初始加载时回流特别厉害。- 本主题可以衍 ...">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    <meta name="google-site-verification" content="DR-3xvCA7YBP7TIeg7__j5lxaniGh2pzocrfywyn8o0">
+    <meta name="baidu-site-verification" content="zQef3H7nga">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/css/0.styles.a7a5ffb3.css" as="style"><link rel="preload" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/app.5514714f.js" as="script"><link rel="preload" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/5.8f03a21b.js" as="script"><link rel="preload" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/16.a00417ee.js" as="script"><link rel="preload" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/9.efcfe850.js" as="script"><link rel="preload" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/8.eec476d6.js" as="script"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/10.4e703af7.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/11.7fbebba5.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/12.1153c514.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/13.431f4376.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/14.67802fce.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/15.81486e67.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/17.b2b42cdc.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/18.178007b0.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/19.a5ea0502.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/20.7721c23f.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/21.882cb20b.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/22.02b65dad.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/23.8a2ee7ba.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/24.9615ece1.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/25.e8aefabe.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/26.e1c80f58.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/27.0b8c7966.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/28.f8cb5680.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/29.8c84a290.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/3.30cd915c.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/30.af6dd8d3.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/31.dacb6782.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/32.2a8ca38f.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/33.9ca2b71c.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/4.bb3505fc.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/6.345ac3da.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/7.a4756390.js"><link rel="prefetch" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/vuejs-paginate.472882b3.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/css/0.styles.a7a5ffb3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="GlobalLayout skin-jshine" data-v-1134095c><!----> <div class="Launch" data-v-866ff42c data-v-1134095c><div class="avatar" style="background-image:url('/assets/img/avatar.png');" data-v-866ff42c></div></div> <div class="Spinner " data-v-4f39ff1c data-v-1134095c></div> <div class="Header" data-v-6b417cd2 data-v-1134095c><div class="ext " data-v-6b417cd2><i class="fas fa-cube" data-v-6b417cd2></i></div> <div class="sitename" data-v-6b417cd2><em><span>Mark's</span></em><strong><span>BLOG</span></strong></div> <div class="ext " data-v-6b417cd2><i class="fas fa-search" data-v-6b417cd2></i></div></div> <div class="Goingto" data-v-20c5c9da data-v-1134095c><div class="top" data-v-20c5c9da><i class="fas fa-arrow-up" data-v-20c5c9da></i></div> <div class="bottom" data-v-20c5c9da><i class="fas fa-arrow-down" data-v-20c5c9da></i></div></div> <div class="Addin" data-v-3d642fa2 data-v-1134095c><div class="top " data-v-3d642fa2><i class="fas fa-ad" data-v-3d642fa2></i></div> <div class="bottom " data-v-3d642fa2><i class="fas fa-qrcode" data-v-3d642fa2></i></div> <!----></div> <!----> <div class="frame" data-v-1134095c><div class="main" data-v-1134095c><div class="drawer" data-v-1134095c><div class="Drawer" data-v-5dae4bbf data-v-1134095c><div class="Brand card" data-v-69d01f34 data-v-5dae4bbf><div class="caption ifSmallest" data-v-69d01f34><span class="icon" data-v-69d01f34><i class="fas fa-id-card fa-fw" data-v-69d01f34></i></span> <span data-v-69d01f34>CARD</span></div> <div class="avatar" style="background-image:url('/assets/img/brand.png');" data-v-69d01f34></div> <div class="inner" data-v-69d01f34><div class="author" data-v-69d01f34>jinyaoMa</div> <div class="signature" data-v-69d01f34>issue, func, flow, std, solve</div> <div class="counter" data-v-69d01f34><span title="Count of Posts" data-v-69d01f34><i class="fas fa-archive fa-fw" data-v-69d01f34></i>
+        15 </span>|
+      <span title="Count of Categories" data-v-69d01f34><i class="fas fa-folder-open fa-fw" data-v-69d01f34></i>
+        8 </span>|
+      <span title="Count of Tags" data-v-69d01f34><i class="fas fa-tags fa-fw" data-v-69d01f34></i>
+        24
+      </span></div> <div class="contact" data-v-69d01f34><a target="_blank" href="https://github.com/jinyaoMa" title="jinyaoMa" data-v-69d01f34><i class="fab fa-github fa-fw"></i></a><a target="_blank" href="mailto://jinyao.ma@outlook.com" title="jinyao.ma@outlook.com" data-v-69d01f34><i class="fas fa-envelope fa-fw"></i></a><a target="_blank" href="tencent://Message/?uin=907881445" title="907881445" data-v-69d01f34><i class="fab fa-qq fa-fw"></i></a></div></div> <div class="minimize ifSmallest" data-v-69d01f34></div></div> <div class="Menu" data-v-0e40ca6a data-v-5dae4bbf><div class="card" data-v-0e40ca6a><div class="caption" data-v-0e40ca6a><span class="icon" data-v-0e40ca6a><i class="fas fa-sitemap fa-fw"></i></span> <span data-v-0e40ca6a>MENU</span></div> <div class="inner" data-v-0e40ca6a><a href="/" class="router-link-active" data-v-0e40ca6a><span class="icon" data-v-0e40ca6a><i class="fas fa-home fa-fw"></i></span> <span data-v-0e40ca6a>Home</span></a><a href="/archive/" data-v-0e40ca6a><span class="icon" data-v-0e40ca6a><i class="fas fa-archive fa-fw"></i></span> <span data-v-0e40ca6a>Archive</span></a><a href="/codes/" data-v-0e40ca6a><span class="icon" data-v-0e40ca6a><i class="fas fa-box fa-fw"></i></span> <span data-v-0e40ca6a>Code Library</span></a><a href="/icons/" data-v-0e40ca6a><span class="icon" data-v-0e40ca6a><i class="fas fa-icons fa-fw"></i></span> <span data-v-0e40ca6a>Icon Font Library</span></a><a href="/records/" data-v-0e40ca6a><span class="icon" data-v-0e40ca6a><i class="fas fa-edit fa-fw"></i></span> <span data-v-0e40ca6a>Records</span></a><a href="/gallery/" data-v-0e40ca6a><span class="icon" data-v-0e40ca6a><i class="fas fa-images fa-fw"></i></span> <span data-v-0e40ca6a>Gallery</span></a><a href="/about/" data-v-0e40ca6a><span class="icon" data-v-0e40ca6a><i class="fas fa-user fa-fw"></i></span> <span data-v-0e40ca6a>About</span></a></div> <div class="minimize" data-v-0e40ca6a></div></div></div> <div class="Skin card" data-v-3742b06a data-v-5dae4bbf><div class="caption" data-v-3742b06a><span class="icon" data-v-3742b06a><i class="fas fa-tshirt fa-fw" data-v-3742b06a></i></span> <span data-v-3742b06a>SKIN</span></div> <div class="inner" data-v-3742b06a><div title="Default" class="color " style="background:#696969;" data-v-3742b06a></div><div title="White &amp; Black" class="color " style="background:linear-gradient(120deg, #666666, #999999, #333333);" data-v-3742b06a></div><div title="JShine" class="color active" style="background:linear-gradient(120deg, #ff3300, #cc66ff, #00ccff);" data-v-3742b06a></div><div title="Memariani" class="color " style="background:linear-gradient(120deg, #cc6699, #6666cc, #33cccc);" data-v-3742b06a></div></div> <div class="minimize" data-v-3742b06a></div></div> <div class="Settings card" data-v-1297ae5c data-v-5dae4bbf><div class="caption" data-v-1297ae5c><span class="icon" data-v-1297ae5c><i class="fas fa-cog fa-fw" data-v-1297ae5c></i></span> <span data-v-1297ae5c>SETTINGS</span></div> <div class="inner" data-v-1297ae5c><div class=" " data-v-1297ae5c><span class="icon" data-v-1297ae5c><i class="fas fa-adjust fa-fw"></i></span> <span data-v-1297ae5c>Night Shift</span> <div class="switch" data-v-1297ae5c></div></div><div class=" " data-v-1297ae5c><span class="icon" data-v-1297ae5c><i class="fas fa-video-slash fa-fw"></i></span> <span data-v-1297ae5c>Disable Canvas</span> <div class="switch" data-v-1297ae5c></div></div><div class="active " data-v-1297ae5c><span class="icon" data-v-1297ae5c><i class="fas fa-globe-asia fa-fw"></i></span> <span data-v-1297ae5c>简体中文</span> <div class="switch" data-v-1297ae5c></div></div></div> <div class="minimize" data-v-1297ae5c></div></div></div></div> <div class="center " data-v-1134095c><div class="Translate card" data-v-2e2e3ae9 data-v-1134095c><div class="bar " data-v-2e2e3ae9><div title="Highlight words to translate - Supported by Baidu Translation API" class="sq highlight" data-v-2e2e3ae9><i class="fas fa-highlighter" data-v-2e2e3ae9></i></div> <div class="locales" data-v-2e2e3ae9><div data-v-2e2e3ae9>中文</div> <span data-v-2e2e3ae9>|</span> <div data-v-2e2e3ae9>English</div> <span data-v-2e2e3ae9>|</span> <div data-v-2e2e3ae9>日本語</div> <!----></div> <div title="Click to copy highlighted content above translation bar" class="sq copy" data-v-2e2e3ae9><i class="fas fa-copy" data-v-2e2e3ae9></i></div></div> <!----></div> <div data-v-1134095c><div class="Post" data-v-12a16612 data-v-1134095c><div class="Article card fix " data-v-2d8c9a66 data-v-12a16612><div class="caption" data-v-2d8c9a66><span class="icon" data-v-2d8c9a66><i class="fas fa-file fa-fw" data-v-2d8c9a66></i></span> <span data-v-2d8c9a66>PAGE CONTENT</span></div> <div class="inner" data-v-2d8c9a66><div class="meta  " data-v-2d8c9a66><div class="meta-title" data-v-2d8c9a66>Hexo 主题 Mustom 使用指南（对应主题 1.0 版）</div> <div class="meta-info" data-v-2d8c9a66><div class="info-date" data-v-2d8c9a66><i class="fas fa-calendar-alt fa-fw" data-v-2d8c9a66></i>
+          2020-04-15
+        </div> <div class="info-updated" data-v-2d8c9a66><i class="fas fa-calendar-check fa-fw" data-v-2d8c9a66></i>
+          2020-04-15
+        </div> <div class="info-categories" data-v-2d8c9a66><i class="fas fa-folder-open fa-fw" data-v-2d8c9a66></i> <span data-v-2d8c9a66><!----> <a href="/category/Hexo/" data-v-2d8c9a66>Hexo</a></span></div> <div class="info-wordcount" data-v-2d8c9a66><i class="fas fa-file-word fa-fw" data-v-2d8c9a66></i>
+          3.9k
+        </div> <div class="info-wordcount" data-v-2d8c9a66><i class="fas fa-stopwatch fa-fw" data-v-2d8c9a66></i>
+          31 min.
+        </div></div></div> <div class="markdown-body content__default" data-v-2d8c9a66><ul><li>本主题<a href="//github.com/jinyaoMa/hexo-theme-mustom">Mustom</a>是我参考了卡片式和窗口展示的样式设计的Hexo主题。</li> <li>本主题通过大量的replaceWith函数和PJAX来加载，而且用了Live2D的插件，初始加载时回流特别厉害。</li> <li>本主题可以衍生一个CSS的框架，但是作者本人目前还是在给每个组件都弄一个单独的样式表。</li> <li>本主题把各类资源文件都分门别类了，在以后添加内容方面应该还是较方便的。</li></ul> <h1 id="hexo根目录结构"><a href="#hexo根目录结构" class="header-anchor">#</a> Hexo根目录结构</h1> <p><strong>注：主题文件可以下载<a href="//github.com/jinyaoMa/ma-jinyao.cn">本站</a>所有源代码后，通过复制粘贴<code>themes/mustom</code>文件夹获得，或者下载<a href="//github.com/jinyaoMa/hexo-theme-mustom">Mustom</a>所有源代码获得</strong> <strong>注：以下文件及文件夹都是使用Mustom主题必要的结构</strong></p> <p>先来看看<a href="//github.com/jinyaoMa/ma-jinyao.cn">本站</a>的根目录结构。</p> <div class="language- extra-class"><pre class="language-text"><code>├─scaffolds    : 模板
+├─source       : 内容资源文件夹
+├─themes       : 下载的主题放这里
+├─package.json : 里面可以看我都用了什么没有魔改过的Hexo插件
+├─_config.yml  : 根配置文件
+</code></pre></div><p>这就是一个普通Hexo建站的初始结构。这里主要讲下，<strong>使用我的Mustom主题时，可以使用<code>scaffolds</code>里我的模板，里面包含了必要的front-matter变量。可以复制粘贴整个<code>scaffolds</code>文件去覆盖原本的文件夹。推荐按照<a href="//github.com/jinyaoMa/ma-jinyao.cn">本站</a>里的<code>package.json</code>来安装依赖，因为基本上安装的依赖都是用于优化和兼容。可以复制粘贴本站的<code>package.json</code>去替换原本的文件，之后运行命令<code>npm i</code>安装依赖。之后所有的例子默认都使用了我的模板和依赖之后的操作。</strong></p> <h1 id="config-yml根配置文件"><a href="#config-yml根配置文件" class="header-anchor">#</a> _config.yml根配置文件</h1> <p><strong>注：使用本主题的你可以在上面添加变量和修改变量的值，但是最好不要删除某一个变量，你可以留个空字符串</strong> <strong>可以在复制粘贴以下配置之后，通过网站效果慢慢改</strong></p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token comment"># Hexo Configuration</span>
+<span class="token comment">## Docs: https://hexo.io/docs/configuration.html</span>
+<span class="token comment">## Source: https://github.com/hexojs/hexo/</span>
+
+<span class="token comment"># Site</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">&quot;耀 の 个人网站 | Mark の Personal Website&quot;</span>
+<span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">&quot;耀の个人网站, 耀的个人网站, Mark の Personal Website, Mark's Personal Website, 耀的部落阁, 耀の部落阁, jinyaoMa, Mustom, Hexo&quot;</span>
+<span class="token key atrule">author</span><span class="token punctuation">:</span> jinyaoMa ( 耀 / Mark )
+<span class="token key atrule">year</span><span class="token punctuation">:</span> <span class="token number">2019</span> <span class="token comment"># 建站年</span>
+
+<span class="token comment"># URL</span>
+<span class="token comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span>
+<span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//ma<span class="token punctuation">-</span>jinyao.cn
+<span class="token key atrule">root</span><span class="token punctuation">:</span> /
+
+<span class="token comment"># Directory</span>
+<span class="token key atrule">source_dir</span><span class="token punctuation">:</span> source
+<span class="token key atrule">public_dir</span><span class="token punctuation">:</span> docs <span class="token comment"># 方便使用Github Page</span>
+<span class="token key atrule">tag_dir</span><span class="token punctuation">:</span> tags
+<span class="token key atrule">archive_dir</span><span class="token punctuation">:</span> archives
+<span class="token key atrule">category_dir</span><span class="token punctuation">:</span> categories
+<span class="token key atrule">code_dir</span><span class="token punctuation">:</span> code <span class="token comment"># markdown使用include_code标签</span>
+<span class="token key atrule">skip_render</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">&quot;code/*.*&quot;</span> <span class="token comment"># 排除code_dir</span>
+  <span class="token punctuation">-</span> <span class="token string">&quot;extension/**/*.html&quot;</span> <span class="token comment"># 排除extension</span>
+  <span class="token punctuation">-</span> <span class="token string">&quot;*.html&quot;</span> <span class="token comment"># 如果在在主目录source文件夹里放了搜索引擎验证的.html文件</span>
+  <span class="token punctuation">-</span> <span class="token string">&quot;CNAME&quot;</span> <span class="token comment"># 如果在在主目录source文件夹里放了CNAME文件</span>
+
+<span class="token comment"># Writing</span>
+<span class="token key atrule">new_post_name</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>title.md <span class="token comment"># File name of new posts</span>
+<span class="token key atrule">default_layout</span><span class="token punctuation">:</span> post
+<span class="token key atrule">titlecase</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># Transform title into titlecase</span>
+<span class="token key atrule">external_link</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># Open external links in new tab</span>
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> site <span class="token comment"># Apply to the whole site</span>
+  <span class="token key atrule">exclude</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span>
+<span class="token key atrule">filename_case</span><span class="token punctuation">:</span> <span class="token number">0</span>
+<span class="token key atrule">render_drafts</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">post_asset_folder</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">relative_link</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">future</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">&quot;  &quot;</span>
+  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token comment"># Date / Time format</span>
+<span class="token comment">## Hexo uses Moment.js to parse and display date</span>
+<span class="token comment">## You can customize the date format as defined in</span>
+<span class="token comment">## http://momentjs.com/docs/#/displaying/format/</span>
+<span class="token key atrule">date_format</span><span class="token punctuation">:</span> YYYY<span class="token punctuation">-</span>MM<span class="token punctuation">-</span>DD
+<span class="token key atrule">time_format</span><span class="token punctuation">:</span> HH<span class="token punctuation">:</span>mm<span class="token punctuation">:</span>ss
+<span class="token comment">## Use post's date for updated date unless set in front-matter</span>
+<span class="token key atrule">use_date_for_updated</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token comment"># Extensions</span>
+<span class="token comment">## Plugins: https://hexo.io/plugins/</span>
+<span class="token comment">## Themes: https://hexo.io/themes/</span>
+<span class="token key atrule">theme</span><span class="token punctuation">:</span> mustom
+
+<span class="token comment"># Deployment</span>
+<span class="token comment">## Docs: https://hexo.io/docs/deployment.html</span>
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> baidu_url_submitter
+  <span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+    <span class="token key atrule">repo</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">all_minifier</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 如果装了 hexo-all-minifier</span>
+<span class="token key atrule">markdown</span><span class="token punctuation">:</span> <span class="token comment"># 如果换了原装 hexo-renderer-marked, 用了 hexo-renderer-markdown-it</span>
+  <span class="token key atrule">render</span><span class="token punctuation">:</span>
+    <span class="token key atrule">html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">xhtmlOut</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">breaks</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">linkify</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">typographer</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">quotes</span><span class="token punctuation">:</span> <span class="token string">'“”‘’'</span>
+  <span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>abbr
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>footnote
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>ins
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>sub
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>sup
+  <span class="token key atrule">anchors</span><span class="token punctuation">:</span>
+    <span class="token key atrule">level</span><span class="token punctuation">:</span> <span class="token number">1</span>
+    <span class="token key atrule">collisionSuffix</span><span class="token punctuation">:</span> <span class="token string">'v'</span>
+    <span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">permalinkClass</span><span class="token punctuation">:</span> headerlink
+    <span class="token key atrule">permalinkSide</span><span class="token punctuation">:</span> <span class="token string">'left'</span>
+    <span class="token key atrule">permalinkSymbol</span><span class="token punctuation">:</span> <span class="token string">''</span>
+<span class="token key atrule">nofollow</span><span class="token punctuation">:</span> <span class="token comment"># 如果装了 hexo-filter-nofollow</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> post
+<span class="token key atrule">sitemap</span><span class="token punctuation">:</span> <span class="token comment"># 如果装了 hexo-generator-sitemap</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> sitemap.xml
+  <span class="token key atrule">rel</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">autoprefixer</span><span class="token punctuation">:</span> <span class="token comment"># 如果装了 hexo-autoprefixer</span>
+  <span class="token key atrule">exclude</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;*.min.css&quot;</span>
+  <span class="token key atrule">overrideBrowserslist</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;last 2 versions&quot;</span>
+<span class="token key atrule">babelify</span><span class="token punctuation">:</span> <span class="token comment"># 如果装了 hexo-renderer-babelify + @babel/preset-env</span>
+  <span class="token key atrule">presets</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token string">&quot;@babel/preset-env&quot;</span>
+  <span class="token key atrule">sourceMaps</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">mathjax</span><span class="token punctuation">:</span> <span class="token comment"># 如果装了 hexo-filter-mathjax</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> none <span class="token comment"># or 'ams' or 'all'</span>
+  <span class="token key atrule">single_dollars</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># enable single dollar signs as in-line math delimiters</span>
+  <span class="token key atrule">cjk_width</span><span class="token punctuation">:</span> <span class="token number">0.9</span> <span class="token comment"># relative CJK char width</span>
+  <span class="token key atrule">normal_width</span><span class="token punctuation">:</span> <span class="token number">0.6</span> <span class="token comment"># relative normal (monospace) width</span>
+
+<span class="token key atrule">ignore</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">&quot;**/source/asset/js/common/*.js&quot;</span> <span class="token comment"># 如果装了 hexo-renderer-babelify</span>
+  <span class="token punctuation">-</span> <span class="token string">&quot;**/source/asset/js/part/*.js&quot;</span> <span class="token comment"># 如果装了 hexo-renderer-babelify</span>
+  <span class="token punctuation">-</span> <span class="token string">&quot;**/source/asset/js/plugin/!(L2Dwidget.0.min.js)&quot;</span> <span class="token comment"># 如果装了 hexo-renderer-babelify</span>
+
+<span class="token comment"># 百度主动推送</span>
+<span class="token key atrule">baidu_url_submit</span><span class="token punctuation">:</span>
+  <span class="token key atrule">count</span><span class="token punctuation">:</span> <span class="token number">1000</span> <span class="token comment"># 提交最新的一个链接</span>
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> ma<span class="token punctuation">-</span>jinyao.cn <span class="token comment"># 在百度站长平台中注册的域名</span>
+  <span class="token key atrule">token</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span> <span class="token comment"># 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> baidu_urls.txt <span class="token comment"># 文本文档的地址， 新链接会保存在此文本文档里</span>
+
+<span class="token key atrule">baidu_translate</span><span class="token punctuation">:</span> <span class="token comment"># 用于划词翻译组件</span>
+  <span class="token key atrule">appid</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span>
+  <span class="token key atrule">appkey</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span>
+
+<span class="token key atrule">valine</span><span class="token punctuation">:</span> <span class="token comment"># 用于评论组件</span>
+  <span class="token key atrule">appid</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span>
+  <span class="token key atrule">appkey</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span>
+
+<span class="token comment"># 搜索引擎验证</span>
+<span class="token key atrule">google_site_verification</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span>
+<span class="token key atrule">baidu_site_verification</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span>
+</code></pre></div><h1 id="themes-mustom目录结构"><a href="#themes-mustom目录结构" class="header-anchor">#</a> themes/mustom目录结构</h1> <p>接下来看看<a href="//github.com/jinyaoMa/ma-jinyao.cn/tree/master/themes/mustom">themes/mustom</a>的目录结构。</p> <div class="language- extra-class"><pre class="language-text"><code>├─_config.yml : 主题配置文件，改菜单、改图标、改皮肤、改音乐/一言组件配置、新增组件时涉及
+├─source : 主题资源文件夹
+|   ├─browser.ejs : 不用babelify时旧浏览器会重定向到这个页面
+|   ├─robots.txt
+|   ├─sw.tpl : pwa需要加载的service worker模板
+|   ├─asset
+|   |   ├─part : 所有组件模板文件放这
+|   |   |  ├─audioplayer.ejs
+|   |   |  ├─brand.ejs
+|   |   |  ├─codelib.ejs
+|   |   |  ├─comment.ejs
+|   |   |  ├─extension.ejs
+|   |   |  ├─footer.ejs
+|   |   |  ├─gallery.ejs
+|   |   |  ├─goingto.ejs
+|   |   |  ├─hitokoto.ejs
+|   |   |  ├─menus.ejs
+|   |   |  ├─page.ejs
+|   |   |  ├─panels.ejs
+|   |   |  ├─pather.ejs
+|   |   |  ├─post.ejs
+|   |   |  ├─recentposts.ejs
+|   |   |  ├─records.ejs
+|   |   |  ├─search.ejs
+|   |   |  ├─settings.ejs
+|   |   |  ├─sitename.ejs
+|   |   |  ├─skin.ejs
+|   |   |  ├─timeline.ejs
+|   |   |  ├─toc.ejs
+|   |   |  ├─translater.ejs
+|   |   |  ├─xaside.ejs
+|   |   |  ├─xcanvas.ejs
+|   |   |  ├─xdrawer.ejs
+|   |   |  └xsearch.ejs
+|   |   ├─live2d : Live2D的文件放这
+|   |   |   ├─haruto.model.json
+|   |   |   ├─haruto.physics.json
+|   |   |   ├─mtn
+|   |   |   |  ├─01.mtn
+|   |   |   |  ├─02.mtn
+|   |   |   |  ├─03.mtn
+|   |   |   |  ├─04.mtn
+|   |   |   |  ├─05.mtn
+|   |   |   |  ├─06.mtn
+|   |   |   |  ├─07.mtn
+|   |   |   |  ├─08.mtn
+|   |   |   |  ├─09.mtn
+|   |   |   |  └idle_02.mtn
+|   |   |   ├─moc
+|   |   |   |  ├─haruto.moc
+|   |   |   |  ├─haruto.2048
+|   |   |   |  |      └texture_00.png
+|   |   ├─lang : 所有的语言界面资源文件放这
+|   |   |  ├─en.yml : 英文
+|   |   |  └zh-cn.yml : 中文
+|   |   ├─js : 所有的JS资源文件放这
+|   |   | ├─main.js : 管理所有资源的加载和程序
+|   |   | ├─nomodule.js : 不使用babelify时用得到的旧浏览器重定向
+|   |   | ├─plugin : 所有第三方JS插件模块
+|   |   | |   ├─APlayer.min.js
+|   |   | |   ├─av-min.js
+|   |   | |   ├─evanyou.js
+|   |   | |   ├─L2Dwidget.0.min.js
+|   |   | |   ├─L2Dwidget.min.js
+|   |   | |   ├─md5.min.js
+|   |   | |   ├─Meting.min.js
+|   |   | |   ├─socialShare.min.js
+|   |   | |   └Valine.min.js
+|   |   | ├─part : 所有组件加载必要的模块
+|   |   | |  ├─audioplayer.js
+|   |   | |  ├─brand.js
+|   |   | |  ├─codelib.js
+|   |   | |  ├─comment.js
+|   |   | |  ├─extension.js
+|   |   | |  ├─footer.js
+|   |   | |  ├─gallery.js
+|   |   | |  ├─goingto.js
+|   |   | |  ├─hitokoto.js
+|   |   | |  ├─menus.js
+|   |   | |  ├─page.js
+|   |   | |  ├─panels.js
+|   |   | |  ├─pather.js
+|   |   | |  ├─post.js
+|   |   | |  ├─recentposts.js
+|   |   | |  ├─records.js
+|   |   | |  ├─search.js
+|   |   | |  ├─settings.js
+|   |   | |  ├─sitename.js
+|   |   | |  ├─skin.js
+|   |   | |  ├─timeline.js
+|   |   | |  ├─toc.js
+|   |   | |  ├─translater.js
+|   |   | |  ├─xaside.js
+|   |   | |  ├─xcanvas.js
+|   |   | |  ├─xdrawer.js
+|   |   | |  └xsearch.js
+|   |   | ├─common : 包含所有通用JS函数
+|   |   | |   ├─ajax.js
+|   |   | |   ├─api.js
+|   |   | |   ├─config.js
+|   |   | |   ├─fetch.js
+|   |   | |   ├─lang.js
+|   |   | |   ├─part.js
+|   |   | |   ├─storage.js
+|   |   | |   └util.js
+|   |   ├─img : 所有的固定图像资源文件放这
+|   |   |  ├─android-chrome-192x192.png
+|   |   |  ├─android-chrome-512x512.png
+|   |   |  ├─author.large.png
+|   |   |  ├─author.medium.png
+|   |   |  ├─author.small.png
+|   |   |  ├─by-nc-sa.svg
+|   |   |  ├─icon.large.png
+|   |   |  ├─icon.medium.png
+|   |   |  ├─icon.small.png
+|   |   |  ├─qf3cu.huaji.png
+|   |   |  ├─qf3cu.jpg
+|   |   |  ├─qf3cu.png
+|   |   |  ├─qf3cu.temp.bw.png
+|   |   |  ├─qf3cu.temp.png
+|   |   |  ├─qq.png
+|   |   |  ├─start.png
+|   |   |  ├─start.reverse.png
+|   |   |  └wechat.png
+|   |   ├─font : 所有的字体文件放这
+|   |   |  ├─fa-brands-400.eot
+|   |   |  ├─fa-brands-400.svg
+|   |   |  ├─fa-brands-400.ttf
+|   |   |  ├─fa-brands-400.woff
+|   |   |  ├─fa-brands-400.woff2
+|   |   |  ├─fa-regular-400.eot
+|   |   |  ├─fa-regular-400.svg
+|   |   |  ├─fa-regular-400.ttf
+|   |   |  ├─fa-regular-400.woff
+|   |   |  ├─fa-regular-400.woff2
+|   |   |  ├─fa-solid-900.eot
+|   |   |  ├─fa-solid-900.svg
+|   |   |  ├─fa-solid-900.ttf
+|   |   |  ├─fa-solid-900.woff
+|   |   |  ├─fa-solid-900.woff2
+|   |   |  ├─iconfont.eot
+|   |   |  ├─iconfont.svg
+|   |   |  ├─iconfont.ttf
+|   |   |  ├─iconfont.woff
+|   |   |  └SourceHanSansCN.otf
+|   |   ├─css : 所有的样式文件放这
+|   |   |  ├─style.styl : 引用了所有的样式
+|   |   |  ├─_plugin : 所有第三方样式插件
+|   |   |  |    ├─APlayer.min.css
+|   |   |  |    ├─fontawesome.min.css
+|   |   |  |    ├─github-markdown.min.css
+|   |   |  |    ├─highlight.styl
+|   |   |  |    └share.min.css
+|   |   |  ├─_part : 所有组件样式
+|   |   |  |   ├─audioplayer.styl
+|   |   |  |   ├─brand.styl
+|   |   |  |   ├─codelib.styl
+|   |   |  |   ├─comment.styl
+|   |   |  |   ├─extension.styl
+|   |   |  |   ├─footer.styl
+|   |   |  |   ├─gallery.styl
+|   |   |  |   ├─goingto.styl
+|   |   |  |   ├─hitokoto.styl
+|   |   |  |   ├─menus.styl
+|   |   |  |   ├─page.styl
+|   |   |  |   ├─panels.styl
+|   |   |  |   ├─pather.styl
+|   |   |  |   ├─post.styl
+|   |   |  |   ├─recentposts.styl
+|   |   |  |   ├─records.styl
+|   |   |  |   ├─search.styl
+|   |   |  |   ├─settings.styl
+|   |   |  |   ├─sitename.styl
+|   |   |  |   ├─skin.styl
+|   |   |  |   ├─timeline.styl
+|   |   |  |   ├─toc.styl
+|   |   |  |   ├─translater.styl
+|   |   |  |   ├─xaside.styl
+|   |   |  |   ├─xcanvas.styl
+|   |   |  |   ├─xdrawer.styl
+|   |   |  |   └xsearch.styl
+|   |   |  ├─_common : 包含所有页面的通用样式
+|   |   |  |    ├─color.styl : 所有的受皮肤影响的颜色配置
+|   |   |  |    ├─dimension.styl : 所有的固定距离、固定值等配置
+|   |   |  |    └layout.styl : 所有页面通用样式，主要包含“m-”开头的主模板样式
+├─scripts : 主题预处理脚本文件夹
+|    ├─$filter.js
+|    ├─$helper.js
+|    ├─$renderer.js
+|    ├─renderer
+|    |    ├─$partplus.js
+|    |    └$template.js
+|    ├─plugin : 放改过的预处理时用到的第三方插件
+|    |   ├─pangunode.js
+|    |   ├─toc.js
+|    |   ├─hexo-generator-restful
+|    |   |           ├─index.js
+|    |   |           ├─lib
+|    |   |           |  └generator.js
+|    |   ├─hexo-abbrlink
+|    |   |       ├─index.js
+|    |   |       ├─lib
+|    |   |       |  ├─crc16.js
+|    |   |       |  ├─crc32.js
+|    |   |       |  ├─logic.js
+|    |   |       |  └model.js
+|    ├─helper : 放预处理渲染生成期间用到的函数
+|    |   ├─$count.js
+|    |   ├─$css.js
+|    |   ├─$encode.js
+|    |   ├─$forIn.js
+|    |   ├─$gallery.js
+|    |   ├─$js.js
+|    |   ├─$min2read.js
+|    |   ├─$mjs.js
+|    |   ├─$nomjs.js
+|    |   ├─$word4post.js
+|    |   └$word4site.js
+├─layout : 主题预处理页面模板文件夹
+|   ├─archive.ejs : 管理所有归档页面头部涉及的数据
+|   ├─index.ejs : 管理首页面头部涉及的数据
+|   ├─page.ejs : 管理所有单独页面头部涉及的数据
+|   ├─post.ejs : 管理所有文章页面头部涉及的数据
+|   ├─_partial
+|   |    └frame.ejs : 网页模板，增减改组件和修改头部模板时涉及
+</code></pre></div><h2 id="普通使用主题时涉及的文件及文件夹"><a href="#普通使用主题时涉及的文件及文件夹" class="header-anchor">#</a> 普通使用主题时涉及的文件及文件夹</h2> <div class="language- extra-class"><pre class="language-text"><code>├─_config.yml : 主题配置文件，改菜单、改图标、改皮肤、改音乐/一言组件配置、新增组件时涉及
+├─source : 主题资源文件夹
+|   ├─asset
+|   |   ├─part : 所有组件模板文件放这
+|   |   ├─lang : 所有的语言界面资源文件放这
+|   |   |  ├─en.yml : 英文
+|   |   |  └zh-cn.yml : 中文
+|   |   ├─js : 所有的JS资源文件放这
+|   |   | ├─main.js : 管理所有资源的加载和程序
+|   |   | ├─part : 所有组件加载必要的模块
+|   |   ├─css : 所有的样式文件放这
+|   |   |  ├─style.styl : 引用了所有的样式
+|   |   |  ├─_part : 所有组件样式
+├─layout : 主题预处理页面模板文件夹
+|   ├─_partial
+|   |    └frame.ejs : 网页模板，增减改组件和修改头部模板时涉及
+</code></pre></div><h1 id="source目录结构"><a href="#source目录结构" class="header-anchor">#</a> source目录结构</h1> <p>再来看看<a href="//github.com/jinyaoMa/ma-jinyao.cn/tree/master/source">source</a>的目录结构。</p> <div class="language- extra-class"><pre class="language-text"><code>├─CNAME : 锁定github pages域名定向
+├─_posts : 所有的文章
+|   ├─Gallery-Post-Not-Supported.md
+|   ├─Hello-Hexo.md
+|   ├─Helpful-Links.md
+|   ├─HTTP是什么？.md
+|   ├─Markdown-Basic-Syntax.md
+|   ├─Oracle-SQL-Basic-Usage.md
+|   ├─TCP-IP是什么？.md
+|   ├─主题hexo-theme-mustom使用指南.md
+|   ├─旧版日记仿markdown编译代码.md
+|   ├─测试区2048JS代码.md
+|   └网易云音乐歌单JS音乐播放器JS代码.md
+├─resume : 这是个“简历小贴士”单页面
+|   └index.md
+├─records : 这是个“记录”单页面
+|    ├─content.yml : 记录组件加载时从这里读取数据
+|    └index.md
+├─library : 这是个“代码库”单页面
+|    └index.md
+├─letter : 这是个“求职信小贴士”单页面
+|   └index.md
+├─gallery : 这是个“图库”单页面
+|    ├─FaceQ1583444636773.png
+|    ├─http-request-example.jpg
+|    ├─http-request-format.png
+|    ├─http-response-example.jpg
+|    ├─http-response-format.png
+|    ├─index.md
+|    ├─tcp-ip-ipv6-prefix.jpg
+|    ├─tcp-ip-router-network.jpg
+|    ├─tcp-ip-router-subnet.jpg
+|    ├─wallpaper-2311325.jpg
+|    ├─wallpaper-2572384.jpg
+|    ├─wallpaper-878514.jpg
+|    ├─yao2048-0.jpg
+|    └yaoplayer-0.jpg
+├─extension : 这个是本站左下角的扩展功能
+|     ├─content.yml : 扩展组件加载时从这里读取数据
+|     ├─test : “测试”扩展
+|     ├─resume : “简历生成”扩展
+|     ├─palette : “图像颜色提取”扩展
+|     ├─letter : “求职信”扩展
+├─code : 所有使用Hexo标签“include_code”的代码文件都放这
+├─about : 这是个“关于”单页面
+|   └index.md
+</code></pre></div><h1 id="新建单页面例子"><a href="#新建单页面例子" class="header-anchor">#</a> 新建单页面例子</h1> <p><strong>注：需要我的scaffolds/page.md模板为前提</strong></p> <p>假如我要新建一个“友链”单页面，我需要运行新建命令：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>hexo new page <span class="token string">&quot;links&quot;</span>
+</code></pre></div><p>运行命令后得到以下新目录结构</p> <div class="language- extra-class"><pre class="language-text"><code>├─_posts
+├─resume
+├─records
+├─links : 新“友链”单页面
+|   └index.md : 模板生成的index.md
+├─library
+├─letter
+├─gallery
+├─extension
+├─code
+├─about
+</code></pre></div><p>如何修改<code>links/index.md</code>可以参考<a href="//raw.githubusercontent.com/jinyaoMa/ma-jinyao.cn/master/source/about/">about/index.md</a></p> <h2 id="添加菜单项目"><a href="#添加菜单项目" class="header-anchor">#</a> 添加菜单项目</h2> <p>在主题配置<code>_config.yml</code>中，按格式新增<code>menus</code>下的项目</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">menus</span><span class="token punctuation">:</span>
+  <span class="token key atrule">main</span><span class="token punctuation">:</span> <span class="token comment"># 项目组</span>
+    <span class="token key atrule">home</span><span class="token punctuation">:</span> <span class="token comment"># 项目</span>
+      <span class="token key atrule">url</span><span class="token punctuation">:</span> / <span class="token comment"># 项目链接</span>
+      <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">'&lt;i class=&quot;fas fa-home fa-fw&quot;&gt;&lt;/i&gt;'</span> <span class="token comment"># 项目图标</span>
+    <span class="token key atrule">archive</span><span class="token punctuation">:</span> <span class="token comment"># 项目</span>
+      <span class="token key atrule">url</span><span class="token punctuation">:</span> /archives/ <span class="token comment"># 项目链接</span>
+      <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">'&lt;i class=&quot;fas fa-archive fa-fw&quot;&gt;&lt;/i&gt;'</span> <span class="token comment"># 项目图标</span>
+    <span class="token key atrule">about</span><span class="token punctuation">:</span> <span class="token comment"># 项目</span>
+      <span class="token key atrule">url</span><span class="token punctuation">:</span> /about/ <span class="token comment"># 项目链接</span>
+      <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">'&lt;i class=&quot;fas fa-user fa-fw&quot;&gt;&lt;/i&gt;'</span> <span class="token comment"># 项目图标</span>
+    <span class="token key atrule">links</span><span class="token punctuation">:</span> <span class="token comment"># 新项目 &lt;----------------------------------------------------</span>
+      <span class="token key atrule">url</span><span class="token punctuation">:</span> /links/  <span class="token comment"># 新项目链接 &lt;----------------------------------------</span>
+      <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">'&lt;i class=&quot;fas fa-link fa-fw&quot;&gt;&lt;/i&gt;'</span> <span class="token comment"># 新项目图标 &lt;------------</span>
+</code></pre></div><p>接下来，在主题<code>source/asset/lang</code>文件夹中的<code>.yml</code>语言文件新增<code>menus</code>下的项目</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">menus</span><span class="token punctuation">:</span>
+  <span class="token key atrule">main</span><span class="token punctuation">:</span> <span class="token comment"># 对应_config.yml中的项目组</span>
+    <span class="token key atrule">caption</span><span class="token punctuation">:</span> 本站 <span class="token comment"># 项目组名称</span>
+    <span class="token key atrule">items</span><span class="token punctuation">:</span> <span class="token comment"># 对应_config.yml中的项目</span>
+      <span class="token key atrule">home</span><span class="token punctuation">:</span> 首页 <span class="token comment"># 项目名称</span>
+      <span class="token key atrule">archive</span><span class="token punctuation">:</span> 归档 <span class="token comment"># 项目名称</span>
+      <span class="token key atrule">about</span><span class="token punctuation">:</span> 关于 <span class="token comment"># 项目名称</span>
+      <span class="token key atrule">links</span><span class="token punctuation">:</span> 友链 <span class="token comment"># 新项目名称 &lt;-----------------------------------------</span>
+</code></pre></div><h1 id="新建文章例子"><a href="#新建文章例子" class="header-anchor">#</a> 新建文章例子</h1> <p><strong>注：需要我的scaffolds/post.md模板为前提</strong></p> <p>假如我要新建一个“HTTP是什么？”文章，我需要运行新建命令：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>hexo new <span class="token string">&quot;HTTP是什么？&quot;</span>
+</code></pre></div><p>运行命令后得到以下新目录结构</p> <div class="language- extra-class"><pre class="language-text"><code>├─_posts
+|   └HTTP是什么？.md : 新“HTTP是什么？”文章
+├─resume
+├─records
+├─links
+├─library
+├─letter
+├─gallery
+├─extension
+├─code
+├─about
+</code></pre></div><p>打开<code>HTTP是什么？.md</code>，可以看到front-matter中没有abbrlink，没有关系，这是自动生成。<strong>如果文章里使用了MathJax，需要设置<code>mathjax: true</code>。</strong></p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> HTTP是什么？
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">-</span> <span class="token null important">null</span> <span class="token comment"># 分类设置</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token null important">null</span> <span class="token comment"># 标签设置</span>
+<span class="token key atrule">mathjax</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2020-04-10 14:15:34</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> <span class="token datetime number">2020-04-10 14:15:34</span>
+<span class="token punctuation">---</span>
+</code></pre></div><h1 id="添加组件例子"><a href="#添加组件例子" class="header-anchor">#</a> 添加组件例子</h1> <p>假如我要在“友链”单页面里添加一个像&quot;记录&quot;单页面下的记录组件，命名为<code>links</code>组件：</p> <p><strong>首先，在Hexo根目录下<code>source/links</code>文件夹建立一个<code>content.yml</code>用以记录友链，里面的内容可以是这样的：</strong></p> <div class="language-yml source/links/content.yml extra-class"><pre class="language-yml"><code><span class="token comment"># 友链模板</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> jinyaoMa
+  <span class="token key atrule">site</span><span class="token punctuation">:</span> //ma<span class="token punctuation">-</span>jinyao.cn
+  <span class="token key atrule">avatar</span><span class="token punctuation">:</span> //ma<span class="token punctuation">-</span>jinyao.cn/asset/img/author.medium.png
+<span class="token comment"># 其他友链</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Test
+  <span class="token key atrule">site</span><span class="token punctuation">:</span> //baidu.com
+  <span class="token key atrule">avatar</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span>
+
+<span class="token comment"># ...以此类推</span>
+</code></pre></div><p><strong>然后，在主题目录<code>themes/mustom</code>新建和修改以下必要的文件：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>├─_config.yml : 添加需要的图标
+├─source
+|   ├─asset
+|   |   ├─part
+|   |   |  └links.ejs : 必要“组件模板”
+|   |   ├─lang
+|   |   |  ├─en.yml : 添加需要的英文文本
+|   |   |  └zh-cn.yml : 添加需要的中文文本
+|   |   ├─js
+|   |   | ├─part
+|   |   | |  └links.js : 必要“JS加载模块”
+|   |   ├─css
+|   |   |  ├─_part
+|   |   |  |   └links.styl : 必要“组件样式”
+</code></pre></div><p><code>links.ejs</code>：可以参照<a href="//raw.githubusercontent.com/jinyaoMa/ma-jinyao.cn/master/themes/mustom/source/asset/part/records.ejs">asset/part/records.ejs</a>组件模板，刚开始可以只有以下部分：</p> <div class="language-html asset/part/links.ejs extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>p-links<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- 注意类名 --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>p-links-caption<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- 窗口标题部分 --&gt;</span>
+    &lt;%- theme.links.icon %&gt;<span class="token comment">&lt;!-- 窗口标题图标 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>links.caption<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- 加载语言文件中links.caption的字符串 --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>在<code>_config.yml</code>中添加以下代码：</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">links</span><span class="token punctuation">:</span>
+  <span class="token key atrule">icon</span><span class="token punctuation">:</span> <span class="token string">'&lt;i class=&quot;fas fa-link fa-fw&quot;&gt;&lt;/i&gt;'</span>
+</code></pre></div><p>在<code>en.yml</code>和<code>zh-cn.yml</code>中添加以下代码：</p> <div class="language-yml en.yml extra-class"><pre class="language-yml"><code><span class="token key atrule">links</span><span class="token punctuation">:</span>
+  <span class="token key atrule">caption</span><span class="token punctuation">:</span> LINKS
+</code></pre></div><div class="language-yml zh-cn.yml extra-class"><pre class="language-yml"><code><span class="token key atrule">links</span><span class="token punctuation">:</span>
+  <span class="token key atrule">caption</span><span class="token punctuation">:</span> 友链
+</code></pre></div><p><code>links.js</code>：可以参照<a href="//raw.githubusercontent.com/jinyaoMa/ma-jinyao.cn/master/themes/mustom/source/asset/js/part/records.js">asset/js/part/records.js</a>加载模块，刚开始可以只有以下部分：</p> <div class="language-js asset/js/part/links.js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> part <span class="token keyword">from</span> <span class="token string">&quot;../common/part.js&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> tag <span class="token operator">=</span> <span class="token string">'links'</span><span class="token punctuation">;</span> <span class="token comment">// 注意标签名</span>
+<span class="token keyword">let</span> element <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">init</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">params<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">part</span><span class="token punctuation">(</span>tag<span class="token punctuation">,</span> <span class="token parameter">el</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    element <span class="token operator">=</span> el<span class="token punctuation">;</span>
+    document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>tag<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replaceWith</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    callback <span class="token operator">&amp;&amp;</span> <span class="token function">callback</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  tag<span class="token punctuation">,</span>
+  init
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p><code>links.styl</code>：可以参照<a href="//raw.githubusercontent.com/jinyaoMa/ma-jinyao.cn/master/themes/mustom/source/asset/css/_part/records.styl">asset/css/_part/records.styl</a>组件样式，刚开始可以什么样式都没有。</p> <p><strong>完成必要文件的新建之后，就要把这个组件加载到页面上，需要修改一下文件：</strong></p> <p>在Hexo根目录<code>source/links/index.md</code>里面的front-matter中标记这个组件。</p> <div class="language-yml source/links/index.md extra-class"><pre class="language-yml"><code><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> links
+<span class="token key atrule">layout</span><span class="token punctuation">:</span> page
+<span class="token key atrule">name</span><span class="token punctuation">:</span> links
+<span class="token key atrule">parts</span><span class="token punctuation">:</span> 
+  <span class="token punctuation">-</span> page
+  <span class="token punctuation">-</span> links <span class="token comment"># 标记组件</span>
+<span class="token punctuation">---</span>
+</code></pre></div><p>在<code>themes/mustom</code>主题目录中<code>source/asset/css/style.styl</code>引用<code>links.styl</code>。</p> <div class="language-styl extra-class"><pre class="language-styl"><code><span class="token comment">// 文件末尾添加</span>
+<span class="token atrule-declaration"><span class="token atrule">@import</span> <span class="token string">'_part/links'</span></span>
+</code></pre></div><p>在<code>themes/mustom</code>主题目录中<code>source/asset/js/main.js</code>对号插入以下代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 头部所有import下面</span>
+<span class="token keyword">import</span> links <span class="token keyword">from</span> <span class="token string">'./part/links.js'</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Ctrl+F 查找 “Extra Operations”，在“Extra Operations”下添加代码加载组件到“links”单页面 */</span>
+<span class="token comment">// Extra Operations</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\/(links)\/</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token function">pathname</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/links/content.json</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token comment">// content.yml 预编译成的JSON文件，友链的记录文件</span>
+    method<span class="token operator">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+    dataType<span class="token operator">:</span> <span class="token string">'json'</span><span class="token punctuation">,</span>
+    <span class="token function">success</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      parts<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'links'</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> links<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        data
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token parameter">el</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        checklist<span class="token punctuation">.</span>links <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        progress<span class="token punctuation">.</span><span class="token function">step</span><span class="token punctuation">(</span>stepping<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在<code>themes/mustom</code>主题目录中<code>layout/_partial/frame.ejs</code>中<code>div.m-content</code>插入组件标签<code>&lt;links&gt;&lt;/links&gt;</code>。</p> <p><strong>通过以上步骤就能把组件添加到单页面“友链”中</strong></p> <h1 id="删除单页面组件"><a href="#删除单页面组件" class="header-anchor">#</a> 删除单页面组件</h1> <p>想要停用某个单页面组件只要在单页面所属<code>source/YourPage/index.md</code>里面的front-matter中注释掉组件标记即可，例如：</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> links
+<span class="token key atrule">layout</span><span class="token punctuation">:</span> page
+<span class="token key atrule">name</span><span class="token punctuation">:</span> links
+<span class="token key atrule">parts</span><span class="token punctuation">:</span> 
+  <span class="token punctuation">-</span> page
+  <span class="token comment"># - links # 注释掉组件标记</span>
+<span class="token punctuation">---</span>
+</code></pre></div><p><strong><em>我这个主题所用技术都是比较野生和混杂，不懂可以Github Issue我，也可以百度。自己研究一下熟悉之后就简单了，因为来来去去也就几个地方，只是代码分得较细，改动过程鼠标可能比较累。</em></strong></p></div> <div class="tail" data-v-2d8c9a66><div class="ending" data-v-2d8c9a66><span data-v-2d8c9a66>The post above ended</span> <i class="far fa-dot-circle fa-fw" data-v-2d8c9a66></i> <span data-v-2d8c9a66>Thanks for your reading</span></div> <div class="friend" data-v-2d8c9a66><div data-v-2d8c9a66>Come on! Write some comments, and your suggestions will improve the quality of my creative!</div> <div class="button" data-v-2d8c9a66>FRIEND ME</div> <div class="qrcode" data-v-2d8c9a66><div data-v-2d8c9a66><img src="/assets/img/qq.png" data-v-2d8c9a66> <div data-v-2d8c9a66>QQ</div></div><div data-v-2d8c9a66><img src="/assets/img/wechat.png" data-v-2d8c9a66> <div data-v-2d8c9a66>WeChat</div></div></div></div> <div class="share" data-v-2d8c9a66><!----></div> <div class="license" data-v-2d8c9a66><div class="frame" data-v-2d8c9a66><div data-v-2d8c9a66><span data-v-2d8c9a66>Post Author:</span> <a target="_blank" href="/" data-v-2d8c9a66>jinyaoMa</a></div> <div data-v-2d8c9a66><span data-v-2d8c9a66>Post Link:</span> <a target="_blank" href="/" data-v-2d8c9a66>/</a></div> <div data-v-2d8c9a66><span data-v-2d8c9a66>Copyright Notice:</span> <span data-v-2d8c9a66>All articles/posts in this website are licensed under <a target="_blank" href="//creativecommons.org/licenses/by-nc-sa/4.0/"><i class="fab fa-creative-commons"></i> BY-NC-SA</a> unless stating additionally.</span></div></div></div> <div class="tags" data-v-2d8c9a66><a href="/tag/Mustom/" data-v-2d8c9a66># Mustom</a></div> <div class="pn" data-v-2d8c9a66><!----> <a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#" title="Newer Post: undefined" class="next" data-v-2d8c9a66></a></div></div> <div class="readmode" data-v-2d8c9a66><span data-v-2d8c9a66>Enable Read Mode</span> <i class="fas fa-book-open" data-v-2d8c9a66></i></div></div></div> <div class="Comment card" data-v-028e1257 data-v-12a16612><div class="caption" data-v-028e1257><span class="icon" data-v-028e1257><i class="fas fa-comments fa-fw" data-v-028e1257></i></span> <span data-v-028e1257>COMMENTS</span></div> <div class="inner" data-v-028e1257><!----></div> <div class="minimize" data-v-028e1257></div></div></div></div> <div class="Empty card" style="background-image:url('/assets/img/empty.png');" data-v-7176c082 data-v-1134095c></div></div> <div class="aside" data-v-1134095c><div class="Aside" data-v-d310051e data-v-1134095c><div class="Panel" data-v-34e36b8d data-v-d310051e><div class="card" data-v-34e36b8d><div class="caption" data-v-34e36b8d><span class="icon" data-v-34e36b8d><i class="fas fa-folder-open fa-fw"></i></span> <span data-v-34e36b8d>CATEGORIES</span></div> <div class="inner" data-v-34e36b8d><a href="/category/Blog/" style="font-size:1.0166666666666666rem;opacity:1;" data-v-34e36b8d>Blog</a><a href="/category/Hexo/" style="font-size:0.95rem;opacity:0.875;" data-v-34e36b8d>Hexo</a><a href="/category/网络/" style="font-size:0.8833333333333333rem;opacity:0.75;" data-v-34e36b8d>网络</a><a href="/category/Note/" style="font-size:0.8833333333333333rem;opacity:0.75;" data-v-34e36b8d>Note</a><a href="/category/SQL/" style="font-size:0.8166666666666667rem;opacity:0.625;" data-v-34e36b8d>SQL</a><a href="/category/Markdown/" style="font-size:0.8166666666666667rem;opacity:0.625;" data-v-34e36b8d>Markdown</a><a href="/category/数据结构与算法/" style="font-size:1.0166666666666666rem;opacity:1;" data-v-34e36b8d>数据结构与算法</a><a href="/category/Plugin/" style="font-size:0.8833333333333333rem;opacity:0.75;" data-v-34e36b8d>Plugin</a></div> <!----> <div class="minimize" data-v-34e36b8d></div></div><div class="card" data-v-34e36b8d><div class="caption" data-v-34e36b8d><span class="icon" data-v-34e36b8d><i class="fas fa-tags fa-fw"></i></span> <span data-v-34e36b8d>TAGS</span></div> <!----> <div class="inner" data-v-34e36b8d><a href="/tag/2048/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>2048</a><a href="/tag/Test/" style="font-size:0.8833333333333333rem;opacity:1;" data-v-34e36b8d>Test</a><a href="/tag/Command/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>Command</a><a href="/tag/Mustom/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>Mustom</a><a href="/tag/HTTP/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>HTTP</a><a href="/tag/HTTPS/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>HTTPS</a><a href="/tag/Oracle/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>Oracle</a><a href="/tag/SQL/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>SQL</a><a href="/tag/Links/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>Links</a><a href="/tag/基础/" style="font-size:0.8833333333333333rem;opacity:1;" data-v-34e36b8d>基础</a><a href="/tag/抽象数据类/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>抽象数据类</a><a href="/tag/Stack/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>Stack</a><a href="/tag/Queue/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>Queue</a><a href="/tag/TCP/IP/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>TCP/IP</a><a href="/tag/MAC/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>MAC</a><a href="/tag/IPv6/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>IPv6</a><a href="/tag/IPv4/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>IPv4</a><a href="/tag/线性表/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>线性表</a><a href="/tag/List/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>List</a><a href="/tag/old blog/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>old blog</a><a href="/tag/diary/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>diary</a><a href="/tag/JavaScript/" style="font-size:0.8833333333333333rem;opacity:1;" data-v-34e36b8d>JavaScript</a><a href="/tag/Big O/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>Big O</a><a href="/tag/音乐播放器/" style="font-size:0.8166666666666667rem;opacity:0.75;" data-v-34e36b8d>音乐播放器</a></div> <div class="minimize" data-v-34e36b8d></div></div></div> <div class="Audioplayer card" data-v-36ca48a9 data-v-d310051e><div class="caption" data-v-36ca48a9><span class="icon" data-v-36ca48a9><i class="fas fa-music fa-fw" data-v-36ca48a9></i></span> <span data-v-36ca48a9>PLAYLIST</span></div> <div class="inner" style="height:calc(297px + 90px);" data-v-36ca48a9><meting-js server="netease"type="playlist"id="4989572738"theme="var(--link)"list-max-height="297px"></meting-js></div> <div class="minimize" data-v-36ca48a9></div></div> <div class="Clustrmaps card" data-v-3e6631e1 data-v-d310051e><div class="caption" data-v-3e6631e1><span class="icon" data-v-3e6631e1><i class="fas fa-map fa-fw" data-v-3e6631e1></i></span> <span data-v-3e6631e1>Clustrmaps</span></div> <div class="inner" data-v-3e6631e1><script id="clustrmaps" data-v-3e6631e1></script></div> <div class="minimize" data-v-3e6631e1></div></div> <div class="Toc card" data-v-0fea4cca data-v-d310051e data-v-d310051e><div class="caption" data-v-0fea4cca><span class="icon" data-v-0fea4cca><i class="fas fa-bookmark fa-fw" data-v-0fea4cca></i></span> <span data-v-0fea4cca>TABLE OF CONTENTS</span></div> <div class="inner" data-v-0fea4cca><div data-v-0fea4cca><ul><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#hexo根目录结构">Hexo根目录结构</a></li><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#config-yml根配置文件">_config.yml根配置文件</a></li><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#themes-mustom目录结构">themes/mustom目录结构</a><ul><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#普通使用主题时涉及的文件及文件夹">普通使用主题时涉及的文件及文件夹</a></li></ul></li><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#source目录结构">source目录结构</a></li><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#新建单页面例子">新建单页面例子</a><ul><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#添加菜单项目">添加菜单项目</a></li></ul></li><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#新建文章例子">新建文章例子</a></li><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#添加组件例子">添加组件例子</a></li><li><a href="/post/cd0e94fa87bd88209ee0bc5be2d6b5eb/#删除单页面组件">删除单页面组件</a></li></ul></div></div></div></div></div> <div class="footer" data-v-1134095c><div data-v-1134095c><div class="Footer" data-v-0b34c432 data-v-1134095c><div data-v-0b34c432>© 2019 - 2021 jinyaoMa</div> <div data-v-0b34c432></div> <div data-v-0b34c432>Theme <a target="_blank" href="//github.com/jinyaoMa/vuepress-theme-mustom" title="vuepress-theme-mustom">Mustom</a> By <a target="_blank" href="//github.com/jinyaoMa" title="jinyaoMa">jinyaoMa</a></div> <div class="footerCount" data-v-0b34c432><span title="Site total page views" data-v-0b34c432><i class="fas fa-eye fa-fw" data-v-0b34c432></i>
+      ∞
+    </span> <span title="Site total visitors" data-v-0b34c432><i class="fas fa-user-tie fa-fw" data-v-0b34c432></i>
+      ∞
+    </span> <span title="Site total word count" data-v-0b34c432><i class="fas fa-file-word fa-fw" data-v-0b34c432></i>
+      15.3k
+    </span></div> <div class="license" data-v-0b34c432><a class="by-nc-sa" target="_blank" href="//creativecommons.org/licenses/by-nc-sa/4.0/" title="Creative Commons Attribution-Noncommercial-ShareAlike 4.0 International license"></a></div></div></div></div></div></div> <div class="Notification default hide" data-v-3429fdee data-v-1134095c><div class="frame" data-v-3429fdee><div class="inner" data-v-3429fdee><div class="icon" data-v-3429fdee><i class="fas fa-exclamation-circle fa-fw"></i></div> <div class="msg" data-v-3429fdee>DEFAULT</div></div></div></div></div><div class="global-ui"><!----><div id="live2d-widget" class="live2d-widget-container" style="position:fixed;right:48px;bottom:0px;width:180px;height:270px;z-index:99999;opacity:1;pointer-events:none;"><canvas id="live2d_canvas" width="180" height="270" class="live2d_canvas" style="position:absolute;left:0px;top:0px;width:180px;height:270px;"></canvas></div></div></div>
+    <script src="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/app.5514714f.js" defer></script><script src="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/5.8f03a21b.js" defer></script><script src="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/16.a00417ee.js" defer></script><script src="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/9.efcfe850.js" defer></script><script src="https://cdn.jsdelivr.net/gh/jinyaoMa/vuepress-theme-mustom@1.1.3/assets/js/8.eec476d6.js" defer></script>
+  </body>
+</html>
